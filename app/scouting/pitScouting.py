@@ -14,4 +14,4 @@ def pitScouting():
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
         print(data)
-    return "pie"
+    return data
