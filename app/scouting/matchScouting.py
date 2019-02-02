@@ -5,6 +5,11 @@ sys.path.append("..")
 # print(app.app)
 
 
+@app.route('/', methods=['GET'])
+def home():
+    return "works"
+
+
 @app.route('/scouting/match', methods=['GET', 'POST'])
 def matchScouting():
     if request.method == "GET":

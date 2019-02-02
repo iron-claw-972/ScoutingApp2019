@@ -6,7 +6,7 @@ sys.path.append("..")
 
 
 @app.route('/scouting/pit', methods=['GET', 'POST'])
-def matchScouting():
+def pitScouting():
     if request.method == "GET":
         return '<html><body><form action="/scouting/pit" method="POST"><input type="text" name="fname"><input type="submit" value="Submit"></form></body></html>'
     if request.method == "POST":
@@ -14,4 +14,4 @@ def matchScouting():
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
         print(data)
-    return str(data)
+    return "pie"
