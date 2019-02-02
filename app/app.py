@@ -9,3 +9,6 @@ import scouting.matchScouting
 import scouting.pitScouting
 import scouting.templatingData
 import publicity.publicity
+
+
+app.run(port=5001)
