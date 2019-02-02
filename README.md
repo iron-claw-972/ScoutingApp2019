@@ -13,8 +13,8 @@
 - [ ] 25" Touch Screen
 - [ ] Pit Monitor
 - [ ] Internet x2
-- [ ] 5 Cellular Hotspot
-- [ ] 5 Battery Charger Sensor
+- [ ] Cellular Hotspots
+- [ ] Battery Charger Sensors
 
 ### Publicity Board
 - [ ] Sponsors
