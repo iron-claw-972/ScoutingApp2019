@@ -8,12 +8,13 @@ app = Flask(__name__)
 #import pit.matchData
 #import pit.matchSchedule
 #import publicity.publicity
-# import scouting.matchScouting
+from scouting.matchScouting import matchScouting
 # import scouting.pitScouting
 # import scouting.templatingData
 
 from scouting.data import bp
 
 app.register_blueprint(bp)
+app.register_blueprint(matchScouting)
 
 app.run(port=5001)
