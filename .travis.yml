@@ -4,10 +4,10 @@ language: python
 # Set the python version to 3.6
 python: 3.6
 
-# # Install the codecov pip dependency
-# install:
-#   - pip install flask
-#   - pip install flask-ci
+# Install the codecov pip dependency
+install:
+  - pip install flask
+  - pip install flask-ci
 
 # Run the unit test
 script:
