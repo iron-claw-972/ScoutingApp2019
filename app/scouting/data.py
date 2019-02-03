@@ -1,6 +1,7 @@
-from flask import Flask, request, Blueprint
+from flask import Flask, request, Blueprint, render_template
 
 bp = Blueprint('data', __name__)
+
 
 @bp.route('/data', methods=['GET'])
 def handle():

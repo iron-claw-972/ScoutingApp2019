@@ -2,16 +2,21 @@ from flask import Flask
 from flask_script import Manager, Server
 from flask_ci import CICommand
 from tests import settings
-#print(dir(tests),type(tests))
-import time
+
 app = Flask(__name__)
 
 app.debug = True
 
-# import pit.liveStream
-#import pit.matchData
-#import pit.matchSchedule
-# import scouting.templatingData
+import pit.liveStream as liveStream
+import pit.matchData as matchData
+import pit.matchSchedule as matchSchedule
+import pit.batteryTracker as batteryTracker
+PIT_PREFIX = '/pit'
+
+app.register_blueprint(liveStream.bp, url_prefix = PIT_PREFIX)
+app.register_blueprint(matchData.bp, url_prefix = PIT_PREFIX)
+app.register_blueprint(matchSchedule.bp, url_prefix = PIT_PREFIX)
+app.register_blueprint(batteryTracker.bp, url_prefix = PIT_PREFIX)
 
 import scouting.data as data
 import scouting.matchScouting as matchScouting
