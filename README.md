@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/iron-claw-972/ScoutingApp2019.svg?branch=master)](https://travis-ci.com/iron-claw-972/ScoutingApp2019)
+
 ## Setup
 1. install latest version of python 3 (process depends on your machine). Installing anaconda makes it easy.
 2. install flask: `pip3 install flask`
