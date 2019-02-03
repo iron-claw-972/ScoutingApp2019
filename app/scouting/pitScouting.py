@@ -1,11 +1,12 @@
 from flask import Flask, request, Blueprint
+import flask
 
-bp = Blueprint('pitScouting', __name__)
+bp = Blueprint('pitScouting', __name__, template_folder='templates')
 
 @bp.route('/pitScouting', methods=['GET', 'POST'])
 def handle():
     if request.method == "GET":
-        return '<html><body><form action="/scouting/pit" method="POST"><input type="text" name="fname"><input type="submit" value="Submit"></form></body></html>'
+        return flask.render_template('pitScouting.html')
     if request.method == "POST":
         fields = [k for k in request.form]
         values = [request.form[k] for k in request.form]
