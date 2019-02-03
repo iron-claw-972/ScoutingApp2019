@@ -2,6 +2,7 @@ from flask import Flask
 from flask_script import Manager
 from flask_ci import CICommand
 from tests import settings
+#print(dir(tests),type(tests))
 import time
 app = Flask(__name__)
 

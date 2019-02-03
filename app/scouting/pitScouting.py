@@ -3,6 +3,7 @@ import flask
 
 bp = Blueprint('pitScouting', __name__, template_folder='templates')
 
+
 @bp.route('/pitScouting', methods=['GET', 'POST'])
 def handle():
     if request.method == "GET":
@@ -12,4 +13,4 @@ def handle():
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
         print(data)
-    return data
+    return str(data)
