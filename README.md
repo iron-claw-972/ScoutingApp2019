@@ -7,13 +7,7 @@
 6. to start the server: `python app/app.py runserver`
 7. to run tests: `python app/app.py ci`
 8. to access the server, go to [localhost:5000](http://localhost:5000)
-7. all the files where you write your code (not app.py), must start with:
-```python
-from app import app
-from flask import Flask, request
-import sys
-sys.path.append("..")
-```
+
 ## Scouting App Requirements
 
 ### Scouting App
