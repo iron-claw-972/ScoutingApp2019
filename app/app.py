@@ -3,7 +3,7 @@ import time
 app = Flask(__name__)
 
 
-# import __init__
+import __init__
 # import pit.liveStream
 #import pit.matchData
 #import pit.matchSchedule
