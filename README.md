@@ -38,3 +38,8 @@
 - [ ] SA data for match prep
 - [ ] Livestream
 - [ ] Battery Tracker
+
+## TODO
+### Misc.
+- [ ] move configurations from app.py to config.py
+- [ ] configure production WSGI server
