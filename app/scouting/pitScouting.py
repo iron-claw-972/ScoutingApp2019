@@ -1,12 +1,9 @@
-from app import app
-from flask import Flask, request
-import sys
-sys.path.append("..")
-# print(app.app)
+from flask import Flask, request, Blueprint
 
+bp = Blueprint('pitScouting', __name__)
 
-@app.route('/scouting/pit', methods=['GET', 'POST'])
-def pitScouting():
+@bp.route('/pitScouting', methods=['GET', 'POST'])
+def handle():
     if request.method == "GET":
         return '<html><body><form action="/scouting/pit" method="POST"><input type="text" name="fname"><input type="submit" value="Submit"></form></body></html>'
     if request.method == "POST":
