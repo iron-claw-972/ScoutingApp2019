@@ -7,6 +7,7 @@
 6. to start the server: `python app/app.py runserver`
 7. to run tests: `python app/app.py ci`
 8. to access the server, go to [localhost:5000](http://localhost:5000)
+9. (optional) configure environment variable FLASK_ENV="development" to run in development mode and get rid of the warning and get some dev features
 
 ## Scouting App Requirements
 
