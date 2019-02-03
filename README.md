@@ -1,8 +1,8 @@
 ## Setup
 1. install latest version of python 3 (process depends on your machine). Installing anaconda makes it easy.
 2. install flask: `pip3 install flask`
-3. ~install sql library: `pip3 install mysql-connector` ~
-4. ~install sql~
+3. ~~install sql library: `pip3 install mysql-connector`~~
+4. ~~install sql~~
 5. install flask-ci: `pip3 install flask-ci`
 6. to start the server: `python app/app.py runserver`
 7. to run tests: `python app/app.py ci`
