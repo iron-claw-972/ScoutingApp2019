@@ -16,9 +16,8 @@
   - pitHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
   - everything else: files that pithandler calls
 - Scouting
-  - data.py: all functions/handlers for displaying scouting data on the website
-  - matchScouting.py: all functions/handlers for inputting match scouting data
-  - pitScouting.py: all functions/handlers for inputting pit scouting data
+  - scoutingHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
+  - everything else: files that pithandler calls
 - Publicity Board
   - Since this should just be a few html files, the handlers can go in `publicityBoard.py`
   
