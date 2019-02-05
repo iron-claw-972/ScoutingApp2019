@@ -15,7 +15,11 @@ app.debug = True
 PIT_PREFIX = '/pit'
 SCOUTING_PREFIX = '/scouting'
 
+# database config, evntually move to config
 app.database = database.DatabaseUtil
+app.database.storeVariable('batteryStatus', ['good', 'good', 'good'])
+app.database.storeVariable('timeUntilGood', [0, 0, 0])
+app.database.storeVariable('batteryChargingTime', 5)
 
 app.register_blueprint(pitHandler.bp, url_prefix=PIT_PREFIX)
 app.register_blueprint(scoutingHandler.bp, url_prefix=SCOUTING_PREFIX)
