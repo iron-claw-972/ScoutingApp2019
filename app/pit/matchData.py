@@ -1,8 +1,5 @@
-from flask import Flask, request, Blueprint, render_template
+from flask import render_template
+import time
 
-bp = Blueprint('matchData', __name__)
 
-
-@bp.route('/matchData', methods=['GET'])
-def handle():
-    return 'data'
+def matchdata(database, request):

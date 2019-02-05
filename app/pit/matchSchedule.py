@@ -1,8 +1,5 @@
-from flask import Flask, request, Blueprint, render_template
+from flask import render_template
+import time
 
-bp = Blueprint('matchSchedule', __name__)
 
-
-@bp.route('/matchSchedule', methods=['GET'])
-def handle():
-    return 'data'
+def matchSchedule(database, request):
