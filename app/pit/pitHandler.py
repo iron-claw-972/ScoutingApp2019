@@ -7,9 +7,6 @@ database = None
 
 @bp.route('/home', methods=['GET'])
 def home():
-    return 'data'
-
-
-@bp.route('/batteryTracker', methods=['GET', 'POST'])
-def battery():
-    return batteryTracker(current_app._get_current_object().database, request)
+    battery1, battery2, battery3 = batteryTracker(
+        current_app._get_current_object().database, request)
+    return render_template('batteryTracker.html', battery1, battery2, battery3)
