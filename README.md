@@ -16,10 +16,22 @@
   - pitHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
   - everything else: files that pithandler calls
 - Scouting
-  - scoutingHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
+  - scoutingHandler.py: contains all `@app.route`s for the pit
   - everything else: files that pithandler calls
 - Publicity Board
-  - Since this should just be a few html files, the handlers can go in `publicityBoard.py`
+  - publicityHandler.py: contains all `@app.route`s for publicity (there should only be one or two pages)
+  - everything else: files that pithandler calls
+- templates
+  - all html files for :
+    - pit
+    - scouting
+    - publicity
+- static
+  - all resources for front end access
+    - css
+    - js
+    - images
+    - ...
   
 ## Scouting App Requirements
 
