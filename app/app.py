@@ -1,7 +1,6 @@
 import publicity.publicityBoard as publicityBoard
 import scouting.scoutingHandler as scoutingHandler
 import pit.pitHandler as pitHandler
-import pit.batteryTracker as batteryTracker
 import util.DatabaseUtil as database
 from flask import Flask
 from flask_script import Manager, Server
@@ -16,7 +15,7 @@ app.debug = True
 PIT_PREFIX = '/pit'
 SCOUTING_PREFIX = '/scouting'
 
-# database config, evntually move to config
+#  config, evntually move to config
 app.database = database.DatabaseUtil
 app.database.storeVariable('batteryStatus', ['good', 'good', 'good'])
 app.database.storeVariable('timeUntilGood', [0, 0, 0])

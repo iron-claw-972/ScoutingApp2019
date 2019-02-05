@@ -1,4 +1,5 @@
 from flask import Flask, request, Blueprint, render_template, current_app
+from .batteryTracker import batteryTracker
 
 bp = Blueprint('pit', __name__)
 database = None
@@ -11,4 +12,4 @@ def home():
 
 @bp.route('/batteryTracker', methods=['GET', 'POST'])
 def battery():
-    return current_app._get_current_object().batteryTracker.batteryTracker(current_app._get_current_object().database, request)
+    return batteryTracker(current_app._get_current_object().database, request)

@@ -1,4 +1,4 @@
-from flask import Flask, request, Blueprint, render_template, current_app
+from flask import render_template
 import time
 
 
@@ -21,6 +21,3 @@ def batteryTracker(database, request):
             database.storeVariable('batteryStatus', batteryStatus)
 
         return render_template('batteryTracker.html', one=database.getVariable('batteryStatus')[0], two=database.getVariable('batteryStatus')[1], three=database.getVariable('batteryStatus')[2])
-
-
-current_app._get_current_object().batteryTracker = batteryTracker
