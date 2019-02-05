@@ -11,6 +11,17 @@
 8. to access the server, go to [localhost:5000](http://localhost:5000)
 9. (optional) configure environment variable FLASK_ENV="development" to run in development mode and get rid of the warning and get some dev features
 
+## Code Structure
+- Pit
+  - pitHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
+  - everything else: files that pithandler calls
+- Scouting
+  - data.py: all functions/handlers for displaying scouting data on the website
+  - matchScouting.py: all functions/handlers for inputting match scouting data
+  - pitScouting.py: all functions/handlers for inputting pit scouting data
+- Publicity Board
+  - Since this should just be a few html files, the handlers can go in `publicityBoard.py`
+  
 ## Scouting App Requirements
 
 ### Scouting App
