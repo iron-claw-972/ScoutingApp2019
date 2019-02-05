@@ -1,6 +1,7 @@
 import publicity.publicityBoard as publicityBoard
 import scouting.scoutingHandler as scoutingHandler
 import pit.pitHandler as pitHandler
+import pit.batteryTracker as batteryTracker
 import util.DatabaseUtil as database
 from flask import Flask
 from flask_script import Manager, Server
