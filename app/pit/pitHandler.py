@@ -2,7 +2,6 @@ from flask import Flask, request, Blueprint, render_template, current_app
 from .batteryTracker import batteryTracker
 
 bp = Blueprint('pit', __name__)
-database = None
 
 
 @bp.route('/home', methods=['GET'])

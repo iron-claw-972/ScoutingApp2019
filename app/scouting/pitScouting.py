@@ -1,11 +1,7 @@
-from flask import Flask, request, Blueprint
 import flask
 
-bp = Blueprint('pitScouting', __name__, template_folder='templates')
 
-
-@bp.route('/pitScouting', methods=['GET', 'POST'])
-def handle():
+def pitScouting(request):
     if request.method == "GET":
         return flask.render_template('pitScouting.html')
     if request.method == "POST":
