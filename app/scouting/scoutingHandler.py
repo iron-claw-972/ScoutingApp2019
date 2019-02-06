@@ -7,7 +7,7 @@ bp = Blueprint('scouting', __name__)
 
 @bp.route('/home', methods=['GET'])
 def home():
-    return "go to input forms"
+    return render_template('scoutingHome.html')
 
 
 @bp.route('/inputPitData', methods=['GET', 'POST'])
