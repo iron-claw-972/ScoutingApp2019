@@ -9,4 +9,5 @@ database = None
 def home():
     battery1, battery2, battery3 = batteryTracker(
         current_app._get_current_object().database, request)
+
     return render_template('batteryTracker.html', battery1, battery2, battery3)

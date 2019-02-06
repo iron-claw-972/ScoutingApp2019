@@ -1,5 +1,6 @@
 from flask import render_template
-import time
+import datetime
 
 
 def matchSchedule(database, request):
+    currentTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
