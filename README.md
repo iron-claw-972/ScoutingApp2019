@@ -11,7 +11,7 @@
 8. to access the server, go to [localhost:5000](http://localhost:5000)
 9. (optional) configure environment variable FLASK_ENV="development" to run in development mode and get rid of the warning and get some dev features
 
-## Code Structure - not approved
+## Code Structure
 - Pit
   - pitHandler.py: contains all `@app.route`s for the pit (there should only be one or two pages)
   - everything else: files that pithandler calls
@@ -44,18 +44,14 @@
 - [ ] ToN oF bIG dAtA?
 
 ### Hardware
-- [ ] Computer
-- [ ] 25" Touch Screen
-- [ ] Pit Monitor
-- [ ] Internet x2
-- [ ] Cellular Hotspots
-- [ ] Battery Charger Sensors
+- [ ] 25" Touch Screen for publicity board
+- [ ] Pit Monitor for pit display
 
 ### Publicity Board
 - [ ] Sponsors
 - [ ] Tech Binder
-- [ ] "Business Plan"
-- [ ] CAD (interactive)
+- [ ] Business Plan
+- [ ] interactive CAD
 
 ### Pit Display
 - [ ] Team Match Schedule
