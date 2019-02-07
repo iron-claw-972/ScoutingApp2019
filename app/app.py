@@ -4,7 +4,7 @@ import pit.pitHandler as pitHandler
 import util.DatabaseUtil as database
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="")
 
 app.debug = True
 
