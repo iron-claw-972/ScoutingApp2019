@@ -2,6 +2,7 @@ import publicity.publicityBoard as publicityBoard
 import scouting.scoutingHandler as scoutingHandler
 import pit.pitHandler as pitHandler
 import util.DatabaseUtil as database
+import util.DataScraper as scraper
 from flask import Flask
 
 app = Flask(__name__, static_folder="static", static_url_path="")
