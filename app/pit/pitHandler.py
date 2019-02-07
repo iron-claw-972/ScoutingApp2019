@@ -4,7 +4,7 @@ from .batteryTracker import batteryTracker
 bp = Blueprint('pit', __name__)
 
 
-@bp.route('/home', methods=['GET'])
+@bp.route('/home', methods=['GET', 'POST'])
 def home():
     battery1, battery2, battery3 = batteryTracker(
         current_app._get_current_object().database, request)
