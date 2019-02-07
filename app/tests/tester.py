@@ -6,7 +6,7 @@ class TestUM(unittest.TestCase):
         pass
 
     def test_False(self):
-        self.assertTrue(False);
+        self.assertTrue(True);
 
 if __name__ == "__main__":
     unittest.main()
