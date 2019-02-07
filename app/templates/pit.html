@@ -1,20 +1,59 @@
 <html>
 
-<body>
-    <h1>Battery Tracker</h1>
-    <form action="/pit/batteryTracker" method="POST">
-        Enter the number of the battery you just used, and then start charging it
-        <input type="text" name="state">
-        <input type="submit" value="Submit">
-    </form>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScoutingAppBootstrap</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
 
-    battery0: {{one}}
-    <br />
-    battery1: {{two}}
-    <br />
-    battery2: {{three}}
-    <h1>Time Until Next Competition</h1>
-    <h1>Alliance Partners and Opponents</h1>
+<body style="text-align: center">
+    <h1 class="text-center" style="margin:14px;margin-bottom:45px;">Pit Dashboard</h1>
+    <div class="table-responsive" style="text-align: center">
+        <table class="table">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width:199px;">
+                        <p style="height:19px;">Next Match</p>
+                    </td>
+                    <td style="width:507px;">
+                        <p style="height:19px;">Alliance Partners:</p>
+                        <p>Opposing Teams</p>
+                        <p>Time Until Match Starts:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:199px;">
+                        <p style="height:19px;">Following Match</p>
+                    </td>
+                    <td style="width:507px;">
+                        <p style="height:19px;">Alliance Partners:</p>
+                        <p>Opposing Teams</p>
+                        <p>Time Until Match Starts:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Battery Tracker</td>
+                    <td>
+                        <form action="/pit/batteryTracker" method="POST">
+                            Enter the number of the battery you just used, and then start charging it
+                            <input type="text" name="state">
+                            <input type="submit" value="Submit">
+                        </form>
+                        <p style="height:19px;">Battery 1: {{one}}</p>
+                        <p style="height:19px;">Battery 2: {{two}}</p>
+                        <p style="height:19px;">Battery 3: {{three}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <header>
+        <div class="page-header" style="padding-left:0;margin-left:25px;margin-right:25;"></div>
+    </header>
 </body>
 
 </html>
