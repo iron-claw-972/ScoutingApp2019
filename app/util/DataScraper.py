@@ -7,10 +7,14 @@ class DataScraper:
     apiKey = "1CQGBNHADuOcI5xDHmLjpIBdQwxTHzZmPpDohm1gNs79gDtN5BrGgIt1bPzAlx2N"
     SVReventKey = ""
 
-    def getEvents(self, year):
+    def __init__(self):
+        self.SVReventKey = self.getEvent("2018", "Silicon Valley Regional")[
+            'first_event_id']
+
+    def getEvent(self, year, name):
         events = json.loads(requests.get(self.baseUrl + "/events/" +
                                          year + '?X-TBA-Auth-Key='+self.apiKey).text)
-        return events
+        return next((e for e in events if e['name'] == name))
 
 
-print(DataScraper().getEvents("2018"))
+print(DataScraper().getEvent("2018", "San Francisco Regional"))
