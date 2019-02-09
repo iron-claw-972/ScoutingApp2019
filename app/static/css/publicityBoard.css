@@ -1,0 +1,23 @@
+h1, h2, p{
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    width: 50%;
+    padding: 25px;
+}
+
+div#mainDiv {
+    height: 50vh;
+}
+
+embed#businessPlan {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+embed#techBinder {
+    margin-left: 50%;
+}
