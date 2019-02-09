@@ -11,6 +11,8 @@
 
 body {
     padding: 20px;
+    height: 100vh;
+    background-image: linear-gradient( white , white, #FF6400);
 }
 
 h1, h2, p{
@@ -43,13 +45,13 @@ div#marqueeDiv {
 
 div#oddMarqueeDiv {
     display: inline-block;
-    animation: oddMarquee 40s linear infinite;
+    animation: oddMarquee 50s linear infinite;
 }
 
 div#evenMarqueeDiv {
     display: inline-block;
-    animation: evenMarquee 40s linear infinite;
-    animation-delay: 20s;
+    animation: evenMarquee 50s linear infinite;
+    animation-delay: 25s;
   }
 
 img.sponsorImage {
