@@ -1,23 +1,88 @@
+@font-face {
+    font-family: Monserrat;
+    src: url(../fonts/monserrat/MontserratAlternates-Regular.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Monserrat;
+}
+
+body {
+    padding: 20px;
+}
+
 h1, h2, p{
     text-align: center;
 }
 
-td {
+@keyframes oddMarquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+@keyframes evenMarquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+div#marqueeDiv {
+    margin-top: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div#oddMarqueeDiv {
+    display: inline-block;
+    animation: oddMarquee 24s linear infinite;
+}
+
+div#evenMarqueeDiv {
+    display: inline-block;
+    animation: evenMarquee 24s linear infinite;
+    animation-delay: 12s;
+  }
+
+img.sponsorImage {
+    height: 10vh;
+    margin: 0 10px;
+}
+
+nav {
+    padding: auto;
+    margin-top: 10px;
     text-align: center;
-    width: 50%;
-    padding: 25px;
+}
+
+button.navButton {
+    border: none;
+    border-radius: 2.5vh 2.5vh 0 0;
+    width: 30%;
+    height: 5vh;
+    background-color: #DDDDDD;
+}
+
+button#middleNavButton {
+    margin: 0 1%;
 }
 
 div#mainDiv {
+    border-radius: 2.5vh;
     height: 50vh;
+    background-color: #DDDDDD;
+    padding: 30px;
 }
 
 embed#businessPlan {
     height: 100%;
-    width: 50%;
-    float: left;
-}
-
-embed#techBinder {
-    margin-left: 50%;
+    width: 100%;
 }
