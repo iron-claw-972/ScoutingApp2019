@@ -23,6 +23,9 @@ class DataScraper:
         return json.loads(requests.get(self.baseUrl + "/team/frc"+team+"/events/" +
                                        year+"/statuses" + '?X-TBA-Auth-Key='+self.apiKey).text)
 
+    def getSecretTeamInfo(self, team):
+        return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'?X-TBA-Auth-Key='+self.apiKey).text)
+
     def getTeams(self, year, id):
         return json.loads(requests.get(self.baseUrl + "/event/" + id + "/teams" + '?X-TBA-Auth-Key=' + self.apiKey).text)
 
@@ -39,6 +42,6 @@ class DataScraper:
 datascraper = DataScraper()
 # print(datascraper.getEvent("2019", "San Francisco Regional"))
 # print(datascraper.getTeamInfo("254", "2018"))
-print(datascraper.eventAlliances(datascraper.SFeventKey))
+# print(datascraper.eventAlliances(datascraper.SFeventKey))
 # print(datascraper.SVReventKey)
 # print(datascraper.getTeams("2019", datascraper.SFeventKey))
