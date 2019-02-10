@@ -4,6 +4,12 @@
 }
 
 @font-face {
+    font-family: Monserrat;
+    src: url(../fonts/monserrat/Montserrat-Bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
     font-family: Bladerunner;
     src: url(../fonts/bladerunner/bladerunner.ttf);
 }
@@ -26,8 +32,8 @@ body {
 }
 
 h1 {
-    font-family: "Arial Black", sans-serif;
-    color: black;
+    font-family: "Monserrat";
+    font-weight: bold;
     font-size: 5vw;
     line-height: 0.75; 
 }
@@ -50,7 +56,8 @@ img#clawLogo {
 }
 
 h1 {
-    font-family: "Arial Black", sans-serif;
+    font-family: "Monserrat";
+    font-weight: bold;
     color: black;
     font-size: 5vw;
     line-height: 0.75; 
