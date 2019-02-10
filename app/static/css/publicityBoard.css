@@ -50,10 +50,15 @@ p {
 
 img#clawLogo {
     height: 12vw;
-    flex: 1 1 0;
-    display: block;
-    margin: auto;
-    float: center;
+    margin: 0 1vw;
+    display: inline-block;
+}
+
+div.line {
+    width: 20vw;
+    height: 5vw;
+    display: inline-block;
+    border-top: black solid 0.5vw;
 }
 
 h1 {
@@ -126,7 +131,28 @@ button.navButton {
     font-size: 2.5vw;
     width: 30%;
     height: 5vh;
+}
+
+button.navButton:focus {
+    outline: none;
+}
+
+button.navButton#selected {
     background-color: orange;
+}
+
+button.navButton:not(#selected) {
+    background-color: #ffc151;
+    transition: 0.5s;
+}
+
+button.navButton:not(#selected):hover {
+    background-color: #ffb228;
+}
+
+button.navButton:not(#selected):active {
+    background-color: #ffa100;
+    transition: 0s;
 }
 
 div#embedDiv {
@@ -142,6 +168,7 @@ div#embedDiv {
 embed {
     height: 100%;
     width: 100%;
+    border: none;
 }
 
 embed#techBinder, embed#interactiveCAD {

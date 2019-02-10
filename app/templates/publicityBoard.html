@@ -10,8 +10,9 @@
 
         <head>
 
-            
+            <div class="line"></div>
             <img id="clawLogo" src="images/clawLogoBlack.png" />
+            <div class="line"></div>
 
             <h1>We are Team</h1>
             <span class="bladerunner">Iron Claw</span>
@@ -63,18 +64,19 @@
 
         <div id="tabDiv">
             <nav id="tabs">
-                <button class="navButton">TECH BINDER</button>
-                <button class="navButton">INTERACTIVE CAD</button>
-                <button class="navButton">BUSINESS PLAN</button>
+                <button class="navButton" onclick="changeTab(this, 'techBinder')">TECH BINDER</button>
+                <button class="navButton"onclick="changeTab(this, 'interactiveCAD')">INTERACTIVE CAD</button>
+                <button id="selected" class="navButton" onclick="changeTab(this, 'businessPlan')">BUSINESS PLAN</button>
             </nav>
 
             <div id="embedDiv">
                 <embed id="techBinder" src="http://167.99.26.126/wp-content/uploads/2018/12/Business-Plan-2017-2018.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitB&messages=0">
+                <embed id="interactiveCAD" src="../publicityBoard/3d">
                 <embed id="businessPlan" src="http://167.99.26.126/wp-content/uploads/2018/12/Business-Plan-2017-2018.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitB&messages=0"> 
-                
             </div>
         </div>
     </body>
 
-    <script src="js/publicityBoardResizeHandler.js"></script>
+    <script src="js/publicityBoard/resizeHandler.js"></script>
+    <script src="js/publicityBoard/tabHandler.js"></script>
 </html>
