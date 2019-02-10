@@ -1,22 +1,70 @@
 @font-face {
     font-family: Monserrat;
-    src: url(../fonts/monserrat/MontserratAlternates-Regular.otf);
+    src: url(../fonts/monserrat/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: Bladerunner;
+    src: url(../fonts/bladerunner/bladerunner.ttf);
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: Monserrat;
+    font-family: "Monserrat";
+    text-align: center;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-    padding: 20px;
-    height: 100vh;
-    background-image: linear-gradient( white , white, #FF6400);
+    padding: 2vh 2vw;
+    height: calc(100%-4vh);
+    background-image: linear-gradient(#FFAA00,#FF6600);
 }
 
-h1, h2, p{
-    text-align: center;
+h1 {
+    font-family: "Arial Black", sans-serif;
+    color: black;
+    font-size: 5vw;
+    line-height: 0.75; 
+}
+
+.bladerunner {
+    font-family: "Bladerunner";
+    font-size: 8vw;
+    word-spacing: -3vw;
+}
+
+p {
+    font-size: 3vw;
+}
+
+img#clawLogo {
+    height: 12vw;
+    display: block;
+    margin: auto;
+    float: center;
+}
+
+h1 {
+    font-family: "Arial Black", sans-serif;
+    color: black;
+    font-size: 5vw;
+    line-height: 0.75; 
+}
+
+h2 {
+    display: inline-block;
+    padding: 0 5vw;
+    font-family: "Arial Black", sans-serif;
+    color: black;
+    font-size: 4vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-bottom: black solid 1px;
 }
 
 @keyframes oddMarquee {
@@ -38,53 +86,54 @@ h1, h2, p{
 }
 
 div#marqueeDiv {
-    margin-top: 30px;
+    margin-top: 0;
     overflow: hidden;
     white-space: nowrap;
 }
 
 div#oddMarqueeDiv {
     display: inline-block;
-    animation: oddMarquee 50s linear infinite;
+    animation: oddMarquee 30s linear infinite;
 }
 
 div#evenMarqueeDiv {
     display: inline-block;
-    animation: evenMarquee 50s linear infinite;
-    animation-delay: 25s;
+    animation: evenMarquee 30s linear infinite;
+    animation-delay: 15s;
   }
 
 img.sponsorImage {
-    height: 10vh;
-    margin: 0 20px;
+    height: 8vh;
+    margin-left: 2vw;
 }
 
 nav {
     padding: auto;
-    margin-top: 30px;
+    margin-top: 1vh;
     text-align: center;
 }
 
 button.navButton {
     border: none;
     border-radius: 2.5vh 2.5vh 0 0;
+    font-size: 2.5vw;
     width: 30%;
     height: 5vh;
     background-color: #DDDDDD;
 }
 
-button#middleNavButton {
-    margin: 0 1%;
-}
-
 div#mainDiv {
     border-radius: 2.5vh;
-    height: 50vh;
     background-color: #DDDDDD;
     padding: 30px;
+    flex-grow: 1;
 }
 
-embed#businessPlan {
+embed {
     height: 100%;
     width: 100%;
+}
+
+embed#techBinder, embed#interactiveCAD {
+    display: none;
 }
