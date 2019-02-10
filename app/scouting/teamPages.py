@@ -11,6 +11,7 @@ def teamPages(number):
         data = database.getTeamData(number)
     try:
         name = data['teamInfo']['nickname']
+        website = data['teamInfo']['website']
     except:
         return flask.render_template('404.html')
-    return flask.render_template('teamPages.html', num=str(number), name=data['teamInfo']['nickname'])
+    return flask.render_template('teamPages.html', num=str(number), name=data['teamInfo']['nickname'], website=website)
