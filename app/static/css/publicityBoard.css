@@ -28,7 +28,7 @@ html {
 body {
     padding: 2vh 2vw;
     height: calc(100%-4vh);
-    background-image: linear-gradient(#FFAA00,#FF6600);
+    background-image: linear-gradient(#FFAA00 0%, #FFAA00 30%,#FF6600 85%);
 }
 
 h1 {
@@ -105,13 +105,13 @@ div#marqueeDiv {
 
 div#oddMarqueeDiv {
     display: inline-block;
-    animation: oddMarquee 40s linear infinite;
+    animation: oddMarquee 48s linear infinite;
 }
 
 div#evenMarqueeDiv {
     display: inline-block;
-    animation: evenMarquee 40s linear infinite;
-    animation-delay: 20s;
+    animation: evenMarquee 48s linear infinite;
+    animation-delay: 24s;
   }
 
 img.sponsorImage {
@@ -138,27 +138,27 @@ button.navButton:focus {
 }
 
 button.navButton#selected {
-    background-color: orange;
+    background-color: #FF6600;
 }
 
 button.navButton:not(#selected) {
-    background-color: #ffc151;
+    background-color: rgba(255, 122, 34, 0.3);
     transition: 0.5s;
 }
 
 button.navButton:not(#selected):hover {
-    background-color: #ffb228;
+    background-color: rgb(255, 122, 34);
 }
 
 button.navButton:not(#selected):active {
-    background-color: #ffa100;
+    background-color: #FF6600;
     transition: 0s;
 }
 
 div#embedDiv {
     border-radius: 2.5vh;
-    background-color: orange;
-    padding: 30px;
+    background-color: #FF6600;
+    padding: 5vw;
     position: absolute;
     bottom: 2vh;
     left: 2vw;
@@ -171,6 +171,74 @@ embed {
     border: none;
 }
 
-embed#techBinder, embed#interactiveCAD {
+embed#businessPlan, embed#interactiveCAD {
     display: none;
+}
+
+
+
+
+
+@media (orientation: landscape) {
+    h1 {
+        font-size: 3vw;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 2vw;
+        margin-top: 5vh;
+    }
+
+    .bladerunner {
+        font-size: 6vw;
+        word-spacing: -4vh;
+    }
+
+    div.line {
+        width: 10vw;
+    }
+
+    div#topDiv {
+        width: 42vw;
+        display: inline-block;
+        float: left;
+    }
+
+    p {
+        font-size: 3vh;
+    }
+
+    div#marqueeDiv {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 1vw;
+    }
+
+    img.sponsorImage {
+        height: 8vh;
+        margin-left: 1vw;
+    }
+    
+    div#tabDiv {
+        width: 50vw;
+        display: inline-block;
+        padding-top: 20vh;
+        right: 0vw;
+        left: 50vw;
+        top: 40vh;
+    }
+
+    button.navButton {
+        border: none;
+        border-radius: 2vh 2vh 0 0;
+        font-size: 1.5vw;
+        width: 30%;
+        height: 7vh;
+    }
+
+    div#embedDiv {
+        left: 45vw;
+        right: 3vw;
+    }
 }
