@@ -144,11 +144,14 @@ button.navButton:focus {
 
 button.navButton#selected {
     background-color: #FF6600;
+    transition: 0.5s;
+    line-height: 1;
 }
 
 button.navButton:not(#selected) {
     background-color: rgba(255, 122, 34, 0.3);
     transition: 0.5s;
+    line-height: 1.2;
 }
 
 button.navButton:not(#selected):hover {
