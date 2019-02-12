@@ -120,7 +120,7 @@ div#evenMarqueeDiv {
 
 img.sponsorImage {
     height: 8vh;
-    margin-left: 2vw;
+    margin-left: 1.5vw;
 }
 
 nav {
@@ -144,7 +144,6 @@ button.navButton:focus {
 
 button.navButton#selected {
     background-color: #FF6600;
-    font-weight: bold;
 }
 
 button.navButton:not(#selected) {
@@ -154,15 +153,15 @@ button.navButton:not(#selected) {
 
 button.navButton:not(#selected):hover {
     background-color: rgb(255, 122, 34);
-    bottom: 0;
+    transition: 0.5s;
 }
 
 button.navButton:not(#selected):active {
     background-color: #FF6600;
-    transition: 0s;
+    transition: 0.5s;
 }
 
-div#embedDiv {
+div#iframeDiv {
     border-radius: 2.5vh;
     background-color: #FF6600;
     padding: 5vw;
@@ -172,17 +171,15 @@ div#embedDiv {
     right: 2vw;
 }
 
-embed {
+iframe {
     height: 100%;
     width: 100%;
     border: none;
 }
 
-embed#businessPlan, embed#interactiveCAD {
+iframe#businessPlan, iframe#techBinder {
     display: none;
 }
-
-
 
 
 
@@ -210,7 +207,6 @@ embed#businessPlan, embed#interactiveCAD {
         width: 40vw;
         display: inline-block;
         position: relative;
-        top: 6vw;
     }
 
     p {
@@ -234,7 +230,7 @@ embed#businessPlan, embed#interactiveCAD {
     }
 
     nav {
-        margin-top: 20vh;
+        margin-top: 15vh;
         position: relative;
         right: 2vw;
     }
@@ -242,13 +238,18 @@ embed#businessPlan, embed#interactiveCAD {
     button.navButton {
         border: none;
         border-radius: 2vh 2vh 0 0;
-        font-size: 1.5vw;
+        font-size: 1.25vw;
         width: 30%;
         height: 7vh;
     }
 
-    div#embedDiv {
+    button.navButton#selected {
+        font-size: 1.5vw;
+    }
+
+    div#iframeDiv {
         left: 45vw;
         right: 3vw;
+        padding: 3vw;
     }
 }
