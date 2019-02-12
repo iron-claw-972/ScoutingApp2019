@@ -21,6 +21,11 @@ def match():
     return matchScouting(request)
 
 
+@bp.route('/teamPages')
+def teamPagesInput():
+    return render_template('teamPageInput.html')
+
+
 @bp.route('/teamPage/<number>')
 def teamPage(number):
     return teamPages(number)

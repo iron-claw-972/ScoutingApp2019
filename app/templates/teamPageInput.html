@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScoutingAppBootstrap</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+</head>
+
+<body style="text-align:center">
+    <h1 style="margin-top:35vh;margin-bottom:5vh;">Enter Team Number</h1>
+    <div>
+        <input id="meform" type="text" autocomplete="off" style="height:52px;width:201px;margin-top:20 vh;" />
+    </div>
+</body>
+<script>
+    document.getElementById('meform').onkeydown = function (event) {
+        if (event.keyCode == 13) {
+            window.location = "teamPage/" + document.getElementById('meform').value;
+        }
+    }
+</script>
+
+</html>
