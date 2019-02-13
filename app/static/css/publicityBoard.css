@@ -121,6 +121,7 @@ div#evenMarqueeDiv {
 img.sponsorImage {
     height: 8vh;
     margin-left: 1.5vw;
+    filter: brightness(0);
 }
 
 nav {
