@@ -204,6 +204,7 @@ iframe#businessPlan, iframe#techBinder {
 
     div.line {
         width: 10vw;
+        border-top-width: 0.25vw;
     }
 
     div#topDiv {
