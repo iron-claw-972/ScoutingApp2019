@@ -37,8 +37,14 @@ body {
     flex-flow: column;
 }
 
+div.divider {
+    height: 0;
+    width: 60vw;
+    border-top: 2px solid black;
+    margin: auto;
+}
+
 header {
-    background-color: black;
     flex: 0 0 10%;
     display: flex;
     align-items: center;
@@ -47,20 +53,22 @@ header {
 
 img#clawLogo {
     height: 7vh;
+    
 }
 
 h1 {
+    color: #FF6400;
     font-family: "Bebas";
     font-weight: bold;
     font-size: 8vw;
     margin-left: 2vw;
-    color: #FF6600;
     display: inline;
     word-spacing: 1vw;
+    letter-spacing: 0.3vw;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 div#teamDescription {
-    background-color: #FF6600;
     flex: 0 0 8%;
     display: flex;
     justify-content: center;
@@ -75,6 +83,9 @@ p {
 
 iframe {
     border: none;
+    margin: 3vh 0 3vh 0;
+    /*border-top: 4px solid black;
+    border-bottom: 4px solid black;*/
     flex: 1 1 auto;
 }
 
@@ -84,7 +95,6 @@ div#sponsors {
     align-items: center;
     overflow: hidden;
     white-space: nowrap;
-    background-color: #FF6600;
 }
 
 @keyframes oddMarquee {
@@ -118,6 +128,6 @@ div#evenMarqueeDiv {
 
 img.sponsorImage {
     height: 8vh;
-    margin-left: 1.5vw;
+    margin-left: 2vw;
     filter: brightness(0);
 }
