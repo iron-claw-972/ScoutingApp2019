@@ -1,20 +1,20 @@
 from .DataScraper import datascraper
-import mysql.connector
+#import mysql.connector
 
 
 class DatabaseUtil:
     variableStorage = {}
     teamData = {"972": {}}
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="8characters",
-        auth_plugin="mysql_native_password",
-        database="app_test"
-    )
-    mycursor = mydb.cursor()
-    mycursor.execute("SELECT * FROM new_table")
-    print([e for e in mycursor.fetchall()])
+    #mydb = mysql.connector.connect(
+    #    host="localhost",
+    #    user="root",
+    #    password="8characters",
+    #    auth_plugin="mysql_native_password",
+    #    database="app_test"
+    #)
+    #mycursor = mydb.cursor()
+    #mycursor.execute("SELECT * FROM new_table")
+    #print([e for e in mycursor.fetchall()])
 
     @staticmethod
     def storeVariable(name, value):
