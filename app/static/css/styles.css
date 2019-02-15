@@ -11,14 +11,15 @@ a.btn.btn-link.btn-lg {
 }
 
 button.scoutingHomeButtons {
-    background-color: transparent;
+    background-color: #ff9900;
     color: black;
     border-color: black;
     border-radius: 10x 10px;
-    padding: 25px;
+    padding: 10px;
     transition: 0.5s;
-
+    margin: 10px;
 }
+
 button:hover {
     cursor: hand;
 }
