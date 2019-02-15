@@ -14,73 +14,77 @@
     src: url(../fonts/bladerunner/bladerunner.ttf);
 }
 
+@font-face {
+    font-family: Bebas;
+    src: url(../fonts/bebas/BEBAS.ttf);
+}
+
+
 * {
     padding: 0;
     margin: 0;
     font-family: "Monserrat";
 }
 
-html {
+html, body {
     height: 100%;
+    width: 100%;
 }
 
 body {
-    padding: 2vh 2vw;
-    height: calc(100%-4vh);
-    background-image: linear-gradient(#FFAA00 0%, #FFAA00 30%,#FF6600 85%);
+    padding: 0;
+    display: flex;
+    flex-flow: column;
 }
 
-div#topDiv {
-    text-align: center;
-}
-
-h1 {
-    font-family: "Monserrat";
-    font-weight: bold;
-    font-size: 2vh;
-    line-height: 0.75; 
-}
-
-.bladerunner {
-    font-family: "Bladerunner";
-    font-size: 6vh;
-    word-spacing: -2vh;
-}
-
-p {
-    font-size: 2vh;
+header {
+    background-color: black;
+    flex: 0 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 img#clawLogo {
-    height: 16vw;
-    margin: 0 1vw;
-    display: inline-block;
-}
-
-div.line {
-    width: 20vw;
-    height: 8vw;
-    display: inline-block;
-    border-top: black solid 0.5vw;
+    height: 7vh;
 }
 
 h1 {
-    font-family: "Monserrat";
+    font-family: "Bebas";
     font-weight: bold;
-    color: black;
-    font-size: 5vw;
-    line-height: 0.75; 
+    font-size: 8vw;
+    margin-left: 2vw;
+    color: #FF6600;
+    display: inline;
+    word-spacing: 1vw;
 }
 
-h2 {
-    display: inline-block;
-    padding: 0 5vw;
-    font-family: "Arial Black", sans-serif;
-    color: black;
-    font-size: 4vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    border-bottom: black solid 0.2vh;
+div#teamDescription {
+    background-color: #FF6600;
+    flex: 0 0 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    width: 95vw;
+    text-align: center;
+    font-size: 3.2vw;
+}
+
+iframe {
+    border: none;
+    flex: 1 1 auto;
+}
+
+div#sponsors {
+    flex: 0 0 12%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #FF6600;
 }
 
 @keyframes oddMarquee {
@@ -101,160 +105,19 @@ h2 {
     }
 }
 
-div#marqueeDiv {
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0 4vw;
-}
-
 div#oddMarqueeDiv {
-    display: inline-block;
+    display: block;
     animation: oddMarquee 48s linear infinite;
 }
 
 div#evenMarqueeDiv {
-    display: inline-block;
+    display: block;
     animation: evenMarquee 48s linear infinite;
     animation-delay: 24s;
-  }
+}
 
 img.sponsorImage {
-    height: 6vh;
+    height: 8vh;
     margin-left: 1.5vw;
     filter: brightness(0);
-}
-
-nav {
-    padding: auto;
-    margin-top: 1vh;
-    text-align: center;
-}
-
-button.navButton {
-    border: none;
-    border-radius: 2.5vh 2.5vh 0 0;
-    font-size: 2.5vw;
-    width: 30%;
-    height: 5vh;
-    position: relative;
-}
-
-button.navButton:focus {
-    outline: none;
-}
-
-button.navButton#selected {
-    background-color: #FF6600;
-    transition: 0.5s;
-    line-height: 1;
-}
-
-button.navButton:not(#selected) {
-    background-color: rgba(255, 122, 34, 0.3);
-    transition: 0.5s;
-    line-height: 1.2;
-}
-
-button.navButton:not(#selected):hover {
-    background-color: rgb(255, 122, 34);
-    transition: 0.5s;
-}
-
-button.navButton:not(#selected):active {
-    background-color: #FF6600;
-    transition: 0.5s;
-}
-
-div#iframeDiv {
-    border-radius: 2.5vh;
-    background-color: #FF6600;
-    padding: 5vw;
-    position: absolute;
-    bottom: 2vh;
-    left: 2vw;
-    right: 2vw;
-}
-
-iframe {
-    height: 100%;
-    width: 100%;
-    border: none;
-}
-
-iframe#businessPlan, iframe#techBinder {
-    display: none;
-}
-
-
-
-@media (orientation: landscape) {
-    h1 {
-        font-size: 3vw;
-        line-height: 1;
-    }
-
-    h2 {
-        font-size: 2vw;
-        margin-top: 4vh;
-    }
-
-    .bladerunner {
-        font-size: 6vw;
-        word-spacing: -4vh;
-    }
-
-    div.line {
-        width: 10vw;
-        border-top-width: 0.25vw;
-    }
-
-    div#topDiv {
-        width: 40vw;
-        display: inline-block;
-        position: relative;
-    }
-
-    p {
-        font-size: 3vh;
-    }
-
-    div#marqueeDiv {
-        overflow: hidden;
-        white-space: nowrap;
-        margin: 0 1vw;
-    }
-
-    img.sponsorImage {
-        height: 8vh;
-        margin-left: 1vw;
-    }
-    
-    div#tabDiv {
-        width: 50vw;
-        float: right;
-    }
-
-    nav {
-        margin-top: 15vh;
-        position: relative;
-        right: 2vw;
-    }
-
-    button.navButton {
-        border: none;
-        border-radius: 2vh 2vh 0 0;
-        font-size: 1.25vw;
-        width: 30%;
-        height: 7vh;
-    }
-
-    button.navButton#selected {
-        font-size: 1.5vw;
-    }
-
-    div#iframeDiv {
-        left: 45vw;
-        right: 3vw;
-        padding: 3vw;
-    }
 }
