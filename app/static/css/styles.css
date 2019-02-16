@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(#FFAA00 0%, #FFAA00 30%,#FF6600 85%);
+    background-color: white;    
 }
 
 a.btn.btn-default.btn-lg {
@@ -11,14 +11,15 @@ a.btn.btn-link.btn-lg {
 }
 
 button.scoutingHomeButtons {
-    background-color: transparent;
+    background-color: #ff9900;
     color: black;
-    border-color: black ;
-    border-radius: 10px 10px;
-    padding: 15px;
+    border-color: black;
+    border-radius: 10x 10px;
+    padding: 10px;
     transition: 0.5s;
+    margin: 10px;
 }
 
 button:hover {
-    border-width: 5px;
+    cursor: hand;
 }
