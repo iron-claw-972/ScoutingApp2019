@@ -15,6 +15,8 @@ class DatabaseUtil:
     mycursor = mydb.cursor()
     mycursor.execute("SELECT * FROM team_info")
     print([e for e in mycursor.fetchall()])
+    mydb.commit()
+    # mydb.close()
 
     @staticmethod
     def storeVariable(name, value):
