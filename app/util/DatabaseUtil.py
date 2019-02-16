@@ -12,10 +12,11 @@ class DatabaseUtil:
         auth_plugin="mysql_native_password",
         database="app_test"
     )
-    mycursor = mydb.cursor()
-    mycursor.execute("SELECT * FROM team_info")
-    print([e for e in mycursor.fetchall()])
-    mydb.commit()
+    if (mydb):
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT * FROM team_info")
+        print([e for e in mycursor.fetchall()])
+        mydb.commit()
     # mydb.close()
 
     @staticmethod
@@ -26,11 +27,22 @@ class DatabaseUtil:
     def addTeam(dictOfValues):
         keys = [e for e in dictOfValues]
         print('''INSERT INTO team_info('''+','.join([e for e in keys])+''')
-                         VALUES('''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
+                         VALUES(
+                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
                          ''')
         DatabaseUtil.mycursor.execute('''INSERT INTO team_info('''+','.join([e for e in keys])+''')
-                         VALUES('''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
+                         VALUES(
+                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
                          ''')
+        DatabaseUtil.mydb.commit()
+
+    @staticmethod
+    def modifyTeam(teamnumber, dictOfValues):
+        keys = ','.join([e+'="'+dictOfValues[e]+'"' for e in dictOfValues])
+        DatabaseUtil.mycursor.execute('''UPDATE team_info
+        SET '''+keys+'''
+        WHERE TeamNumber='''+teamnumber)
+        DatabaseUtil.mydb.commit()
 
     @staticmethod
     def getVariable(name):
@@ -55,5 +67,3 @@ class DatabaseUtil:
 
 # DatabaseUtil.addBATeamData('972')
 # print(DatabaseUtil.getTeamData("972"))
-DatabaseUtil.addTeam(
-    {"Name": "Iron Claw Robotics", "TeamNumber": "973"})
