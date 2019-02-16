@@ -27,7 +27,7 @@ html {
 body {
     padding: 2vh 2vw;
     height: calc(100%-4vh);
-    background-image: linear-gradient(#FFAA00 0%, #FFAA00 30%,#FF6600 85%);
+    background-image: linear-gradient(#FFAA00 0%, #FFAA00 10%,#FF6600 85%);
 }
 
 div#topDiv {
