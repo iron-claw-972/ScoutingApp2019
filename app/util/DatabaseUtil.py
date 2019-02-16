@@ -5,18 +5,21 @@ import mysql.connector
 class DatabaseUtil:
     variableStorage = {}
     teamData = {"972": {}}
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="8characters",
-        auth_plugin="mysql_native_password",
-        database="app_test"
-    )
-    if (mydb):
-        mycursor = mydb.cursor()
-        mycursor.execute("SELECT * FROM team_info")
-        print([e for e in mycursor.fetchall()])
-        mydb.commit()
+    try:
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="8characters",
+            auth_plugin="mysql_native_password",
+            database="app_test"
+        )
+        if (mydb):
+            mycursor = mydb.cursor()
+            mycursor.execute("SELECT * FROM team_info")
+            print([e for e in mycursor.fetchall()])
+            mydb.commit()
+    except:
+        pass
     # mydb.close()
 
     @staticmethod
