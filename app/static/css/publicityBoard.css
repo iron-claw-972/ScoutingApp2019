@@ -83,9 +83,7 @@ p {
 
 iframe {
     border: none;
-    margin: 3vh 0 3vh 0;
-    /*border-top: 4px solid black;
-    border-bottom: 4px solid black;*/
+    margin: 2vh 0 2vh 0;
     flex: 1 1 auto;
 }
 
