@@ -1,6 +1,8 @@
 from .DataScraper import datascraper
-import mysql.connector
-
+try:
+    import mysql.connector
+except:
+    pass
 
 class DatabaseUtil:
     variableStorage = {}
