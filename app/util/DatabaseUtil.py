@@ -45,6 +45,20 @@ class DatabaseUtil:
         DatabaseUtil.mydb.commit()
 
     @staticmethod
+    def getTeam(teamnumber):
+        DatabaseUtil.mycursor.execute("SELECT * FROM team_info")
+        return [e for e in DatabaseUtil.mycursor.fetchall()]
+    
+    @staticmethod
+    def addMatch(matchNumber):
+        DatabaseUtil.mycursor.execute('''INSERT INTO match_info(MatchNumber)
+                         VALUES(
+                             '''+matchNumber+''')
+                         ''')
+        DatabaseUtil.mydb.commit()
+    
+    
+    @staticmethod
     def getVariable(name):
         return DatabaseUtil.variableStorage[name]
 
