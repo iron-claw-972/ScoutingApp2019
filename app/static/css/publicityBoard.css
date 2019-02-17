@@ -27,7 +27,7 @@ html {
 body {
     padding: 2vh 2vw;
     height: calc(100%-4vh);
-    background-image: linear-gradient(#FFAA00 0%, #FFAA00 30%,#FF6600 85%);
+    background-image: linear-gradient(#FFAA00 0%, #FFAA00 10%,#FF6600 85%);
 }
 
 div#topDiv {
@@ -48,18 +48,18 @@ h1 {
 }
 
 p {
-    font-size: 2vh;
+    font-size: 1.5vw;
 }
 
 img#clawLogo {
-    height: 12vw;
+    height: 16vw;
     margin: 0 1vw;
     display: inline-block;
 }
 
 div.line {
     width: 20vw;
-    height: 5vw;
+    height: 8vw;
     display: inline-block;
     border-top: black solid 0.5vw;
 }
@@ -119,14 +119,14 @@ div#evenMarqueeDiv {
   }
 
 img.sponsorImage {
-    height: 8vh;
+    height: 6vh;
     margin-left: 1.5vw;
     filter: brightness(0);
 }
 
 nav {
     padding: auto;
-    margin-top: 1vh;
+    margin-top: 2vh;
     text-align: center;
 }
 
@@ -205,6 +205,7 @@ iframe#businessPlan, iframe#techBinder {
 
     div.line {
         width: 10vw;
+        border-top-width: 0.25vw;
     }
 
     div#topDiv {
