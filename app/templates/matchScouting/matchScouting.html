@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Input Match Data</title>
+        <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+    </head>
+
+    <body>
+        <h1>Input Match Data</h1>
+        <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
+
+        <form method="POST">
+
+            <div id="hatchInput">
+                <h3>Hatch</h3>
+                <input type="checkbox" name="hatchIntake" checked> <label for="hatchIntake">Can intake &amp; hold?</label>
+                <div class="outtakeLevels">
+                    <input type="radio" name="hatchOuttakeLevel" value="0" checked> <label for="hatchOuttakeLevel">0</label>
+                    <input type="radio" name="hatchOuttakeLevel" value="1"> <label for="hatchOuttakeLevel">1</label>
+                    <input type="radio" name="hatchOuttakeLevel" value="2"> <label for="hatchOuttakeLevel">2</label>
+                    <input type="radio" name="hatchOuttakeLevel" value="3"> <label for="hatchOuttakeLevel">3</label>
+                </div>
+            </div>
+
+            <div id="cargoInput">
+                <h3>Cargo</h3>
+                <input type="checkbox" name="cargoIntake" checked> <label for="cargoIntake">Can intake &amp; hold?</label>
+                <div class="outtakeLevels">
+                    <input type="radio" name="cargoOuttakeLevel" value="0" checked> <label for="cargoOuttakeLevel">0</label>
+                    <input type="radio" name="cargoOuttakeLevel" value="1"> <label for="cargoOuttakeLevel">1</label>
+                    <input type="radio" name="cargoOuttakeLevel" value="2"> <label for="cargoOuttakeLevel">2</label>
+                    <input type="radio" name="cargoOuttakeLevel" value="3"> <label for="cargoOuttakeLevel">3</label>
+                </div>
+            </div>
+
+            <div id="climbInput">
+                <input type="radio" name="climbLevel" value="0" checked> <label for="climbLevel">None</label>
+                <input type="radio" name="climbLevel" value="1"> <label for="climbLevel">Level 1</label>
+                <input type="radio" name="climbLevel" value="2"> <label for="climbLevel">Level 2</label>
+                <input type="radio" name="climbLevel" value="3"> <label for="climbLevel">Level 3</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Input Match Data</title>
+        <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+    </head>
+
+    <body>
+        <h1>Input Team Number</h1>
+        <h2>You are scouting on Match #{{matchNumber}}</em></h2>
+
+        <form method="POST">
+
+            <input style="display: none;" name="matchNumber" value="{{matchNumber}}">
+
+            <select name="teamNumber">
+                <option selected>Select a Team</option>
+                <option value="18">18 The Nonexistant Numbers</option>
+                <option value="254">254 The Cheesy Poofs</option>
+                <option value="972">254 The Iron Claw</option>
+                <option value="1678">1678 Citrus Circuits</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+</html>
