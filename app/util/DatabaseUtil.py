@@ -4,6 +4,7 @@ try:
 except:
     pass
 
+
 class DatabaseUtil:
     variableStorage = {}
     teamData = {"972": {}}
@@ -16,9 +17,9 @@ class DatabaseUtil:
             database="app_test"
         )
         if (mydb):
-            mycursor = mydb.cursor()
+            mycursor = mydb.cursor(buffered=True)
             mycursor.execute("SELECT * FROM team_info")
-            print([e for e in mycursor.fetchall()])
+            # print([e for e in mycursor.fetchall()])
             mydb.commit()
     except:
         pass
@@ -31,10 +32,6 @@ class DatabaseUtil:
     @staticmethod
     def addTeam(dictOfValues):
         keys = [e for e in dictOfValues]
-        print('''INSERT INTO team_info('''+','.join([e for e in keys])+''')
-                         VALUES(
-                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
-                         ''')
         DatabaseUtil.mycursor.execute('''INSERT INTO team_info('''+','.join([e for e in keys])+''')
                          VALUES(
                              '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
@@ -53,7 +50,7 @@ class DatabaseUtil:
     def getTeam(teamnumber):
         DatabaseUtil.mycursor.execute("SELECT * FROM team_info")
         return [e for e in DatabaseUtil.mycursor.fetchall()]
-    
+
     @staticmethod
     def addMatch(matchNumber):
         DatabaseUtil.mycursor.execute('''INSERT INTO match_info(MatchNumber)
@@ -61,8 +58,25 @@ class DatabaseUtil:
                              '''+matchNumber+''')
                          ''')
         DatabaseUtil.mydb.commit()
-    
-    
+
+    @staticmethod
+    def createMatch(matchNumber):
+        if not DatabaseUtil.mycursor.execute("SHOW TABLES LIKE '%s'" % matchNumber):
+            DatabaseUtil.mycursor.execute(
+                'CREATE TABLE IF NOT EXISTS '+str(matchNumber)+' (TeamNumber VARCHAR(45))')
+            DatabaseUtil.mydb.commit()
+            DatabaseUtil.mycursor.execute("""ALTER TABLE `app_test`.`%s`
+            ADD COLUMN `TopH` VARCHAR(45) NULL AFTER `TeamNumber`,
+            ADD COLUMN `MidH` VARCHAR(45) NULL AFTER `TopH`,
+            ADD COLUMN `LowH` VARCHAR(45) NULL AFTER `MidH`,
+            ADD COLUMN `CarH` VARCHAR(45) NULL AFTER `LowH`,
+            ADD COLUMN `TopC` VARCHAR(45) NULL AFTER `CarH`,
+            ADD COLUMN `MidC` VARCHAR(45) NULL AFTER `TopC`,
+            ADD COLUMN `LowC` VARCHAR(45) NULL AFTER `MidC`,
+            ADD COLUMN `CarC` VARCHAR(45) NULL AFTER `LowC`,
+            ADD COLUMN `Climb` VARCHAR(45) NULL AFTER `CarC`,
+            ADD PRIMARY KEY (`TeamNumber`);""" % (str(matchNumber)))
+
     @staticmethod
     def getVariable(name):
         return DatabaseUtil.variableStorage[name]
