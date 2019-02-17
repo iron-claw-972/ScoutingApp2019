@@ -11,7 +11,7 @@ def matchScouting(request):
 
         data = dict(zip(fields, values))
         database = current_app._get_current_object().database
-        database.createMatch('ID'+data['matchNumber'])
+        #database.createMatch('ID'+data['matchNumber'])
         print(data)
 
         if('teamNumber' in fields):
