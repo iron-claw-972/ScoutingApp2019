@@ -10,9 +10,9 @@ class DatabaseUtil:
     teamData = {"972": {}}
     try:
         mydb = mysql.connector.connect(
-            host="localhost",
+            host="167.99.26.126",
             user="root",
-            password="8characters",
+            password="iDevelop4Success101!",
             auth_plugin="mysql_native_password",
             database="app_test"
         )
@@ -21,8 +21,10 @@ class DatabaseUtil:
             mycursor.execute("SELECT * FROM team_info")
             # print([e for e in mycursor.fetchall()])
             mydb.commit()
+        else:
+            print("NO SQL")
     except:
-        pass
+        print("NO SQL")
     # mydb.close()
 
     @staticmethod
