@@ -63,21 +63,12 @@ class DatabaseUtil:
 
     @staticmethod
     def createMatch(matchNumber):
-        if not DatabaseUtil.mycursor.execute("SHOW TABLES LIKE '%s'" % matchNumber):
+        DatabaseUtil.mycursor.execute(
+            "SELECT * FROM match_info WHERE MatchID LIKE '%" + matchNumber + "%';")
+        result = DatabaseUtil.mycursor.fetchall()
+        if (not result):
             DatabaseUtil.mycursor.execute(
-                'CREATE TABLE IF NOT EXISTS '+str(matchNumber)+' (TeamNumber VARCHAR(45))')
-            DatabaseUtil.mydb.commit()
-            DatabaseUtil.mycursor.execute("""ALTER TABLE `app_test`.`%s`
-            ADD COLUMN `TopH` VARCHAR(45) NULL AFTER `TeamNumber`,
-            ADD COLUMN `MidH` VARCHAR(45) NULL AFTER `TopH`,
-            ADD COLUMN `LowH` VARCHAR(45) NULL AFTER `MidH`,
-            ADD COLUMN `CarH` VARCHAR(45) NULL AFTER `LowH`,
-            ADD COLUMN `TopC` VARCHAR(45) NULL AFTER `CarH`,
-            ADD COLUMN `MidC` VARCHAR(45) NULL AFTER `TopC`,
-            ADD COLUMN `LowC` VARCHAR(45) NULL AFTER `MidC`,
-            ADD COLUMN `CarC` VARCHAR(45) NULL AFTER `LowC`,
-            ADD COLUMN `Climb` VARCHAR(45) NULL AFTER `CarC`,
-            ADD PRIMARY KEY (`TeamNumber`);""" % (str(matchNumber)))
+                "INSERT INTO match_info (MatchID) VALUES ('"+matchNumber+"');")
 
     @staticmethod
     def getVariable(name):
