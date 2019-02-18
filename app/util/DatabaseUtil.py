@@ -54,21 +54,34 @@ class DatabaseUtil:
         return [e for e in DatabaseUtil.mycursor.fetchall()]
 
     @staticmethod
-    def addMatch(matchNumber):
-        DatabaseUtil.mycursor.execute('''INSERT INTO match_info(MatchNumber)
-                         VALUES(
-                             '''+matchNumber+''')
-                         ''')
-        DatabaseUtil.mydb.commit()
+    def matchExists(matchNumber):
+        DatabaseUtil.mycursor.execute(
+            "SELECT COUNT(1) FROM match_info WHERE MatchID = " + matchNumber + ";")
+        count = DatabaseUtil.mycursor.fetchall()[0][0]
+        if(count == 0):
+            return False
+        elif(count==1):
+            return True
+        else:
+            print('Duplicate Matches!')
+            quit()
 
     @staticmethod
-    def createMatch(matchNumber):
+    def createMatch(matchNumber): #returns dictionary of teams
         DatabaseUtil.mycursor.execute(
-            "SELECT * FROM match_info WHERE MatchID LIKE '%" + matchNumber + "%';")
-        result = DatabaseUtil.mycursor.fetchall()
-        if (not result):
+            "INSERT INTO match_info (MatchID) VALUES ("+matchNumber+");")
+        teamDict = datascraper.getMatchTeams(matchNumber)
+        for key, value in teamDict.items():
             DatabaseUtil.mycursor.execute(
-                "INSERT INTO match_info (MatchID) VALUES ('"+matchNumber+"');")
+                "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = " + matchNumber + ";")
+        return teamDict
+
+    @staticmethod
+    def printMatches():
+        DatabaseUtil.mycursor.execute(
+            "SELECT * FROM match_info")
+        print(DatabaseUtil.mycursor.fetchall())
+
 
     @staticmethod
     def getVariable(name):

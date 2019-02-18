@@ -38,6 +38,15 @@ class DataScraper:
     def getTeamMatches(self, team, event_key):
         return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'/event/'+event_key+'/matches'+'?X-TBA-Auth-Key='+self.apiKey).text)
 
+    def getMatchTeams(self, matchNumber):
+        return {
+            "R1": "18",
+            "R2": "254",
+            "R3": "971",
+            "B1": "973",
+            "B2": "1776",
+            "B3": "1678"
+        }
 
 datascraper = DataScraper()
 # print(datascraper.getEvent("2019", "San Francisco Regional"))
