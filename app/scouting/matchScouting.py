@@ -14,16 +14,22 @@ def matchScouting(request):
 
         if('teamNumber' in fields):
             return flask.render_template('/matchScouting/matchScouting.html', matchNumber=request.form['matchNumber'], teamNumber=request.form['teamNumber'])
-        
+
         if('matchNumber' in fields):
             if(not database.matchExists(data['matchNumber'])):
                 teams = database.createMatch(data['matchNumber'])
-            return flask.render_template('/matchScouting/inputTeamNumber.html', matchNumber=request.form['matchNumber'], 
-                R1 = teams['R1'],
-                R2 = teams['R2'],
-                R3 = teams['R3'],
-                B1 = teams['B1'],
-                B2 = teams['B2'],
-                B3 = teams['B3'],)
+            else:
+                teamlist = ['R1', 'R2', 'R3', 'B1', 'B2', 'B3']
+                teams = [e for e in database.getMatches() if e[0] ==
+                         data["matchNumber"]][0][1:7]
+                teams = {teamlist[c]: team for c, team in enumerate(teams)}
+            print(teams)
+            return flask.render_template('/matchScouting/inputTeamNumber.html', matchNumber=request.form['matchNumber'],
+                                         R1=teams['R1'],
+                                         R2=teams['R2'],
+                                         R3=teams['R3'],
+                                         B1=teams['B1'],
+                                         B2=teams['B2'],
+                                         B3=teams['B3'],)
 
     return str(data)

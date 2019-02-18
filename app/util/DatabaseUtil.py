@@ -60,28 +60,28 @@ class DatabaseUtil:
         count = DatabaseUtil.mycursor.fetchall()[0][0]
         if(count == 0):
             return False
-        elif(count==1):
+        elif(count == 1):
             return True
         else:
             print('Duplicate Matches!')
             quit()
 
     @staticmethod
-    def createMatch(matchNumber): #returns dictionary of teams
+    def createMatch(matchNumber):  # returns dictionary of teams
         DatabaseUtil.mycursor.execute(
             "INSERT INTO match_info (MatchID) VALUES ("+matchNumber+");")
         teamDict = datascraper.getMatchTeams(matchNumber)
         for key, value in teamDict.items():
             DatabaseUtil.mycursor.execute(
                 "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = " + matchNumber + ";")
+        DatabaseUtil.mydb.commit()
         return teamDict
 
     @staticmethod
-    def printMatches():
+    def getMatches():
         DatabaseUtil.mycursor.execute(
             "SELECT * FROM match_info")
-        print(DatabaseUtil.mycursor.fetchall())
-
+        return DatabaseUtil.mycursor.fetchall()
 
     @staticmethod
     def getVariable(name):
@@ -106,3 +106,4 @@ class DatabaseUtil:
 
 # DatabaseUtil.addBATeamData('972')
 # print(DatabaseUtil.getTeamData("972"))
+# print(DatabaseUtil.getMatches())
