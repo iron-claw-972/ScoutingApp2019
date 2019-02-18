@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
     </head>
 
+    <div id="background"></div>
     <body>
         <h1>Input Team Number</h1>
         <h2>You are scouting on Match #{{matchNumber}}</em></h2>
@@ -14,7 +15,7 @@
 
             <input style="display: none;" name="matchNumber" value="{{matchNumber}}">
 
-            <select name="teamNumber">
+            <select name="teamNumber" id="teamNumberSelect">
                 <option selected disabled>Select a Team</option>
                 <option value="{{R1}}">Team {{R1}}</option>
                 <option value="{{R2}}">Team {{R2}}</option>

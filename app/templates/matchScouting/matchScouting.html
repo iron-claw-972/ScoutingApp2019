@@ -5,8 +5,10 @@
 <head>
     <title>Input Match Data</title>
     <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+    <script src="/js/toggle.js"></script>
 </head>
 
+<div id="background"></div>
 <body>
     <h1>Input Match Data</h1>
     <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
@@ -18,17 +20,10 @@
             <input type="checkbox" name="hatchIntake" id="hatchIntake" checked> <label for="hatchIntake"
                 class="firstLabel lastLabel needswide">Can intake &amp; hold?</label>
             <div class="outtakeLevels">
-                <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel"
-                    for="hatch0">Cargo</label>
-                <!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="Level 1" id="hatch1"><label
-                    for="hatch1">Rocket 1</label>
-                <!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="Level 2" id="hatch2"><label
-                    for="hatch2">Rocket 2</label>
-                <!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="Level 3" id="hatch3"><label
-                    class="lastLabel" for="hatch3">Rocket 3</label>
+                <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel"for="hatch0">0</label><!--
+                --><input type="radio" name="hatchOuttakeLevel" value="1" id="hatch1"><label for="hatch1">1</label><!--
+                --><input type="radio" name="hatchOuttakeLevel" value="2" id="hatch2"><label for="hatch2">2</label><!--
+                --><input type="radio" name="hatchOuttakeLevel" value="3" id="hatch3"><label class="lastLabel" for="hatch3">3</label>
             </div>
 
             <div class="">
@@ -66,15 +61,10 @@
 
         <div id="climbInput">
             <h3>Hab Climb</h3>
-            <input type="radio" name="climbLevel" value="0" id="climb0"><label class="firstLabel"
-                for="climb0">None</label>
-            <!--
-                --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level
-                1</label>
-            <!--
-                --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label>
-            <!--
-                --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel"
+            <input type="radio" name="climbLevel" value="0" id="climb0"><label class="firstLabel" for="climb0">None</label><!--
+            --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level 1</label><!--
+            --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label><!--
+            --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel"
                 for="climb3">Level 3</label>
         </div>
 
