@@ -10,11 +10,11 @@
         <h1>Input Match Data</h1>
         <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
 
-        <form method="POST">
+        <form id="inputForm" method="POST">
 
             <div id="hatchInput">
                 <h3>Hatch</h3>
-                <input type="checkbox" name="hatchIntake" checked> <p for="hatchIntake">Can intake &amp; hold?</p>
+                <input type="checkbox" name="hatchIntake" id="hatchIntake" checked> <label for="hatchIntake" class="firstLabel lastLabel">Can intake &amp; hold?</label>
                 <div class="outtakeLevels">
                     <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel" for="hatch0">0</label><!--
                     --><input type="radio" name="hatchOuttakeLevel" value="1" id="hatch1"><label for="hatch1">1</label><!--
@@ -25,7 +25,7 @@
 
             <div id="cargoInput">
                 <h3>Cargo</h3>
-                <input type="checkbox" name="cargoIntake" checked> <p for="cargoIntake">Can intake &amp; hold?</p>
+                <input type="checkbox" name="cargoIntake" id="cargoIntake" checked> <label for="cargoIntake" class="firstLabel lastLabel">Can intake &amp; hold?</label>
                 <div class="outtakeLevels">
                     <input type="radio" name="cargoOuttakeLevel" value="0" id="cargo0" checked><label class="firstLabel" for="cargo0">0</label><!--
                     --><input type="radio" name="cargoOuttakeLevel" value="1" id="cargo1"><label for="cargo1">1</label><!--
@@ -41,6 +41,8 @@
                 --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label><!--
                 --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel" for="climb3">Level 3</label>
             </div>
+
+            <textarea rows="4" form="inputForm" name="comments" maxlength="255" placeholder="Enter additional comments here..."></textarea>
 
             <input type="submit" value="Submit">
         </form>
