@@ -40,7 +40,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../images/scoutingLogo.png");
+    background-image: url("../images/scoutingLogo2.png");
     background-attachment: fixed;
     animation-name: backgroundScroll;
     animation-duration: 8s;
