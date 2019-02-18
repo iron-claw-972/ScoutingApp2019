@@ -23,6 +23,32 @@ html, body {
     padding: 0;
 }
 
+@keyframes backgroundScroll {
+    from{
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 447px 891px;
+    }
+}
+
+body::before {
+    z-index:-999;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/scoutingLogo.png");
+    background-attachment: fixed;
+    animation-name: backgroundScroll;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    filter: opacity(25%);
+}
+
 div#hatchInput, div#cargoInput {
     display: inline-block;
     float: center;
@@ -36,7 +62,7 @@ div#climbInput {
 h1 {
     display: inline-block;
     margin-bottom: 5vh;
-    padding: 0 2vw;
+    width: 80vw;
     border-bottom: 2px solid black;
 }
 
@@ -61,6 +87,7 @@ input + label {
     transition: 0.25s;
     padding: 1vh 1vw;
     margin-bottom: 1vh;
+    background-color: white;
 }
 
 input:checked + label {
@@ -98,17 +125,25 @@ select {
 
 textarea {
     display: block;
+    position: relative;
     margin: auto;
-    width: 25vw;
+    width: 40vw;
     padding: 2vh;
     border-radius: 2vh;
-    resize: none;
+    resize: vertical;
+    font-size: 2vh;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+textarea:focus {
+    border: 2px solid orange;
 }
 
 input[type="text"] {
     margin: auto;
     display: block;
-    width: 15vw;
+    width: 40vw;
     padding: 2vh;
     border-radius: 2vh;
     border: 2px solid black;
