@@ -80,7 +80,7 @@ input[type='radio'], input[type='checkbox'] {
 }
 
 input + label {
-    width: 80px;
+    width: 200px;
     height: 20px;
     display: inline-block;
     border: 2px solid black;
@@ -92,7 +92,18 @@ input + label {
     background-color: white;
 }
 
-input:checked + label {
+.labelinputs {
+    width: 200px;
+    height: 20px;
+    display: inline-block;
+    color: black;
+    margin-left: -2px;
+    transition: 0.25s;
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+}
+
+input:active + label {
     border-color: orange;
     color: orange;
     background-color: #fff0d6;
@@ -104,7 +115,7 @@ label:hover {
     transition: 0.25s;
 }
 
-input:checked + label + input + label {
+input:active + label + input + label {
     border-left-color: orange;
 }
 
