@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Input Match Data</title>
-        <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
-    </head>
 
-    <body>
-        <h1>Input Match Data</h1>
-        <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
+<head>
+    <title>Input Match Data</title>
+    <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+</head>
 
-        <form id="inputForm" method="POST">
+<body>
+    <h1>Input Match Data</h1>
+    <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
 
-            <div id="hatchInput">
-                <h3>Hatch</h3>
-                <input type="checkbox" name="hatchIntake" id="hatchIntake" checked> <label for="hatchIntake" class="firstLabel lastLabel">Can intake &amp; hold?</label>
-                <div class="outtakeLevels">
-                    <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel" for="hatch0">0</label><!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="1" id="hatch1"><label for="hatch1">1</label><!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="2" id="hatch2"><label for="hatch2">2</label><!--
-                    --><input type="radio" name="hatchOuttakeLevel" value="3" id="hatch3"><label class="lastLabel" for="hatch3">3</label>
-                </div>
+    <form id="inputForm" method="POST">
+
+        <div id="hatchInput">
+            <h3>Hatch</h3>
+            <input type="checkbox" name="hatchIntake" id="hatchIntake" checked> <label for="hatchIntake"
+                class="firstLabel lastLabel needswide">Can intake &amp; hold?</label>
+            <div class="outtakeLevels">
+                <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel"
+                    for="hatch0">0</label>
+                <!--
+                    --><input type="radio" name="hatchOuttakeLevel" value="1" id="hatch1"><label for="hatch1">1</label>
+                <!--
+                    --><input type="radio" name="hatchOuttakeLevel" value="2" id="hatch2"><label for="hatch2">2</label>
+                <!--
+                    --><input type="radio" name="hatchOuttakeLevel" value="3" id="hatch3"><label class="lastLabel"
+                    for="hatch3">3</label>
             </div>
+        </div>
 
-            <div id="cargoInput">
-                <h3>Cargo</h3>
-                <input type="checkbox" name="cargoIntake" id="cargoIntake" checked> <label for="cargoIntake" class="firstLabel lastLabel">Can intake &amp; hold?</label>
-                <div class="outtakeLevels">
-                    <input type="radio" name="cargoOuttakeLevel" value="0" id="cargo0" checked><label class="firstLabel" for="cargo0">0</label><!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="1" id="cargo1"><label for="cargo1">1</label><!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="2" id="cargo2"><label for="cargo2">2</label><!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="3" id="cargo3"><label class="lastLabel" for="cargo3">3</label>
-                </div>
+        <div id="cargoInput">
+            <h3>Cargo</h3>
+            <input type="checkbox" name="cargoIntake" id="cargoIntake" checked> <label for="cargoIntake"
+                class="firstLabel lastLabel needswide">Can intake &amp; hold?</label>
+            <div class="outtakeLevels">
+                <input type="radio" name="cargoOuttakeLevel" value="0" id="cargo0" checked><label class="firstLabel"
+                    for="cargo0">0</label>
+                <!--
+                    --><input type="radio" name="cargoOuttakeLevel" value="1" id="cargo1"><label for="cargo1">1</label>
+                <!--
+                    --><input type="radio" name="cargoOuttakeLevel" value="2" id="cargo2"><label for="cargo2">2</label>
+                <!--
+                    --><input type="radio" name="cargoOuttakeLevel" value="3" id="cargo3"><label class="lastLabel"
+                    for="cargo3">3</label>
             </div>
+        </div>
 
-            <div id="climbInput">
-                <h3>Hab Climb</h3>
-                <input type="radio" name="climbLevel" value="0" id="climb0"><label class="firstLabel" for="climb0">None</label><!--
-                --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level 1</label><!--
-                --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label><!--
-                --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel" for="climb3">Level 3</label>
-            </div>
+        <div id="climbInput">
+            <h3>Hab Climb</h3>
+            <input type="radio" name="climbLevel" value="0" id="climb0"><label class="firstLabel"
+                for="climb0">None</label>
+            <!--
+                --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level
+                1</label>
+            <!--
+                --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label>
+            <!--
+                --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel"
+                for="climb3">Level 3</label>
+        </div>
 
-            <textarea rows="4" form="inputForm" name="comments" maxlength="255" placeholder="Enter additional comments here..."></textarea>
+        <textarea rows="4" form="inputForm" name="comments" maxlength="255"
+            placeholder="Enter additional comments here..."></textarea>
 
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+        <input type="submit" value="Submit">
+    </form>
+</body>
 
 </html>

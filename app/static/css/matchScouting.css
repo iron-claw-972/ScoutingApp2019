@@ -80,6 +80,8 @@ input[type='radio'], input[type='checkbox'] {
 }
 
 input + label {
+    width: 80px;
+    height: 20px;
     display: inline-block;
     border: 2px solid black;
     color: black;
@@ -118,6 +120,9 @@ label.lastLabel {
     border-bottom-right-radius: 100px;
 }
 
+.needswide {
+    width: 180px;
+}
 select {
     display: block;
     margin: auto;
