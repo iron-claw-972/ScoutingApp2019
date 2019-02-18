@@ -32,7 +32,7 @@ html, body {
     }
 }
 
-body::before {
+#background {
     z-index:-999;
     content: "";
     position: absolute;
@@ -80,8 +80,6 @@ input[type='radio'], input[type='checkbox'] {
 }
 
 input + label {
-    width: 80px;
-    height: 20px;
     display: inline-block;
     border: 2px solid black;
     color: black;
@@ -120,12 +118,33 @@ label.lastLabel {
     border-bottom-right-radius: 100px;
 }
 
-.needswide {
-    width: 180px;
+button[onclick="toggle()"] {
+    position: absolute;
+    bottom: 5px;
+    width: 25px;
+    height: 25px;
+    right: 70vw;
+    background-color: transparent;
+    background-repeat: none;
+    background-size: 100%;
+    background-image: url(../images/toggle.png);
+    border: none;
+    filter: opacity(0%);
 }
+
+button[onclick="toggle()"]:hover {
+    filter: opacity(10%);
+}
+
 select {
     display: block;
     margin: auto;
+    font-size: 2vh;
+    padding: 2vh 1vh;
+    border-radius: 2vh;
+    background: none;
+    background-color: orange;
+    border: none;
 }
 
 textarea {
@@ -136,7 +155,6 @@ textarea {
     padding: 2vh;
     border-radius: 2vh;
     resize: vertical;
-    font-size: 2vh;
     border: 2px solid black;
     overflow: hidden;
 }
