@@ -1,4 +1,5 @@
 from .DataScraper import datascraper
+import os
 try:
     import mysql.connector
 except:
@@ -11,8 +12,8 @@ class DatabaseUtil:
     try:
         mydb = mysql.connector.connect(
             host="167.99.26.126",
-            user="root",
-            password="",
+            user="scouting",
+            password=os.environ["mypass"],
             auth_plugin="mysql_native_password",
             database="app_test"
         )
