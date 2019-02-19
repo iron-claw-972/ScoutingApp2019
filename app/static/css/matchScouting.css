@@ -23,6 +23,10 @@ html, body {
     padding: 0;
 }
 
+body {
+    padding-bottom: 5vh;
+}
+
 @keyframes backgroundScroll {
     from{
         background-position: 0% 0%;
@@ -35,7 +39,7 @@ html, body {
 #background {
     z-index:-999;
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -58,7 +62,9 @@ div#hatchInput, div#cargoInput {
 div#climbInput {
     margin: 4vh 0;
 }
-
+div#rocketInput {
+    margin: 4vh 0;
+}
 h1 {
     display: inline-block;
     margin-bottom: 5vh;
@@ -75,13 +81,8 @@ p {
     margin: 0  0 1vh 0;
 }
 
-input[type='radio'], input[type='checkbox'] {
-    display: none;
-}
-
-input + label {
-    width: 200px;
-    height: 20px;
+input {
+    width: 12vw;
     display: inline-block;
     border: 2px solid black;
     color: black;
@@ -93,8 +94,7 @@ input + label {
 }
 
 .labelinputs {
-    width: 200px;
-    height: 20px;
+    width: 10vw;
     display: inline-block;
     color: black;
     margin-left: -2px;
@@ -103,29 +103,23 @@ input + label {
     margin-bottom: 1vh;
 }
 
-input:active + label {
-    border-color: orange;
-    color: orange;
+input:hover {
     background-color: #fff0d6;
     transition: 0.25s;
 }
 
-label:hover {
-    background-color: #fff0d6;
+input:active {
+    background-color: orange;
     transition: 0.25s;
 }
 
-input:active + label + input + label {
-    border-left-color: orange;
-}
-
-label.firstLabel {
+input.firstInput {
     padding-left: calc(1vw + 0.5vh);
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
 }
 
-label.lastLabel {
+input.lastInput {
     padding-right: calc(1vw + 0.5vh);
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;

@@ -4,8 +4,8 @@ var element
 for (var i = 0; i < inputid.length; i++) {
     element = document.getElementById(inputid[i])
     element.idnum = i;
-    element.onclick = function () {
+    element.addEventListener("click", function () {
         var increase = document.getElementById(labelid[this.idnum]);
         increase.textContent = Number(increase.textContent) + 1
-    }
+    });
 }
