@@ -15,63 +15,62 @@
     <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
 
     <form id="inputForm" method="POST">
+        <div id="sandstormInput">
+            <h3>Sandstorm</h3>
+            <div class="outtakeLevels">
+                <input type="radio" name="sandstorm" value="idk" id="SSidk" checked><label class="firstInput"for="SSidk">Don't Know</label>
+                <input type="radio" name="sandstorm" value="none" id="SSnone"><label for="SSnone">None</label>
+                <input type="radio" name="sandstorm" value="camera" id="SScamera"><label for="SScamera">Camera</label>
+                <input type="radio" name="sandstorm" value="autonomous" id="SSautonomous"><label class="lastInput" for="SSautonomous">Vision</label>
+            </div>
+        </div>
 
         <div id="hatchInput">
             <h3>Hatch</h3>
-            <input type="button" name="hatchIntake" id="hatchIntake" value="Can Intake and Hold?"
-                class="lastInput firstInput wide"></input>
             <div class="outtakeLevels">
                 <input type="button" value="Cargo Ship" id="hatch0" class="firstInput" checked>
-                <!--
-                --><input type="button" value="Rocket 1" id="hatch1">
-                <!--
-                --><input type="button" value="Rocket 2" id="hatch2">
-                <!--
-                --><input type="button" value="Rocket 3" id="hatch3" class="lastInput">
+                
+                <input type="button" value="Rocket 1" id="hatch1">
+                
+                <input type="button" value="Rocket 2" id="hatch2">
+                
+                <input type="button" value="Rocket 3" id="hatch3" class="lastInput">
             </div>
 
             <div>
-                <label class="labelinputs" id="h0">0</label>
-                <label class="labelinputs" id="h1">0</label>
-                <label class="labelinputs" id="h2">0</label>
-                <label class="labelinputs" id="h3">0</label>
+                <label class="counter" id="h0">0</label>
+                <label class="counter" id="h1">0</label>
+                <label class="counter" id="h2">0</label>
+                <label class="counter" id="h3">0</label>
             </div>
         </div>
         <br />
         <div id="cargoInput">
             <h3>Cargo</h3>
-            <input type="button" name="cargoIntake" id="cargoIntake" value="Can Intake and Hold?"
-                class="lastInput firstInput wide"></input>
             <div class="outtakeLevels">
                 <input type="button" value="Cargo Ship" id="cargo0" class="firstInput" checked>
-                <!--
-                --><input type="button" value="Rocket 1" id="cargo1">
-                <!--
-                --><input type="button" value="Rocket 2" id="cargo2">
-                <!--
-                --><input type="button" value="Rocket 3" id="cargo3" class="lastInput">
+                
+                <input type="button" value="Rocket 1" id="cargo1">
+                
+                <input type="button" value="Rocket 2" id="cargo2">
+                
+                <input type="button" value="Rocket 3" id="cargo3" class="lastInput">
             </div>
             <div>
-                <label class="labelinputs" id="c0">0</label>
-                <label class="labelinputs" id="c1">0</label>
-                <label class="labelinputs" id="c2">0</label>
-                <label class="labelinputs" id="c3">0</label>
+                <label class="counter" id="c0">0</label>
+                <label class="counter" id="c1">0</label>
+                <label class="counter" id="c2">0</label>
+                <label class="counter" id="c3">0</label>
             </div>
         </div>
 
         <div id="climbInput">
-            <h3>Ranking Points</h3>
-            <input type="button" name="rocket" id="rockey" value="Completed 1 Rocket?"
-                class="lastInput firstInput wide"></input>
-            <br />
+            <h3>Climb</h3>
             <div class="outtakeLevels">
-                <input type="button" value="No Climb" id="l0" class="firstInput" checked>
-                <!--
-                            --><input type="button" value="Level 1" id="l1">
-                <!--
-                            --><input type="button" value="Level 2" id="l2">
-                <!--
-                            --><input type="button" value="Level 3" id="l3" class="lastInput">
+                <input type="radio" name="climbLevel" value="No Climb" id="climb0" checked><label class="firstInput"for="climb0">No Climb</label>
+                <input type="radio" name="climbLevel" value="Level 1" id="climb1"><label for="climb1">Level 1</label>
+                <input type="radio" name="climbLevel" value="Level 2" id="climb2"><label for="climb2">Level 2</label>
+                <input type="radio" name="climbLevel" value="Level 3" id="climb3"><label class="lastInput" for="climb3">Level 3</label>
             </div>
 
 
