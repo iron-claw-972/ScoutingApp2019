@@ -13,3 +13,21 @@ for (var i = 0; i < inputid.length; i++) {
 for (var f = 0; f < buttonfix.length; f++) {
     document.querySelector('#' + buttonfix[f]).style = "width:17.5vw"
 }
+$("#form").submit(function (eventObj) {
+    var values = [];
+    for (var i = 0; i < inputid.length; i++) {
+        val = document.getElementById(inputid[i]).textContent;
+        values.push(val);
+    }
+    $('<input />').attr('type', 'hidden')
+        .attr('cargo0', val[0])
+        .attr('cargo1', val[1])
+        .attr('cargo2', val[2])
+        .attr('cargo3', val[3])
+        .attr('hatch0', val[4])
+        .attr('hatch1', val[5])
+        .attr('hatch2', val[6])
+        .attr('hatch3', val[7])
+        .appendTo(this);
+    return true;
+});
