@@ -23,9 +23,11 @@ class DatabaseUtil:
             # print([e for e in mycursor.fetchall()])
             mydb.commit()
         else:
-            print("NO SQL")
+            print(
+                "NO SQL. you may need to obtain the password and put it into the env varaible mypass")
     except:
-        print("NO SQL")
+        print("NO SQL. you may need to obtain the password and put it into the env varaible mypass")
+
     # mydb.close()
 
     @staticmethod
@@ -77,6 +79,15 @@ class DatabaseUtil:
                 "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = " + matchNumber + ";")
         DatabaseUtil.mydb.commit()
         return teamDict
+
+    @staticmethod
+    def addMatchRecord(dictOfValues):
+        keys = [e for e in dictOfValues]
+        DatabaseUtil.mycursor.execute('''INSERT INTO team_performance('''+','.join([e for e in keys])+''')
+                         VALUES(
+                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
+                         ''')
+        DatabaseUtil.mydb.commit()
 
     @staticmethod
     def getMatches():

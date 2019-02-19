@@ -26,12 +26,13 @@ for (var f = 0; f < buttonfix.length; f++) {
 document.querySelector('#inputForm > input[type="submit"]').onclick = function (eventObj) {
     var values = [];
     inputid = ['c0', 'c1', 'c2', 'c3', 'h0', 'h1', 'h2', 'h3']
-
+    var matchNum = document.querySelectorAll('b')[0].textContent;
+    var teamNum = document.querySelectorAll('b')[0].textContent;
     for (var i = 0; i < inputid.length; i++) {
         val = document.getElementById(inputid[i]).textContent;
         values.push(val);
     }
-    alert(values)
+    //alert(values)
     $('<input />').attr('type', 'hidden')
         .attr('name', 'cargo')
         .attr('value', values[0] + ',' + values[1] + ',' + values[2] + ',' + values[3] + ',')
@@ -39,6 +40,15 @@ document.querySelector('#inputForm > input[type="submit"]').onclick = function (
     $('<input />').attr('type', 'hidden')
         .attr('name', 'hatch')
         .attr('value', values[4] + ',' + values[5] + ',' + values[6] + ',' + values[7] + ',')
+        .appendTo(this);
+
+    $('<input/>').attr('type', 'hidden')
+        .attr('name', 'matchNum')
+        .attr('value', matchNum)
+        .appendTo(this);
+    $('<input/>').attr('type', 'hidden')
+        .attr('name', 'teamNum')
+        .attr('value', teamNum)
         .appendTo(this);
     return true;
 }
