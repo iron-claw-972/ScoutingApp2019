@@ -12,7 +12,7 @@ class DatabaseUtil:
         mydb = mysql.connector.connect(
             host="167.99.26.126",
             user="root",
-            password="iDevelop4Success101!",
+            password="",
             auth_plugin="mysql_native_password",
             database="app_test"
         )
