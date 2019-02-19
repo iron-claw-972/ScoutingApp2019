@@ -10,6 +10,16 @@ for (var i = 0; i < inputid.length; i++) {
         increase.textContent = Number(increase.textContent) + 1
     });
 }
+for (var i = 0; i < labelid.length; i++) {
+    element = document.getElementById(labelid[i])
+    element.idnum = i;
+    element.addEventListener("click", function () {
+        var decrease = document.getElementById(labelid[this.idnum]);
+        if ((Number(decrease.textContent) - 1) >= 0) {
+            decrease.textContent = Number(decrease.textContent) - 1
+        }
+    });
+}
 for (var f = 0; f < buttonfix.length; f++) {
     document.querySelector('#' + buttonfix[f]).style = "width:17.5vw"
 }
