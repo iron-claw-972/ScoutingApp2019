@@ -1,5 +1,6 @@
 inputid = ['cargo0', 'cargo1', 'cargo2', 'cargo3', 'hatch0', 'hatch1', 'hatch2', 'hatch3']
 labelid = ['c0', 'c1', 'c2', 'c3', 'h0', 'h1', 'h2', 'h3']
+buttonfix = ['hatch0', 'hatch1', 'hatch2', 'hatch3', 'cargo0', 'cargo1', 'cargo2', 'cargo3']
 var element
 for (var i = 0; i < inputid.length; i++) {
     element = document.getElementById(inputid[i])
@@ -8,4 +9,7 @@ for (var i = 0; i < inputid.length; i++) {
         var increase = document.getElementById(labelid[this.idnum]);
         increase.textContent = Number(increase.textContent) + 1
     });
+}
+for (var f = 0; f < buttonfix.length; f++) {
+    document.querySelector('#' + buttonfix[f]).style = "width:17.5vw"
 }
