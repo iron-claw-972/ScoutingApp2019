@@ -21,20 +21,13 @@
             <input type="checkbox" name="hatchIntake" id="hatchIntake" checked> <label for="hatchIntake"
                 class="firstLabel lastLabel needswide">Can intake &amp; hold?</label>
             <div class="outtakeLevels">
-                <input type="radio" name="hatchOuttakeLevel" value="0" id="hatch0" checked><label class="firstLabel"
-                    for="hatch0">Cargo</label>
-                <!--
-                --><input type="radio" name="hatchOuttakeLevel" value="1" id="hatch1"><label for="hatch1">Rocket
-                    1</label>
-                <!--
-                --><input type="radio" name="hatchOuttakeLevel" value="2" id="hatch2"><label for="hatch2">Rocket
-                    2</label>
-                <!--
-                --><input type="radio" name="hatchOuttakeLevel" value="3" id="hatch3"><label class="lastLabel"
-                    for="hatch3">Rocket 3</label>
+                <input type="button" value="Cargo Ship" id="hatch0" class="firstInput" checked><!--
+                --><input type="button" value="Rocket 1" id="hatch1"><!--
+                --><input type="button" value="Rocket 2" id="hatch2"><!--
+                --><input type="button" value="Rocket 3" id="hatch3" class="lastInput">
             </div>
 
-            <div class="">
+            <div>
                 <label class="labelinputs" id="h0">0</label>
                 <label class="labelinputs" id="h1">0</label>
                 <label class="labelinputs" id="h2">0</label>
@@ -47,19 +40,12 @@
             <input type="checkbox" name="cargoIntake" id="cargoIntake" checked> <label for="cargoIntake"
                 class="firstLabel lastLabel needswide">Can intake &amp; hold?</label>
             <div class="outtakeLevels">
-                <input type="radio" name="cargoOuttakeLevel" value="0" id="cargo0" checked><label class="firstLabel"
-                    for="cargo0">Cargo</label>
-                <!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="1" id="cargo1"><label for="cargo1">Rocket
-                    1</label>
-                <!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="2" id="cargo2"><label for="cargo2">Rocket
-                    2</label>
-                <!--
-                    --><input type="radio" name="cargoOuttakeLevel" value="3" id="cargo3"><label class="lastLabel"
-                    for="cargo3">Rocket 3</label>
+                <input type="button" value="Cargo Ship" id="cargo0" class="firstInput" checked><!--
+                --><input type="button" value="Rocket 1" id="cargo1"><!--
+                --><input type="button" value="Rocket 2" id="cargo2"><!--
+                --><input type="button" value="Rocket 3" id="cargo3" class="lastInput">
             </div>
-            <div class="">
+            <div>
                 <label class="labelinputs" id="c0">0</label>
                 <label class="labelinputs" id="c1">0</label>
                 <label class="labelinputs" id="c2">0</label>
@@ -70,12 +56,9 @@
         <div id="climbInput">
             <h3>Hab Climb</h3>
             <input type="radio" name="climbLevel" value="0" id="climb0"><label class="firstLabel"
-                for="climb0">None</label>
-            <!--
-            --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level 1</label>
-            <!--
-            --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label>
-            <!--
+                for="climb0">None</label><!--
+            --><input type="radio" name="climbLevel" value="1" id="climb1" checked><label for="climb1">Level 1</label><!--
+            --><input type="radio" name="climbLevel" value="2" id="climb2"><label for="climb2">Level 2</label><!--
             --><input type="radio" name="climbLevel" value="3" id="climb3"><label class="lastLabel" for="climb3">Level
                 3</label>
         </div>
@@ -85,6 +68,8 @@
 
         <input type="submit" value="Submit">
     </form>
+
+    <button id="toggle" onclick="toggle()"></button>
 </body>
 <script src="/js/matchScoutingForm.js"></script>
 
