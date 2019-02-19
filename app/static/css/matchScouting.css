@@ -65,12 +65,7 @@ div#hatchInput, div#cargoInput {
     margin: 0 2vw;
 }
 
-div#climbInput {
-    margin: 4vh 0;
-}
-div#rocketInput {
-    margin: 4vh 0;
-}
+
 h1 {
     display: inline-block;
     margin-bottom: 5vh;
@@ -88,7 +83,7 @@ p {
 }
 
 input {
-    width: 12vw;
+    width: 200px;
     display: inline-block;
     border: 2px solid black;
     color: black;
@@ -134,7 +129,7 @@ input.lastInput {
 button[onclick="toggle()"] {
     position: absolute;
     bottom: 5px;
-    width: 25px;
+
     height: 25px;
     right: 70vw;
     background-color: transparent;
@@ -152,7 +147,7 @@ button[onclick="toggle()"]:hover {
 select {
     display: block;
     margin: auto;
-    font-size: 2vh;
+    font-size: 20px;
     padding: 2vh 1vh;
     border-radius: 2vh;
     background: none;
@@ -175,7 +170,9 @@ textarea {
 textarea:focus {
     border: 2px solid orange;
 }
-
+input{
+    font-size: 25px;
+}
 input[type="text"] {
     margin: auto;
     display: block;
@@ -184,7 +181,7 @@ input[type="text"] {
     border-radius: 2vh;
     border: 2px solid black;
     transition: 0.25s; 
-    font-size: 2vh;
+    font-size: 25px;
 }
 
 input[type="text"]:focus {
@@ -202,7 +199,7 @@ input[type='submit'] {
     transition: 0.25s;
     padding: 1vh calc(1vw + 0.5vh);
     border-radius: 100px;
-    font-size: 2vh;
+    font-size: 25px;
 }
 
 input[type='submit']:hover {
@@ -213,4 +210,7 @@ input[type='submit']:hover {
 input[type='submit']:active {
     background-color: orange;
     transition: 0;
+}
+.wide{
+    width:400px;
 }
