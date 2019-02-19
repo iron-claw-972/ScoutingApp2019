@@ -35,7 +35,13 @@ body {
         background-position: 447px 891px;
     }
 }
-
+input[type='radio'], input[type='checkbox'] {
+    display: none;
+}
+input + label {
+    width: 200px;
+    height: 20px;
+}
 #background {
     z-index:-999;
     content: "";
