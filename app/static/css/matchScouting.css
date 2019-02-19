@@ -65,10 +65,12 @@ h1 {
     margin-bottom: 5vh;
     width: 80vw;
     border-bottom: 2px solid black;
+    font-size: 50px;
 }
 
 h3 {
     margin-bottom: 1vh;
+    font-size: 50px;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -208,7 +210,16 @@ textarea:focus {
 input{
     font-size: 2vw;
 }
-
+input[type="number"] {
+    margin: auto;
+    display: block;
+    width: 40vw;
+    padding: 2vh;
+    border-radius: 2vh;
+    border: 2px solid black;
+    transition: 0.25s; 
+    font-size: 2vw;
+}
 input[type="text"] {
     margin: auto;
     display: block;
