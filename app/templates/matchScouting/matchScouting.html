@@ -11,7 +11,6 @@
 <div id="background"></div>
 
 <body>
-    <h1>Input Match Data</h1>
     <h2>You are scouting on Match #{{matchNumber}} for Team {{teamNumber}} <em>{{teamName}}</em></h2>
 
     <form id="inputForm" method="POST">
@@ -72,11 +71,10 @@
                 <input type="radio" name="climbLevel" value="Level 2" id="climb2"><label for="climb2">Level 2</label>
                 <input type="radio" name="climbLevel" value="Level 3" id="climb3"><label class="lastInput" for="climb3">Level 3</label>
             </div>
-
-
+            <input type="text" name="climbTime" placeholder="Enter time (sec.)" style="width:20vw;" pattern="^[0-9]*$">
         </div>
 
-        <textarea rows="4" form="inputForm" name="comments" maxlength="255"
+        <textarea rows="5" form="inputForm" name="comments" maxlength="255"
             placeholder="Enter additional comments here..."></textarea>
 
         <input type="submit" value="Submit">

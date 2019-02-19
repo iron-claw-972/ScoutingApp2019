@@ -198,6 +198,7 @@ textarea {
     resize: vertical;
     border: 2px solid black;
     overflow: hidden;
+    font-size: 1.5vw;
 }
 
 textarea:focus {
