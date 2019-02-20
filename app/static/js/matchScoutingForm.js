@@ -27,7 +27,7 @@ document.querySelector('#inputForm > input[type="submit"]').onclick = function (
     var values = [];
     inputid = ['c0', 'c1', 'c2', 'c3', 'h0', 'h1', 'h2', 'h3']
     var matchNum = document.querySelectorAll('b')[0].textContent;
-    var teamNum = document.querySelectorAll('b')[0].textContent;
+    var teamNum = document.querySelectorAll('b')[1].textContent;
     for (var i = 0; i < inputid.length; i++) {
         val = document.getElementById(inputid[i]).textContent;
         values.push(val);

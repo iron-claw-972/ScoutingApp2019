@@ -59,7 +59,7 @@ class DatabaseUtil:
     @staticmethod
     def matchExists(matchNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT COUNT(1) FROM match_info WHERE MatchID = " + matchNumber + ";")
+            'SELECT COUNT(1) FROM match_info WHERE `MatchID` = "' + matchNumber + '";')
         count = DatabaseUtil.mycursor.fetchall()[0][0]
         if(count == 0):
             return False
@@ -82,6 +82,8 @@ class DatabaseUtil:
 
     @staticmethod
     def addMatchRecord(dictOfValues):
+        # DatabaseUtil.mycursor.execute(
+        #    'select * from team_performance where `TeamNumber`='+dictOfValues['TeamNumber'])
         keys = [e for e in dictOfValues]
         DatabaseUtil.mycursor.execute('''INSERT INTO team_performance('''+','.join([e for e in keys])+''')
                          VALUES(
