@@ -6,7 +6,7 @@ import util.DataScraper as scraper
 from flask import Flask
 
 app = Flask(__name__, static_folder="static", static_url_path="")
-
+app.secret_key = 'no lookey lookey at me nicey long key so you are no gooooooooooood dont be him'
 app.debug = True
 
 PIT_PREFIX = '/pit'
