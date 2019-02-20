@@ -235,16 +235,18 @@ input[type="text"] {
     margin: auto;
     display: block;
     width: 40vw;
-    padding: 2vh;
+    height:1vw; 
+    padding: 1.3vh;
     border-radius: 2vh;
     border: 2px solid black;
     transition: 0.25s; 
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 input[type="text"]:focus {
     border-color: orange;
     transition: 0.25s;
+    
 }
 
 input[type='submit'] {
