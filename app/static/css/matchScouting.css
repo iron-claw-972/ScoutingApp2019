@@ -35,18 +35,7 @@ body {
         background-position: 447px 891px;
     }
 }
-.vw20{
-    width:21vw;
-}
-.vw15{
-    width:15vw;
-}
-.vw30{
-    width:32vw;
-}
-.vw60{
-    width:62vw;
-}
+
 #background {
     z-index:-999;
     content: "";
@@ -89,6 +78,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 input[type="radio"] + label, input[type="checkbox"] + label {
+    width: 15vw;
     display: inline-block;
     border: 2px solid black;
     color: black;
@@ -146,13 +136,6 @@ input[type="button"] {
     color: black;
     margin-bottom: 1vh;
     font-size: 3vw;
-    background-size: 100% 100%;
-}
-
-.counter:hover {
-    background-color: white;
-    background-image: url('../images/minus.png');
-    transition: 0.25s;
 }
 
 input[type="button"]:hover {
@@ -163,10 +146,6 @@ input[type="button"]:hover {
 input[type="button"]:active {
     background-color: orange;
     transition: 0.25s;
-}
-
-.multiline {
-    margin-bottom: 0;
 }
 
 .firstInput {
@@ -184,9 +163,9 @@ input[type="button"]:active {
 button#toggle {
     position: fixed;
     bottom: 5px;
-    height: 1.5vw;
-    width: 1.5vw;
-    right: 90vw;
+    height: 2vw;
+    width: 2vw;
+    right: 70vw;
     background-color: transparent;
     background-repeat: none;
     background-size: 100%;
@@ -196,7 +175,7 @@ button#toggle {
 }
 
 button#toggle:hover {
-    filter: opacity(5%);
+    filter: opacity(10%);
 }
 
 select {
@@ -215,7 +194,7 @@ textarea {
     position: relative;
     margin: auto;
     margin-top: 3vh;
-    width: 61vw;
+    width: 40vw;
     padding: 2vh;
     border-radius: 2vh;
     resize: vertical;
@@ -244,19 +223,17 @@ input[type="number"] {
 input[type="text"] {
     margin: auto;
     display: block;
-
-    height:20px; 
-    padding: 1.3vh;
+    width: 40vw;
+    padding: 2vh;
     border-radius: 2vh;
     border: 2px solid black;
     transition: 0.25s; 
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 input[type="text"]:focus {
     border-color: orange;
     transition: 0.25s;
-    
 }
 
 input[type='submit'] {

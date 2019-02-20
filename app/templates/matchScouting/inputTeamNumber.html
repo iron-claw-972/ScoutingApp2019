@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>Input Match Data</title>
+        <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+    </head>
 
-<head>
-    <title>Input Match Data</title>
-    <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
-</head>
+    <div id="background"></div>
+    <body>
+        <h1>Input Team Number</h1>
+        <h2>You are scouting on Match #{{matchNumber}}</em></h2>
 
-<div id="background"></div>
+        <form method="POST">
 
-<body>
-    <h1>Input Team Number</h1>
-    <h2>You are scouting on Match #{{matchNumber}}</em></h2>
+            <input style="display: none;" name="matchNumber" value="{{matchNumber}}">
 
-    <form method="POST">
+            <select name="teamNumber" id="teamNumberSelect">
+                <option selected disabled>Select a Team</option>
+                <option value="{{R1}}">Team {{R1}}</option>
+                <option value="{{R2}}">Team {{R2}}</option>
+                <option value="{{R3}}">Team {{R3}}</option>
+                <option value="{{B1}}">Team {{B1}}</option>
+                <option value="{{B2}}">Team {{B2}}</option>
+                <option value="{{B3}}">Team {{B3}}</option>
+            </select>
 
-        <input style="display: none;" name="matchNumber" value="{{matchNumber}}">
-
-        <select name="teamNumber" id="teamNumberSelect">
-            <option selected disabled>Select a Team</option>
-            <option value="{{R1}}">Team {{R1}}</option>
-            <option value="{{R2}}">Team {{R2}}</option>
-            <option value="{{R3}}">Team {{R3}}</option>
-            <option value="{{B1}}">Team {{B1}}</option>
-            <option value="{{B2}}">Team {{B2}}</option>
-            <option value="{{B3}}">Team {{B3}}</option>
-        </select>
-
-        <input type="submit" value="Submit">
-    </form>
-    <script>
-        var options = document.getElementsByTagName('option');
-        for (var e = 0; e < options.length; e++) {
-            if (options[e].textContent == 'Team ') {
-                options[e].parentNode.removeChild(options[e])
-            }
-        }
-    </script>
-</body>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
 
 </html>
