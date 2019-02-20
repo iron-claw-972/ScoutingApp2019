@@ -136,6 +136,13 @@ input[type="button"] {
     color: black;
     margin-bottom: 1vh;
     font-size: 3vw;
+    background-size: 100% 100%;
+}
+
+.counter:hover {
+    background-color: white;
+    background-image: url('../images/minus.png');
+    transition: 0.25s;
 }
 
 input[type="button"]:hover {
@@ -146,6 +153,10 @@ input[type="button"]:hover {
 input[type="button"]:active {
     background-color: orange;
     transition: 0.25s;
+}
+
+.multiline {
+    margin-bottom: 0;
 }
 
 .firstInput {
@@ -163,9 +174,9 @@ input[type="button"]:active {
 button#toggle {
     position: fixed;
     bottom: 5px;
-    height: 2vw;
-    width: 2vw;
-    right: 70vw;
+    height: 1.5vw;
+    width: 1.5vw;
+    right: 90vw;
     background-color: transparent;
     background-repeat: none;
     background-size: 100%;
@@ -175,7 +186,7 @@ button#toggle {
 }
 
 button#toggle:hover {
-    filter: opacity(10%);
+    filter: opacity(5%);
 }
 
 select {
