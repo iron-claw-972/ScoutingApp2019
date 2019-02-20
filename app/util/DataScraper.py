@@ -48,6 +48,7 @@ class DataScraper:
             "B3": "1678"
         }
 
+
 datascraper = DataScraper()
 # print(datascraper.getEvent("2019", "San Francisco Regional"))
 # print(datascraper.getTeamInfo("254", "2018"))

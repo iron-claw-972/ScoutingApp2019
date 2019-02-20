@@ -23,9 +23,11 @@ class DatabaseUtil:
             # print([e for e in mycursor.fetchall()])
             mydb.commit()
         else:
-            print("NO SQL")
+            print(
+                "NO SQL. you may need to obtain the password and put it into the env varaible mypass")
     except:
-        print("NO SQL")
+        print("NO SQL. you may need to obtain the password and put it into the env varaible mypass")
+
     # mydb.close()
 
     @staticmethod
@@ -57,7 +59,7 @@ class DatabaseUtil:
     @staticmethod
     def matchExists(matchNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT COUNT(1) FROM match_info WHERE MatchID = " + matchNumber + ";")
+            'SELECT COUNT(1) FROM match_info WHERE `MatchID` = "' + matchNumber + '";')
         count = DatabaseUtil.mycursor.fetchall()[0][0]
         if(count == 0):
             return False
@@ -77,6 +79,17 @@ class DatabaseUtil:
                 "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = " + matchNumber + ";")
         DatabaseUtil.mydb.commit()
         return teamDict
+
+    @staticmethod
+    def addMatchRecord(dictOfValues):
+        # DatabaseUtil.mycursor.execute(
+        #    'select * from team_performance where `TeamNumber`='+dictOfValues['TeamNumber'])
+        keys = [e for e in dictOfValues]
+        DatabaseUtil.mycursor.execute('''INSERT INTO team_performance('''+','.join([e for e in keys])+''')
+                         VALUES(
+                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
+                         ''')
+        DatabaseUtil.mydb.commit()
 
     @staticmethod
     def getMatches():
