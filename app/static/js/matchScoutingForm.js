@@ -13,21 +13,22 @@ for (var i = 0; i < inputid.length; i++) {
 for (var f = 0; f < buttonfix.length; f++) {
     document.querySelector('#' + buttonfix[f]).style = "width:17.5vw"
 }
-$("#form").submit(function (eventObj) {
+document.querySelector('#inputForm > input[type="submit"]').onclick = function (eventObj) {
     var values = [];
+    inputid = ['c0', 'c1', 'c2', 'c3', 'h0', 'h1', 'h2', 'h3']
+
     for (var i = 0; i < inputid.length; i++) {
         val = document.getElementById(inputid[i]).textContent;
         values.push(val);
     }
+    alert(values)
     $('<input />').attr('type', 'hidden')
-        .attr('cargo0', val[0])
-        .attr('cargo1', val[1])
-        .attr('cargo2', val[2])
-        .attr('cargo3', val[3])
-        .attr('hatch0', val[4])
-        .attr('hatch1', val[5])
-        .attr('hatch2', val[6])
-        .attr('hatch3', val[7])
+        .attr('name', 'cargo')
+        .attr('value', values[0] + ',' + values[1] + ',' + values[2] + ',' + values[3] + ',')
+        .appendTo(this);
+    $('<input />').attr('type', 'hidden')
+        .attr('name', 'hatch')
+        .attr('value', values[4] + ',' + values[5] + ',' + values[6] + ',' + values[7] + ',')
         .appendTo(this);
     return true;
-});
+}
