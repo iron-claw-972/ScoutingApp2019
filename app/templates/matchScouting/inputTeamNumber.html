@@ -31,8 +31,8 @@
     </form>
     <script>
         var options = document.getElementsByTagName('option');
-        for (var e = 0; e < options.length; e++) {
-            if (options[e].textContent == 'Team ') {
+        for (var e = options.length - 1; e >= 0; e--) {
+            if (options[e].value === '') {
                 options[e].parentNode.removeChild(options[e])
             }
         }
