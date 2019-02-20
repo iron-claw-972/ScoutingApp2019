@@ -23,7 +23,7 @@
                 <input type="radio" name="sandstorm" value="none" id="SSnone"><label for="SSnone">None</label>
                 <input type="radio" name="sandstorm" value="camera" id="SScamera"><label for="SScamera">Camera</label>
                 <input type="radio" name="sandstorm" value="autonomous" id="SSautonomous"><label class="lastInput"
-                    for="SSautonomous">Vision</label>
+                    for="SSautonomous">Autonomous</label>
             </div>
         </div>
 
@@ -67,7 +67,7 @@
         </div>
 
         <div id="climbInput">
-            <h3>Climb</h3>
+            <h3>Climb <small><small><small>(without buddy climb)</small></small></small></h3>
             <div class="outtakeLevels">
                 <input type="radio" name="climbLevel" value="No Climb" id="climb0" checked><label class="firstInput"
                     for="climb0">No Climb</label>
@@ -77,7 +77,7 @@
                     for="climb3">Level 3</label>
             </div>
             <input type="number" name="climbTime" placeholder="Enter time (sec.)" style="width:20vw;"
-                pattern="^[0-9]*$">
+                pattern="^[0-9]*$" min="0" max="60">
         </div>
 
         <textarea rows="5" form="inputForm" name="comments" maxlength="255"
