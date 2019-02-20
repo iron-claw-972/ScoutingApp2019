@@ -45,5 +45,13 @@ document.querySelector('#inputForm > input[type="submit"]').onclick = function (
         .attr('name', 'hatch')
         .attr('value', values[4] + ',' + values[5] + ',' + values[6] + ',' + values[7] + ',')
         .appendTo(this);
+    $('<input />').attr('type', 'hidden')
+        .attr('name', 'matchNum')
+        .attr('value', matchNum)
+        .appendTo(this);
+    $('<input />').attr('type', 'hidden')
+        .attr('name', 'teamNum')
+        .attr('value', teamNum)
+        .appendTo(this);
     return true;
 }
