@@ -12,9 +12,11 @@
 <div id="background"></div>
 
 <body>
-	<h1>Input Pit Data</em></h1>
-	<input type="number" name="teamNumber" placeholder="Team Number" style="width:20vw;" pattern="^[0-9]*$">
-	<input type="text" name="scoutname" placeholder="Your Name" style="width:20vw;">
+	<h1>Input Pit Data</h1>
+	<h2>Team Number:</h2>
+	<input type="number" name="teamNumber" placeholder="254" style="width:20vw;" min="1" max="4000" step="1">
+	<br />
+	<input type="text" name="scoutname" placeholder="Scouter's Name" style="width:20vw;">
 	<form id="inputForm" method="POST">
 		<div id="driveTrain">
 			<h3>Drive Trains</h3>
@@ -39,22 +41,22 @@
 			<h3>Hatch</h3>
 			<h2>Outtake Locations </h2>
 			<div class="outtakeLevels">
-				<input type="checkbox" name="cargoLevelC" id="hatch0"><label class="vw15 firstInput" for="hatch0">Cargo
+				<input type="checkbox" name="hatchLevelC" id="hatch0"><label class="vw15 firstInput" for="hatch0">Cargo
 					Station</label>
-				<input type="checkbox" name="cargoLevel1" id="hatch1"><label for="hatch1" class="vw15">Level 1</label>
-				<input type="checkbox" name="cargoLevel2" id="hatch2"><label for="hatch2" class="vw15">Level 2</label>
-				<input type="checkbox" name="cargoLevel3" id="hatch3"><label class="vw15 lastInput" for="hatch3">Level
+				<input type="checkbox" name="hatchLevel1" id="hatch1"><label for="hatch1" class="vw15">Level 1</label>
+				<input type="checkbox" name="hatchLevel2" id="hatch2"><label for="hatch2" class="vw15">Level 2</label>
+				<input type="checkbox" name="hatchLevel3" id="hatch3"><label class="vw15 lastInput" for="hatch3">Level
 					3</label>
 			</div>
 			<h2>Intake Locations </h2>
 			<div class="outtakeLevels">
-				<input type="checkbox" name="hatchLevelC" id="hatchf"><label class="vw30 firstInput"
+				<input type="checkbox" name="hatchLevelG" id="hatchf"><label class="vw30 firstInput"
 					for="hatchf">Ground</label>
-				<input type="checkbox" name="hatchLevel3" id="hatchl"><label class="vw30 lastInput"
+				<input type="checkbox" name="hatchLevelD" id="hatchl"><label class="vw30 lastInput"
 					for="hatchl">Depot</label>
 			</div>
 			<h2>Describe Hatch Mechanisms</h2>
-			<input type="text" class="vw60"></input>
+			<input type="text" name="hatchComments" class="vw60" placeholder="Type here...">
 		</div>
 		<br />
 		<div id="cargoInput">
@@ -70,13 +72,13 @@
 			</div>
 			<h2>Intake Locations </h2>
 			<div class="outtakeLevels">
-				<input type="checkbox" name="cargoLevelC" id="cargof"><label class="vw30 firstInput"
+				<input type="checkbox" name="cargoLevelG" id="cargof"><label class="vw30 firstInput"
 					for="cargof">Ground</label>
-				<input type="checkbox" name="cargoLevel3" id="cargol"><label class="vw30 lastInput"
+				<input type="checkbox" name="cargoLevelD" id="cargol"><label class="vw30 lastInput"
 					for="cargol">Depot</label>
 			</div>
 			<h2>Describe Cargo Mechanisms</h2>
-			<input type="text" class="vw60"></input>
+			<input type="text" name="cargoComments" class="vw60" placeholder="Type here...">
 		</div>
 
 		<div id="climbInput">
@@ -97,13 +99,39 @@
 
 		</div>
 
+		<button id="toggle" onclick="toggle()"></button>
+
+		<h3>Miscellaneous</h3>
+
+		<div class="inlineblock">
+			<h2>Cycle Time (s)</h2>
+			<input type="number" name="cycleTime" placeholder="20" min="3" max="60" step="1" class="floatInput"> 
+		</div>
+
+		<div class="inlineblock">
+			<h2>Programming Language</h2>
+			<input type="text" name="ProgramLang" placeholder="Java" class="floatInput" list="langList"> 
+			<datalist id="langList">
+				<option>C++</option>
+				<option>Java</option>
+				<option>Labview</option>
+				<option>Python</option>
+			</datalist>
+		</div>
+
+		<div class="inlineblock">
+			<h2>Weight (lbs)</h2>
+			<input type="number" name="cycleTime" placeholder="20" min="10" max="150" step="1" class="floatInput"> 
+		</div>
+
+		<h2 style="margin: 5vh 0 1vh 0;">Image Upload</h2>
+		<input type="file" name="robotPicture" class="vw30" accept="video/*, image/*">
+
 		<textarea rows="5" form="inputForm" name="comments" maxlength="255"
 			placeholder="Enter additional comments here..."></textarea>
 
 		<input type="submit" value="Submit">
 	</form>
-
-	<button id="toggle" onclick="toggle()"></button>
 </body>
 
 
