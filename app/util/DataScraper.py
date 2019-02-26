@@ -1,12 +1,12 @@
 import requests
 import json
-import tbapy
+#import tbapy
 
 
 class DataScraper:
     baseUrl = "https://www.thebluealliance.com/api/v3"
     apiKey = "1CQGBNHADuOcI5xDHmLjpIBdQwxTHzZmPpDohm1gNs79gDtN5BrGgIt1bPzAlx2N"
-    tba = tbapy.TBA(apiKey)
+    #tba = tbapy.TBA(apiKey)
     SVReventKey = ""
     SFeventKey = ""
 

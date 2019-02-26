@@ -1,13 +1,14 @@
 import unittest
-from flask import current_app
+from flask import Flask, request, Blueprint, render_template
+from ..util import DatabaseUtil
 
+bp = Blueprint('tester', __name__)
 
 class TestUM(unittest.TestCase):
 
     def setUp(self):
-        database = current_app._get_current_object().database
-        database.addMatch("21")
-        print(1)
+        DatabaseUtil.DatabaseUtil
+        print("GOT DE DATABASE HHEHEHEHEHE")
 
     def test_False(self):
         self.assertTrue(True)

@@ -24,9 +24,9 @@ class DatabaseUtil:
             mydb.commit()
         else:
             print(
-                "NO SQL. you may need to obtain the password and put it into the env varaible mypass")
+                "NO SQL. you may need to obtain the password and put it into the env variable mypass")
     except:
-        print("NO SQL. you may need to obtain the password and put it into the env varaible mypass")
+        print("NO SQL. you may need to obtain the password and put it into the env variable mypass")
 
     # mydb.close()
 
