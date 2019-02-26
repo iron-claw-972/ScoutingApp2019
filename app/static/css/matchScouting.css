@@ -291,6 +291,7 @@ input[type='submit']:active {
 .wide{
     width:400px;
 }
+
 .vw10{
     width:10vw;
 }
@@ -308,4 +309,8 @@ input[type='submit']:active {
     border: 2px solid black;
     transition: 0.25s; 
     font-size: 2vw;
+}
+
+button.scoutingHomeButtons:hover {
+    cursor: hand;
 }
