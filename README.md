@@ -59,6 +59,18 @@
 - [ ] Battery Tracker
 
 ## TODO
+- [x] UI for match input
+- [ ] UI for pit input
+- [x] Database utility
+- [ ] Data output for matches
+- [ ] Data output for pits
+- [ ] Reformat database to match new design (Pranav)
+- [ ] Make pit scouting work (Alan)
+- [ ] Team page ui to encorporate more data (Holden)
+- [ ] Publicity board outline (more details) (Alexis and Dawson)
+- [ ] add more to todo (Holden)
+- [ ] get robot cad in step (Ethan)
+
 ### Misc.
 - [ ] move configurations from app.py to config.py
 - [ ] configure production WSGI server
