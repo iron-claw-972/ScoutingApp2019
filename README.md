@@ -70,6 +70,7 @@
 - [ ] Publicity board outline (more details) (Alexis and Dawson)
 - [ ] add more to todo (Holden)
 - [ ] get robot cad in step (Ethan)
+- [ ] fix travis building (Holden)
 
 ### Misc.
 - [ ] move configurations from app.py to config.py
