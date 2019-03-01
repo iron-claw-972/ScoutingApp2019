@@ -6,7 +6,7 @@ bp = Blueprint('publicity', __name__, template_folder='templates')
 
 @bp.route('/publicityBoard', methods=['GET'])
 def handle():
-    return flask.render_template('publicityBoard.html')
+    return flask.render_template('publicityBoard/publicityBoard.html')
 
 
 @bp.route('/publicityBoard/3d', methods=['GET'])
