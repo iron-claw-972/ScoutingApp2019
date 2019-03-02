@@ -20,10 +20,13 @@ def pit():
 def match():
     return matchScouting(request)
 
-@bp.route('/data', methods=['GET'])
-def currentDataDisplay():
-    return render_template('currentData.html')
+@bp.route('/pitData', methods=['GET'])
+def pitDataDisplay():
+    return render_template('pitData.html')
 
+@bp.route('/matchData', methods=['GET'])
+def matchDataDisplay():
+    return render_template('matchData.html')
 
 @bp.route('/teamPages')
 def teamPagesInput():
