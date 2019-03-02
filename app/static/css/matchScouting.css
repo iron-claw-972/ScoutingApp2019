@@ -314,3 +314,8 @@ input[type='submit']:active {
 button.scoutingHomeButtons:hover {
     cursor: hand;
 }
+
+img#robotPic {
+    display: block;
+    margin: auto;
+}
