@@ -1,5 +1,5 @@
 import flask
-from flask import current_app, session
+from flask import current_app, session, render_template
 
 
 def matchScouting(request):
@@ -22,7 +22,7 @@ def matchScouting(request):
                 teams = database.createMatch(data['matchNumber'])
             else:
                 database.mycursor.execute(
-                    "select * from team_performance where `MatchID`=" + data['matchNumber'] + "")
+                    "select * from team_performance_%s_%s where `MatchID`=" % (database.year, database.compy) + data['matchNumber'] + "")
                 datateams = [e[1] for e in database.mycursor.fetchall()]
                 print(datateams)
                 teamlist = ['R1', 'R2', 'R3', 'B1', 'B2', 'B3']
@@ -43,6 +43,15 @@ def matchScouting(request):
         # example data: {'climbTime': '10', 'cargo': '1,2,1,0,', 'matchNum': '12345', 'comments': 'Comments here', 'climbLevel': 'Level 1', 'teamNum': '12345', 'hatch': '1,1,1,2,', 'sandstorm': 'idk'}
         hatchData = [e for e in data['hatch'].split(',') if e]
         cargoData = [e for e in data['cargo'].split(',') if e]
-        database.addMatchRecord({"MatchID": data['matchNum'], "TeamNumber": data['teamNum'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
-                                 'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm']})
-        return str(data)
+        newdata = {"MatchID": '', "TeamNumber": '', 'Climb': '', 'ClimbTime': '',
+                   'TopH': '', 'MidH': '', 'LowH': '', 'CarH': '', 'CarC': '', 'LowC': '', 'MidC': '', 'TopC': '', 'Comments': '', 'Sandstorm': ''}
+        if (len(cargoData + hatchData) + len(data) - 2) == len(newdata):
+            try:
+                newdata.update({"MatchID": data['matchNum'], "TeamNumber": data['teamNum'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
+                                'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm']})
+            except IndexError:
+                return "Stop Hacking Us. "
+            database.addMatchRecord(newdata)
+            return render_template("fullScreenBill.html")
+        else:
+            return "You will not hack us"
