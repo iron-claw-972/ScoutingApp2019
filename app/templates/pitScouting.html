@@ -14,10 +14,11 @@
 <body>
 	<h1>Input Pit Data</h1>
 	<h2>Team Number:</h2>
-	<input type="number" name="teamNumber" placeholder="254" style="width:20vw;" min="1" max="4000" step="1">
-	<br />
-	<input type="text" name="scoutname" placeholder="Scouter's Name" style="width:20vw;">
+
 	<form id="inputForm" method="POST">
+		<input type="number" name="teamNumber" placeholder="254" style="width:20vw;" min="1" max="4000" step="1">
+		<br />
+		<input type="text" name="scoutname" placeholder="Scouter's Name" style="width:20vw;">
 		<div id="driveTrain">
 			<h3>Drive Trains</h3>
 			<div class="outtakeLevels">
@@ -103,12 +104,12 @@
 
 		<div class="inlineblock">
 			<h2>Cycle Time (s)</h2>
-			<input type="number" name="cycleTime" placeholder="20" min="3" max="60" step="1" class="floatInput"> 
+			<input type="number" name="cycleTime" placeholder="20" min="3" max="60" step="1" class="floatInput">
 		</div>
 
 		<div class="inlineblock">
 			<h2>Programming Language</h2>
-			<input type="text" name="ProgramLang" placeholder="Java" class="floatInput" list="langList"> 
+			<input type="text" name="ProgramLang" placeholder="Java" class="floatInput" list="langList">
 			<datalist id="langList">
 				<option>C++</option>
 				<option>Java</option>
@@ -119,13 +120,13 @@
 
 		<div class="inlineblock">
 			<h2>Weight (lbs)</h2>
-			<input type="number" name="cycleTime" placeholder="120" min="10" max="150" step="1" class="floatInput"> 
+			<input type="number" name="weight" placeholder="120" min="10" max="150" step="1" class="floatInput">
 		</div>
 
 		<h2 style="margin: 5vh 0 1vh 0;">Image Upload</h2>
 		<input type="file" name="robotPicURL" class="vw30" accept="video/*, image/*" onchange="readURL(this);">
-		<img id="robotPic"/>
-		<input type="text" id="robotPic64" name="robotPic64"  style="display: none;">
+		<img id="robotPic" />
+		<input type="text" id="robotPic64" name="robotPic64" style="display: none;">
 
 		<textarea rows="5" form="inputForm" name="comments" maxlength="255"
 			placeholder="Enter additional comments here..."></textarea>
@@ -135,26 +136,26 @@
 
 	<script>
 		function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#robotPic')
-                    .attr('src', e.target.result)
-                    .width('30vw');
+				reader.onload = function (e) {
+					$('#robotPic')
+						.attr('src', e.target.result)
+						.width('30vw');
 
-				var canvas = document.createElement("canvas");
-  				canvas.width = $('#robotPic').width;
-  				canvas.height = $('#robotPic').height;
-  				var ctx = canvas.getContext("2d");
-  				ctx.drawImage($('#robotPic'), 0, 0);
-  				var dataURL = canvas.toDataURL("image/png");
-				$('#robotPic64').val(dataURL);
-            };
+					var canvas = document.createElement("canvas");
+					canvas.width = $('#robotPic').width;
+					canvas.height = $('#robotPic').height;
+					var ctx = canvas.getContext("2d");
+					ctx.drawImage($('#robotPic'), 0, 0);
+					var dataURL = canvas.toDataURL("image/png");
+					$('#robotPic64').val(dataURL);
+				};
 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 	</script>
 </body>
 
