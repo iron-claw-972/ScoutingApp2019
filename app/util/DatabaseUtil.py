@@ -1,9 +1,49 @@
 from .DataScraper import datascraper
 import os
 try:
-    import mysql.connector
+    import mysql.connector as pymysql
 except:
-    pass
+    print("Please install mysql connector")
+
+
+class DB:
+    conn = None
+    cursor = None
+    ip = None  # MySQL connection IP
+    port = None  # MySQL connection port (e.g. 3306)
+    user = None  # MySQL user account (e.g. root)
+    pw = None  # MySQL user password
+    db_name = None  # Database name in MySQL
+    charset = None  # Character encoding (default: utf8)
+
+    def __init__(self, host, user, password, auth_plugin, database):
+        self.ip = host
+        self.user = user
+        self.pw = password
+        self.db_name = database
+        self.auth_plugin = auth_plugin
+
+    def connect(self):
+        self.conn = pymysql.connect(host=self.ip, user=self.user,
+                                    password=self.pw, database=self.db_name, auth_plugin=self.auth_plugin)
+        self.cursor = self.conn.cursor(buffered=True)
+
+    def execute(self, sql):
+        try:
+            self.cursor.execute(sql)
+        except (AttributeError, pymysql.errors.DatabaseError):
+            self.connect()
+            self.cursor.execute(sql)
+        return self.cursor
+
+    def fetchall(self):
+        return self.cursor.fetchall()
+
+    def commit(self):
+        return self.conn.commit()
+
+    def get_connection(self):
+        return self.conn
 
 
 class DatabaseUtil:
@@ -13,15 +53,16 @@ class DatabaseUtil:
     compy = "sfr"
 
     try:
-        mydb = mysql.connector.connect(
+        mydb = DB(
             host="167.99.26.126",
             user="scouting",
             password=os.environ["mypass"],
             auth_plugin="mysql_native_password",
             database="app_test"
         )
+
         if (mydb):
-            mycursor = mydb.cursor(buffered=True)
+            mycursor = mydb
             mycursor.execute("SELECT * FROM team_info_"+year)
             # print([e for e in mycursor.fetchall()])
             mydb.commit()
