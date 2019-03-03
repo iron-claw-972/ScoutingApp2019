@@ -28,12 +28,18 @@ class DB:
                                     password=self.pw, database=self.db_name, auth_plugin=self.auth_plugin)
         self.cursor = self.conn.cursor(buffered=True)
 
-    def execute(self, sql):
+    def execute(self, sql, sql_tuple=None):
         try:
-            self.cursor.execute(sql)
+            if sql_tuple is None:
+                self.cursor.execute(sql)
+            else:
+                self.cursor.execute(sql, sql_tuple)
         except (AttributeError, pymysql.errors.DatabaseError):
             self.connect()
-            self.cursor.execute(sql)
+            if sql_tuple is None:
+                self.cursor.execute(sql)
+            else:
+                self.cursor.execute(sql, sql_tuple)
         return self.cursor
 
     def fetchall(self):
@@ -82,10 +88,10 @@ class DatabaseUtil:
     @staticmethod
     def addTeam(dictOfValues):
         keys = [e for e in dictOfValues]
-        DatabaseUtil.mycursor.execute('INSERT INTO team_info_'+DatabaseUtil.year+'('+','.join([e for e in keys])+''')
+        DatabaseUtil.mycursor.execute('INSERT INTO team_info_'+DatabaseUtil.year+'('+','.join(keys)+''')
                          VALUES(
-                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
-                         ''')
+                             '''+','.join(["%s" for key in keys])+''')
+                         ''', tuple([dictOfValues[key] for key in keys]))
         DatabaseUtil.mydb.commit()
 
     @staticmethod
@@ -133,11 +139,11 @@ class DatabaseUtil:
         keys = [e for e in dictOfValues]
         #print(["'"+dictOfValues[key]+"'" for key in keys])
         DatabaseUtil.mycursor.execute(
-            'DELETE FROM team_performance_%s_%s WHERE MatchID = %s AND TeamNumber = %s' % (DatabaseUtil.year, DatabaseUtil.compy, dictOfValues['MatchID'], dictOfValues['TeamNumber']))
-        DatabaseUtil.mycursor.execute('''INSERT INTO team_performance_'''+DatabaseUtil.year+'_'+DatabaseUtil.compy+'''('''+','.join([e for e in keys])+''')
+            'DELETE FROM team_performance_'+DatabaseUtil.year+'_'+DatabaseUtil.compy+' WHERE MatchID = %s AND TeamNumber = %s', (dictOfValues['MatchID'], dictOfValues['TeamNumber']))
+        DatabaseUtil.mycursor.execute('INSERT INTO team_performance_'+DatabaseUtil.year+'_'+DatabaseUtil.compy+'('+','.join(keys)+''')
                          VALUES(
-                             '''+','.join(["'"+dictOfValues[key]+"'" for key in keys])+''')
-                         ''')
+                             '''+','.join(["%s" for key in keys])+''')
+                         ''', tuple([dictOfValues[key] for key in keys]))
         DatabaseUtil.mydb.commit()
 
     @staticmethod
