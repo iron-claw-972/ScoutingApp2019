@@ -137,22 +137,26 @@
 	<script>
 		function readURL(input) {
 			if (input.files && input.files[0]) {
-				var reader = new FileReader();
+				var img = new Image();
+				var canvas = document.createElement("canvas");
+				var ctx = canvas.getContext("2d");
+				img.onload = function() {
+					canvas.width = img.width;
+					canvas.height = img.height;
+					ctx.drawImage(img, 0, 0);
+					var dataURL = canvas.toDataURL("image/png");
+					alert(dataURL);
+					$('#robotPic64').val(dataURL);
+				};
 
+				var reader = new FileReader();
 				reader.onload = function (e) {
 					$('#robotPic')
 						.attr('src', e.target.result)
 						.width('30vw');
-
-					var canvas = document.createElement("canvas");
-					canvas.width = $('#robotPic').width;
-					canvas.height = $('#robotPic').height;
-					var ctx = canvas.getContext("2d");
-					ctx.drawImage($('#robotPic'), 0, 0);
-					var dataURL = canvas.toDataURL("image/png");
-					$('#robotPic64').val(dataURL);
 				};
 
+				img.src = URL.createObjectURL(event.target.files[0]);
 				reader.readAsDataURL(input.files[0]);
 			}
 		}
