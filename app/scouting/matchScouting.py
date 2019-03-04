@@ -52,6 +52,6 @@ def matchScouting(request):
             except IndexError:
                 return "Stop Hacking Us. "
             database.addMatchRecord(newdata)
-            return render_template("fullScreenBill.html")
+            return render_template("fullScreenBill.html", url="https://belikebill.ga/billgen-API.php?default=1")
         else:
             return "You will not hack us"
