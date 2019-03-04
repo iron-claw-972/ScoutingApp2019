@@ -190,7 +190,7 @@ button#toggle {
     background-color: transparent;
     background-repeat: none;
     background-size: 100%;
-    background-image: url(../images/toggle.png);
+    background-image: url(../images/toggle/toggle.png);
     border: none;
     filter: opacity(0%);
 }
