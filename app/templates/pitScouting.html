@@ -144,8 +144,7 @@
 					canvas.width = img.width;
 					canvas.height = img.height;
 					ctx.drawImage(img, 0, 0);
-					var dataURL = canvas.toDataURL("image/png");
-					alert(dataURL);
+					var dataURL = canvas.toDataURL("image/png");	
 					$('#robotPic64').val(dataURL);
 				};
 

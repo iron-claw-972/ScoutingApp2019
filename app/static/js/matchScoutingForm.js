@@ -24,7 +24,7 @@ for (var i = 0; i < labelid.length; i++) {
 }
 for (var f = 0; f < buttonfix.length; f++) {
     document.querySelector('#' + buttonfix[f]).style = "width:17.5vw"
-}
+}w
 
 
 document.querySelector('#inputForm > input[type="submit"]').onclick = function (eventObj) {

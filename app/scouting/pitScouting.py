@@ -11,6 +11,7 @@ def pitScouting(request):
         fields = [k for k in request.form]
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
+        return str(data)
         badata = {'hatchLevelD': '', 'hatchLevelC': '', 'comments': '', 'scoutname': '', 'cargoLevelG': '', 'robotPic64': '', 'cycleTime': '', 'hatchLevel3': '', 'hatchLevel1': '', 'hatchLevel2': '', 'climbLevel': '', 'cargoLevelC': '',
                   'driveTrain': '', 'hatchLevelG': '', 'cargoComments': '', 'cargoLevel2': '', 'teamNumber': '', 'hatchComments': '', 'buddyClimb': '', 'cargoLevel3': '', 'cargoLevel1': '', 'cargoLevelD': '', 'robotPicURL': '', 'ProgramLang': '', 'weight': ''}
         badata.update(data)
