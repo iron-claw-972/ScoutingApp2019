@@ -14,6 +14,10 @@ def matchScouting(request):
         print(data)
         if ('teamNumber' in fields):
             session['teamnumber'] = data['teamNumber']
+            database.mycursor.execute('select * from team_performance_' + database.year + '_' + database.compy +
+                                      ' where MatchID = %s AND TeamNumber = %s', (session['matchid'], data['teamNumber']))
+            if database.mycursor.fetchall():
+                return flask.render_template('/matchScouting/inputMatchNumber.html')
             database.addMatchRecord(
                 {'TeamNumber': data['teamNumber'], 'MatchID': session['matchid']})
             return flask.render_template('/matchScouting/matchScouting.html', matchNumber=request.form['matchNumber'], teamNumber=request.form['teamNumber'])
