@@ -13,6 +13,7 @@ def matchScouting(request):
         data = dict(zip(fields, values))
         print(data)
         if ('teamNumber' in fields):
+            session['teamnumber'] = data['teamNumber']
             database.addMatchRecord(
                 {'TeamNumber': data['teamNumber'], 'MatchID': session['matchid']})
             return flask.render_template('/matchScouting/matchScouting.html', matchNumber=request.form['matchNumber'], teamNumber=request.form['teamNumber'])
@@ -47,7 +48,7 @@ def matchScouting(request):
                    'TopH': '', 'MidH': '', 'LowH': '', 'CarH': '', 'CarC': '', 'LowC': '', 'MidC': '', 'TopC': '', 'Comments': '', 'Sandstorm': ''}
         if (len(cargoData + hatchData) + len(data) - 2) == len(newdata):
             try:
-                newdata.update({"MatchID": data['matchNum'], "TeamNumber": data['teamNum'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
+                newdata.update({"MatchID": session['matchid'], "TeamNumber": session['teamnumber'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
                                 'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm']})
             except IndexError:
                 return "Stop Hacking Us. "
