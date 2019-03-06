@@ -319,3 +319,7 @@ img#robotPic {
     display: block;
     margin: auto;
 }
+
+input#buddyClimb:not(:checked) ~ input[name="buddyClimbNum"] + label {
+    display: none;
+}
