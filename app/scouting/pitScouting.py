@@ -12,8 +12,8 @@ def pitScouting(request):
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
         return str(data)
-        badata = {'hatchLevelD': '', 'hatchLevelC': '', 'comments': '', 'scoutname': '', 'cargoLevelG': '', 'robotPic64': '', 'cycleTime': '', 'hatchLevel3': '', 'hatchLevel1': '', 'hatchLevel2': '', 'climbLevel': '', 'cargoLevelC': '',
-                  'driveTrain': '', 'hatchLevelG': '', 'cargoComments': '', 'cargoLevel2': '', 'teamNumber': '', 'hatchComments': '', 'buddyClimb': '', 'cargoLevel3': '', 'cargoLevel1': '', 'cargoLevelD': '', 'robotPicURL': '', 'ProgramLang': '', 'weight': ''}
+        badata = {'hatchLevelD': None, 'hatchLevelC': None, 'comments': None, 'scoutname': None, 'cargoLevelG': None, 'robotPic64': None, 'cycleTime': None, 'hatchLevel3': None, 'hatchLevel1': None, 'hatchLevel2': None, 'climbLevel': None, 'cargoLevelC': None,
+                  'driveTrain': None, 'hatchLevelG': None, 'cargoComments': None, 'cargoLevel2': None, 'teamNumber': None, 'hatchComments': None, 'buddyClimb': None, 'cargoLevel3': None, 'cargoLevel1': None, 'cargoLevelD': None, 'robotPicURL': None, 'ProgramLang': None, 'weight': None}
         badata.update(data)
         cargoIntake = ('D' if badata['cargoLevelD'] == 'on' else '') + \
             ('G' if badata['cargoLevelG'] == 'on' else '')
