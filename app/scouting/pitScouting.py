@@ -35,7 +35,7 @@ def pitScouting(request):
             app.upload_file(request.files['robotPicUpload'])
 
         badata = {'hatchLevelD': None, 'hatchLevelC': None, 'comments': None, 'scoutname': None, 'cargoLevelG': None, 'robotPic64': None, 'cycleTime': None, 'hatchLevel3': None, 'hatchLevel1': None, 'hatchLevel2': None, 'climbLevel': None, 'cargoLevelC': None,
-                  'driveTrain': None, 'hatchLevelG': None, 'cargoComments': None, 'cargoLevel2': None, 'teamNumber': None, 'hatchComments': None, 'buddyClimb': None, 'cargoLevel3': None, 'cargoLevel1': None, 'cargoLevelD': None, 'robotPicURL': None, 'ProgramLang': None, 'weight': None}
+                  'driveTrain': None, 'hatchLevelG': None, 'cargoComments': None, 'cargoLevel2': None, 'teamNumber': None, 'hatchComments': None, 'buddyClimb': None, 'cargoLevel3': None, 'cargoLevel1': None, 'cargoLevelD': None, 'robotPicURL': None, 'ProgramLang': None, 'weight': None, 'scoutname': None}
         badata.update(data)
         cargoIntake = ('D' if badata['cargoLevelD'] == 'on' else '') + \
             ('G' if badata['cargoLevelG'] == 'on' else '')
@@ -47,6 +47,6 @@ def pitScouting(request):
             '2' if badata['hatchLevel2'] == 'on' else '') + ('3' if badata['hatchLevel3'] == 'on' else '')
 
         database.addTeam({'TeamNumber': badata['teamNumber'], 'HatchLevels': hatchOutake, 'CargoLevels': cargoOutake, 'HatchIntake': hatchIntake, 'CargoComments': badata['cargoComments'], 'CargoIntake': cargoIntake, 'HatchComments': badata['hatchComments'],
-                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments'], "Picture": filenumber})
+                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments'], "Picture": filenumber, "ScouterName": badata['scoutname']})
         print(badata)
         return render_template('fullScreenBill.html', url=requests.get('https://yesno.wtf/api/').text.split('"')[-2])
