@@ -18,4 +18,4 @@ def teamPages(number):
             website = data['teamInfo']['website']
         except:
             return flask.render_template('404.html')
-        return flask.render_template('teamPages.html', ,num=str(number), name=data['teamInfo']['nickname'], website=website)
+        return flask.render_template('teamPages.html', num=str(number), name=data['teamInfo']['nickname'], website=website)
