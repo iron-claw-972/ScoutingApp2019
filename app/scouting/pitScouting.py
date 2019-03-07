@@ -19,7 +19,7 @@ def pitScouting(request):
         data = dict(zip(fields, values))
         filenumber = ""
         if 'robotPicUpload' in request.files:
-            file = requestFile
+            file = request.files['robotPicUpload']
             # if user does not select file, browser also
             # submit a empty part without filename
             if file.filename and app.allowed_file(file.filename):

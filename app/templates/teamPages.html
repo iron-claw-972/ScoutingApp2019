@@ -16,57 +16,40 @@
             </div>
         </div>
     </header>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="width:495px;">
-                        <div class="table-responsive" style="padding-left:25px;max-width:510px;">
-                            <table class="table">
-                                <thead>
-                                    <tr></tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="width:239px;margin-left:50vw;font-size:25px;">Ranking Points</td>
-                                        <td>{{rankingpoints}} </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width:140px;font-size:25px;">Hatches </td>
-                                        <td>
-                                            <p>Average Hatches per Match: {{HPM}}</p>
-                                            <p>Intake Location: {{HIL}}</p>
-                                            <p>Possible Hatch Heights: {{PHH}}</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width:140px;font-size:25px;">Cargo </td>
-                                        <td>
-                                            <p>Average Cargo per Match:{{CPM}}</p>
-                                            <p>Intake Location: {{CIL}}</p>
-                                            <p>Possible Cargo Heights:{{PCH}}</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width:140px;font-size:25px;">Climb </td>
-                                        <td>
-                                            <p>Type of climb: {{TOC}}</p>
-                                            <p>Possible Climb Heights: {{PCH}}</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </td>
-                    <td><img src="{{imgurl}}" style="width:70vh;"></td>
-                </tr>
-                <tr></tr>
-            </tbody>
-        </table>
-    </div>
+
+    <table class="table">
+        <thead>
+            Pit Scouting Info
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hatches </td>
+                <td>
+                    <p>Average Hatches per Match: {{HPM}}</p>
+                    <p>Intake Location: {{HIL}}</p>
+                    <p>Possible Hatch Heights: {{PHH}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Cargo </td>
+                <td>
+                    <p>Average Cargo per Match:{{CPM}}</p>
+                    <p>Intake Location: {{CIL}}</p>
+                    <p>Possible Cargo Heights:{{PCH}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Climb </td>
+                <td>
+                    <p>Type of climb: {{TOC}}</p>
+                    <p>Possible Climb Heights: {{PCH}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <img src="http://media.team254.com/2012/08/skyfire.jpg" style="float: right; width: 40vw;">
+    
     <script src="/js/jquery-1.12.4.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script id="bs-live-reload" data-sseport="60224" data-lastchange="1549751551576" src="/js/livereload.js"></script>
