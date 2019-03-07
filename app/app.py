@@ -25,19 +25,6 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 app.allowed_file = allowed_file
 
-def upload_file(requestFile):
-    file = requestFile
-    # if user does not select file, browser also
-    # submit a empty part without filename
-    if file.filename and app.allowed_file(file.filename):
-        with open("incrementUploads.txt", "r+") as incrementFile:
-            currentValue = incrementFile.read()
-            print(currentValue + "ooooooooooooOoOoooooHHHHH")
-            filename = currentValue + "." + file.filename.split(".")[-1]
-            incrementFile.truncate(0)
-            incrementFile.write(str(int(currentValue) + 1))
-        file.save(app.root_path + "/" + app.config['UPLOAD_FOLDER'] + "/" + filename) 
-app.upload_file = upload_file
 
 #  config, evntually move to config
 app.database = database.DatabaseUtil

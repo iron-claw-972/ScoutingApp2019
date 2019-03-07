@@ -16,8 +16,20 @@ def pitScouting(request):
         fields = [k for k in request.form]
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
+
         if 'robotPicUpload' in request.files:
+            file = requestFile
+            # if user does not select file, browser also
+            # submit a empty part without filename
+            if file.filename and app.allowed_file(file.filename):
+                with open("incrementUploads.txt", "r+") as incrementFile:
+                    currentValue = incrementFile.read()
+                    filename = currentValue + "." + file.filename.split(".")[-1]
+                    incrementFile.truncate(0)
+                    incrementFile.write(str(int(currentValue) + 1))
+                file.save(app.root_path + "/" + app.config['UPLOAD_FOLDER'] + "/" + filename) 
             app.upload_file(request.files['robotPicUpload'])
+
         badata = {'hatchLevelD': None, 'hatchLevelC': None, 'comments': None, 'scoutname': None, 'cargoLevelG': None, 'robotPic64': None, 'cycleTime': None, 'hatchLevel3': None, 'hatchLevel1': None, 'hatchLevel2': None, 'climbLevel': None, 'cargoLevelC': None,
                   'driveTrain': None, 'hatchLevelG': None, 'cargoComments': None, 'cargoLevel2': None, 'teamNumber': None, 'hatchComments': None, 'buddyClimb': None, 'cargoLevel3': None, 'cargoLevel1': None, 'cargoLevelD': None, 'robotPicURL': None, 'ProgramLang': None, 'weight': None}
         badata.update(data)

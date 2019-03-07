@@ -109,6 +109,11 @@ class DatabaseUtil:
         return [e for e in DatabaseUtil.mycursor.fetchall()]
 
     @staticmethod
+    def getHatchAvg(teamnumber):
+        DatabaseUtil.mycursor.execute(
+            "SELECT  FROM team_info_"+DatabaseUtil.year)
+
+    @staticmethod
     def matchExists(matchNumber):
         DatabaseUtil.mycursor.execute(
             'SELECT COUNT(1) FROM match_info WHERE `MatchID` = "' + matchNumber + '";')
