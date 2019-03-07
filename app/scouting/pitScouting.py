@@ -6,6 +6,7 @@ import os
 from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
+
 def pitScouting(request):
     app = current_app._get_current_object()
 
@@ -16,7 +17,7 @@ def pitScouting(request):
         fields = [k for k in request.form]
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
-
+        filenumber = ""
         if 'robotPicUpload' in request.files:
             file = requestFile
             # if user does not select file, browser also
@@ -24,10 +25,13 @@ def pitScouting(request):
             if file.filename and app.allowed_file(file.filename):
                 with open("incrementUploads.txt", "r+") as incrementFile:
                     currentValue = incrementFile.read()
-                    filename = currentValue + "." + file.filename.split(".")[-1]
+                    filename = currentValue + "." + \
+                        file.filename.split(".")[-1]
+                    filenumber = currentValue
                     incrementFile.truncate(0)
                     incrementFile.write(str(int(currentValue) + 1))
-                file.save(app.root_path + "/" + app.config['UPLOAD_FOLDER'] + "/" + filename) 
+                file.save(app.root_path + "/" +
+                          app.config['UPLOAD_FOLDER'] + "/" + filename)
             app.upload_file(request.files['robotPicUpload'])
 
         badata = {'hatchLevelD': None, 'hatchLevelC': None, 'comments': None, 'scoutname': None, 'cargoLevelG': None, 'robotPic64': None, 'cycleTime': None, 'hatchLevel3': None, 'hatchLevel1': None, 'hatchLevel2': None, 'climbLevel': None, 'cargoLevelC': None,
@@ -42,8 +46,7 @@ def pitScouting(request):
         hatchOutake = ('C' if badata['hatchLevelC'] == 'on' else '') + ('1' if badata['hatchLevel1'] == 'on' else '') + (
             '2' if badata['hatchLevel2'] == 'on' else '') + ('3' if badata['hatchLevel3'] == 'on' else '')
 
-
         database.addTeam({'TeamNumber': badata['teamNumber'], 'HatchLevels': hatchOutake, 'CargoLevels': cargoOutake, 'HatchIntake': hatchIntake, 'CargoComments': badata['cargoComments'], 'CargoIntake': cargoIntake, 'HatchComments': badata['hatchComments'],
-                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments']})
+                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments'], "Picture": filenumber})
         print(badata)
         return render_template('fullScreenBill.html', url=requests.get('https://yesno.wtf/api/').text.split('"')[-2])
