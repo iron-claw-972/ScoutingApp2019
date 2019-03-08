@@ -23,15 +23,14 @@ def pitScouting(request):
             # if user does not select file, browser also
             # submit a empty part without filename
             if file.filename and app.allowed_file(file.filename):
-                with open("scouting/incrementUploads.txt", "r+") as incrementFile:
+                with open("scouting/incrementUploads.txt", "r") as incrementFile:
 
                     currentValue = incrementFile.read()
-                    print("CURRENT VALUE IS " + currentValue)
-                    filename = currentValue
+                    print("CURRENT VALUE IS " + currentValue+'.'+file.filename.split('.')[-1])
+                    filename = currentValue+'.'+file.filename.split('.')[-1]
                     filenumber = currentValue
-                    incrementFile.seek(0)
+                with open("scouting/incrementUploads.txt", "w") as incrementFile:
                     incrementFile.write(str(int(currentValue) + 1))
-                    incrementFile.truncate(0)
                 file.save(app.root_path + "/" +
                           app.config['UPLOAD_FOLDER'] + "/" + filename)
 
