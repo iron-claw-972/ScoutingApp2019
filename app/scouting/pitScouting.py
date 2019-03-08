@@ -17,7 +17,7 @@ def pitScouting(request):
         fields = [k for k in request.form]
         values = [request.form[k] for k in request.form]
         data = dict(zip(fields, values))
-        filenumber = ""
+        filename = ""
         if 'robotPicUpload' in request.files:
             file = request.files['robotPicUpload']
             # if user does not select file, browser also
@@ -28,7 +28,7 @@ def pitScouting(request):
                     currentValue = incrementFile.read()
                     print("CURRENT VALUE IS " + currentValue+'.'+file.filename.split('.')[-1])
                     filename = currentValue+'.'+file.filename.split('.')[-1]
-                    filenumber = currentValue
+
                 with open("scouting/incrementUploads.txt", "w") as incrementFile:
                     incrementFile.write(str(int(currentValue) + 1))
                 file.save(app.root_path + "/" +
@@ -47,6 +47,6 @@ def pitScouting(request):
             '2' if badata['hatchLevel2'] == 'on' else '') + ('3' if badata['hatchLevel3'] == 'on' else '')
 
         database.addTeam({'TeamNumber': badata['teamNumber'], 'HatchLevels': hatchOutake, 'CargoLevels': cargoOutake, 'HatchIntake': hatchIntake, 'CargoComments': badata['cargoComments'], 'CargoIntake': cargoIntake, 'HatchComments': badata['hatchComments'],
-                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments'], "Picture": filenumber, "ScouterName": badata['scoutname']})
+                          'DriveTrain': badata['driveTrain'], 'ClimbLevels': badata['climbLevel'], 'CycleTime': badata['cycleTime'], 'Weight': badata['weight'], 'ProgrammingLanguage': badata['ProgramLang'], 'Comments': badata['comments'], "Picture": filename, "ScouterName": badata['scoutname']})
         print(badata)
         return render_template('fullScreenBill.html', url=requests.get('https://yesno.wtf/api/').text.split('"')[-2])

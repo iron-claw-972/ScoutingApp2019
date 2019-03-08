@@ -105,9 +105,10 @@ class DatabaseUtil:
     @staticmethod
     def getTeam(teamnumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT * FROM team_info_"+DatabaseUtil.year)
+            "SELECT * FROM team_info_"+DatabaseUtil.year+" where TeamNumber="+teamnumber)
         return [e for e in DatabaseUtil.mycursor.fetchall()]
 
+    @staticmethod
     def getTeamMatchPerformance(teamNumber):
         DatabaseUtil.mycursor.execute(
             "SELECT * FROM team_performance_"+DatabaseUtil.year+"_"+DatabaseUtil.compy+" WHERE teamNumber = " + str(teamNumber))

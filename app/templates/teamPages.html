@@ -4,15 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScoutingAppBootstrap</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/teamPages.css">
 </head>
 
 <body data-gr-c-s-loaded="true" style="text-align: center; padding: 0 5vw;">
 
     <div style="width: 50vw; display: inline-block;">
-         <header>
-            <div class="page-header" style="padding-left:0;margin-left:25px;margin-top:40px;margin-bottom:40px;margin-right:25;">
+        <header>
+            <div class="page-header"
+                style="padding-left:0;margin-left:25px;margin-top:40px;margin-bottom:40px;margin-right:25;">
                 <div class="page-header">
                     <h1>Team {{num}} <a href="{{website}}" target="_blank"><small>{{name}} </small></a></h1>
                 </div>
@@ -49,7 +51,7 @@
         </table>
     </div>
 
-    <img src="http://media.team254.com/2012/08/skyfire.jpg" style="float: right; width: 30vw; ">
+    <img src="{{PIC}}" style="float: right; width: 30vw; ">
 
     <table class="table">
         <thead>
@@ -64,24 +66,25 @@
         </thead>
         <tbody>
             {% for match in matches %}
-                <tr>
-                    <td>{{match[2]}}</td>
-                    <td>{{match[3]}}, {{match[4]}}, {{match[5]}}, {{match[6]}}</td>
-                    <td>{{match[7]}}, {{match[8]}}, {{match[9]}}, {{match[10]}}</td>
-                    <td>{{match[11]}}</td>
-                    <td>{{match[12]}}</td>
-                    <td>{{match[14]}}</td>
-                </tr>
+            <tr>
+                <td>{{match[2]}}</td>
+                <td>{{match[3]}}, {{match[4]}}, {{match[5]}}, {{match[6]}}</td>
+                <td>{{match[7]}}, {{match[8]}}, {{match[9]}}, {{match[10]}}</td>
+                <td>{{match[11]}}</td>
+                <td>{{match[12]}}</td>
+                <td>{{match[14]}}</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
-    
+
     <script src="/js/jquery-1.12.4.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script id="bs-live-reload" data-sseport="60224" data-lastchange="1549751551576" src="/js/livereload.js"></script>
 
 
     <span id="copylAddress" style="display: inline-block; position: absolute; left: -9999em;"></span>
-</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span>
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span
+        class="gr__triangle"></span></span>
 
 </html>

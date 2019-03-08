@@ -19,10 +19,11 @@ def teamPages(number):
             website = generalData['teamInfo']['website']
         except:
             return flask.render_template('404.html')
-
+        print(robotData)
         PHH = (robotData[0][3])
         PCH = (robotData[0][4])
         HIL = (robotData[0][5])
         CIL = (robotData[0][7])
-        matches = database.getTeamMatchPerformance(number)    
-        return flask.render_template('teamPages.html', HIL=HIL, PHH=PHH, PCH=PCH, CIL=CIL, num=str(number), name=name, website=website, matches=matches)
+        PIC = ("/images/uploads/"+str(robotData[0][-1]))
+        matches = database.getTeamMatchPerformance(number)
+        return flask.render_template('teamPages.html', PIC=PIC, HIL=HIL, PHH=PHH, PCH=PCH, CIL=CIL, num=str(number), name=name, website=website, matches=matches)
