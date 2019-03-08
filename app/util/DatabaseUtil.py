@@ -108,10 +108,15 @@ class DatabaseUtil:
             "SELECT * FROM team_info_"+DatabaseUtil.year)
         return [e for e in DatabaseUtil.mycursor.fetchall()]
 
+    def getTeamMatchPerformance(teamNumber):
+        DatabaseUtil.mycursor.execute(
+            "SELECT * FROM team_performance_"+DatabaseUtil.year+"_"+DatabaseUtil.compy+" WHERE teamNumber = " + str(teamNumber))
+        return [e for e in DatabaseUtil.mycursor.fetchall()]
+
     @staticmethod
     def getHatchAvg(teamNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT AVG(topH + midH + LowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber) )
+            "SELECT AVG(topH + midH + lowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber) )
 
     @staticmethod
     def matchExists(matchNumber):

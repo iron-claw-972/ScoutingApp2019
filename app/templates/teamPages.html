@@ -8,45 +8,73 @@
     <link rel="stylesheet" href="/css/teamPages.css">
 </head>
 
-<body data-gr-c-s-loaded="true" style="text-align: center">
-    <header>
-        <div class="page-header" style="padding-left:0;margin-left:25px;margin-top:40px;margin-bottom:40px;margin-right:25;">
-            <div class="page-header">
-                <h1>Team {{num}} <a href="{{website}}" target="_blank"><small>{{name}} </small></a></h1>
+<body data-gr-c-s-loaded="true" style="text-align: center; padding: 0 5vw;">
+
+    <div style="width: 50vw; display: inline-block;">
+         <header>
+            <div class="page-header" style="padding-left:0;margin-left:25px;margin-top:40px;margin-bottom:40px;margin-right:25;">
+                <div class="page-header">
+                    <h1>Team {{num}} <a href="{{website}}" target="_blank"><small>{{name}} </small></a></h1>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+
+        <table class="table">
+            <thead>
+                General &amp; Pit Scouting Info
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hatches </td>
+                    <td>
+                        <p>Intake Location: {{HIL}}</p>
+                        <p>Possible Hatch Heights: {{PHH}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cargo </td>
+                    <td>
+                        <p>Intake Location: {{CIL}}</p>
+                        <p>Possible Cargo Heights:{{PCH}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Climb </td>
+                    <td>
+                        <p>Type of climb: {{TOC}}</p>
+                        <p>Possible Climb Heights: {{PCH}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <img src="http://media.team254.com/2012/08/skyfire.jpg" style="float: right; width: 30vw; ">
 
     <table class="table">
         <thead>
-            General &amp; Pit Scouting Info
+            <tr>
+                <th>Match ID</th>
+                <th>Hatches (Top, Mid, Low, Car)</th>
+                <th>Cargo (Top, Mid, Low, Car)</th>
+                <th>Climb</th>
+                <th>Climb Time</th>
+                <th>Comments</th>
+            </tr>
         </thead>
         <tbody>
-             <tr>
-                <td>Hatches </td>
-                <td>
-                    <p>Intake Location: {{HIL}}</p>
-                    <p>Possible Hatch Heights: {{PHH}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Cargo </td>
-                <td>
-                    <p>Intake Location: {{CIL}}</p>
-                    <p>Possible Cargo Heights:{{PCH}}</p>
-                </td>
-            </tr>
-            <tr>
-                <td>Climb </td>
-                <td>
-                    <p>Type of climb: {{TOC}}</p>
-                    <p>Possible Climb Heights: {{PCH}}</p>
-                </td>
-            </tr>
+            {% for match in matches %}
+                <tr>
+                    <td>{{match[2]}}</td>
+                    <td>{{match[3]}}, {{match[4]}}, {{match[5]}}, {{match[6]}}</td>
+                    <td>{{match[7]}}, {{match[8]}}, {{match[9]}}, {{match[10]}}</td>
+                    <td>{{match[11]}}</td>
+                    <td>{{match[12]}}</td>
+                    <td>{{match[14]}}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
-
-    <img src="http://media.team254.com/2012/08/skyfire.jpg" style="float: right; width: 40vw;">
     
     <script src="/js/jquery-1.12.4.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>

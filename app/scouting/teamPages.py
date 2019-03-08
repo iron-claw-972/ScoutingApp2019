@@ -12,10 +12,17 @@ def teamPages(number):
     else:
         database = current_app._get_current_object().database
         database.addBATeamData(number)
-        data = database.getTeamData(number)
+        generalData = database.getTeamData(number)
+        robotData = database.getTeam(number)
         try:
-            name = data['teamInfo']['nickname']
-            website = data['teamInfo']['website']
+            name = generalData['teamInfo']['nickname']
+            website = generalData['teamInfo']['website']
         except:
             return flask.render_template('404.html')
-        return flask.render_template('teamPages.html', num=str(number), name=data['teamInfo']['nickname'], website=website)
+
+        PHH = (robotData[0][3])
+        PCH = (robotData[0][4])
+        HIL = (robotData[0][5])
+        CIL = (robotData[0][7])
+        matches = database.getTeamMatchPerformance(number)    
+        return flask.render_template('teamPages.html', HIL=HIL, PHH=PHH, PCH=PCH, CIL=CIL, num=str(number), name=name, website=website, matches=matches)
