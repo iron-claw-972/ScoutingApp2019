@@ -10,4 +10,6 @@ def pitData():
 
 
 def matchData():
-    return render_template('matchData.html')
+    database = current_app._get_current_object().database
+    database.mycursor.execute('select * from team_performance_2019_sfr')
+    return render_template('matchData.html', data=database.mycursor.fetchall())
