@@ -2,6 +2,8 @@ from flask import Flask, request, Blueprint, render_template, current_app
 from .pitScouting import pitScouting
 from .matchScouting import matchScouting
 from .teamPages import teamPages
+from .data import pitData
+from .data import matchData
 import random
 import time
 bp = Blueprint('scouting', __name__)
@@ -28,11 +30,11 @@ def match():
 
 @bp.route('/pitData', methods=['GET'])
 def pitDataDisplay():
-    return render_template('pitData.html')
+    return pitData()
 
 @bp.route('/matchData', methods=['GET'])
 def matchDataDisplay():
-    return render_template('matchData.html')
+    return matchData()
 
 @bp.route('/teamPages')
 def teamPagesInput():

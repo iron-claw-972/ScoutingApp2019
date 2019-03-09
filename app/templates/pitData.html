@@ -1,12 +1,55 @@
 <html>
-    <head>
-        <meta charset = "utf-8" />
-        <title>Pit Data</title>
-        <link rel = "stylesheet" type="text/css" href="/css/matchScouting.css">
-    </head>
 
-    <div id = "background"></div>
-    <body>
-        <h1>Pit Data</h1>
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title>Pit Data</title>
+    <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+
+</head>
+
+<div id="background"></div>
+
+<body style="text-align: center">
+    <h1>Pit Data</h1>
+    <table style="width:90vw;text-align: center; margin-left: auto;margin-right: auto;">
+        <thead>
+            <tr>
+                <th>Team Number</th>
+                <th>Hatch Levels</th>
+                <th>Cargo Levels</th>
+                <th>Hatch Intake</th>
+                <th>Cargo Comments</th>
+                <th>Cargo Intake</th>
+                <th>Hatch Comments</th>
+                <th>Drive Train</th>
+                <th>Climb Levels</th>
+                <th>Buddy Climb</th>
+                <th>Cycle Time</th>
+                <th>Weight</th>
+                <th>Programming Language</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        {% for item in data %}
+        <tr>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td>{{item[6]}}</td>
+            <td>{{item[7]}}</td>
+            <td>{{item[8]}}</td>
+            <td>{{item[9]}}</td>
+            <td>{{item[10]}}</td>
+            <td>{{item[11]}}</td>
+            <td>{{item[12]}}</td>
+            <td>{{item[13]}}</td>
+            <td>{{item[14]}}</td>
+            <td>{{item[15]}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
 </html>
