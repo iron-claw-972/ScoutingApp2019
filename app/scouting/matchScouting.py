@@ -1,5 +1,6 @@
 import flask
 from flask import current_app, session, render_template
+import time
 
 
 def matchScouting(request):

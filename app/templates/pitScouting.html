@@ -4,7 +4,7 @@
 
 <head>
 	<title>Input Pit Data</title>
-	<link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+	<link rel="stylesheet" type="text/css" href="/css/matchScouting.css?v=1.1">
 	<script src="/js/toggle.js"></script>
 	<script src="/js/jquery.js"></script>
 </head>
@@ -16,7 +16,8 @@
 	<h2>Team Number:</h2>
 
 	<form id="inputForm" method="POST" enctype="multipart/form-data">
-		<input type="number" name="teamNumber" placeholder="254" style="width:20vw;" min="1" max="4000" step="1" required>
+		<input type="number" name="teamNumber" placeholder="254" style="width:20vw;" min="1" max="4000" step="1"
+			required>
 		<br />
 		<input type="text" name="scoutname" placeholder="Scouter's Name" style="width:20vw;" required>
 		<div id="driveTrain">
@@ -42,7 +43,8 @@
 			<h3>Hatch</h3>
 			<h2>Outtake Locations </h2>
 			<div class="outtakeLevels">
-				<input type="checkbox" name="hatchLevel1" id="hatch1"><label for="hatch1" class="firstInput vw20">Level 1</label>
+				<input type="checkbox" name="hatchLevel1" id="hatch1"><label for="hatch1" class="firstInput vw20">Level
+					1</label>
 				<input type="checkbox" name="hatchLevel2" id="hatch2"><label for="hatch2" class="vw20">Level 2</label>
 				<input type="checkbox" name="hatchLevel3" id="hatch3"><label class="vw20 lastInput" for="hatch3">Level
 					3</label>
@@ -62,7 +64,8 @@
 			<h3>Cargo </h3>
 			<h2>Outtake Locations </h2>
 			<div class="outtakeLevels">
-				<input type="checkbox" name="cargoLevel1" id="cargo1"><label for="cargo1" class="firstInput vw20">Level 1</label>
+				<input type="checkbox" name="cargoLevel1" id="cargo1"><label for="cargo1" class="firstInput vw20">Level
+					1</label>
 				<input type="checkbox" name="cargoLevel2" id="cargo2"><label for="cargo2" class="vw20">Level 2</label>
 				<input type="checkbox" name="cargoLevel3" id="cargo3"><label class="lastInput vw20" for="cargo3">Level
 					3</label>
@@ -91,7 +94,7 @@
 					for="climb3">Level 3</label>
 			</div>
 
-			
+
 
 			<input type="checkbox" name="buddyClimb" id="buddyClimb"><label class="firstInput lastInput"
 				for="buddyClimb" style="margin-right: 1vw;">Buddy Climb?</label>
@@ -107,7 +110,8 @@
 
 		<div class="inlineblock">
 			<h2>Cycle Time (s)</h2>
-			<input type="number" name="cycleTime" placeholder="20" min="3" max="60" step="1" class="floatInput" required>
+			<input type="number" name="cycleTime" placeholder="20" min="3" max="60" step="1" class="floatInput"
+				required>
 		</div>
 
 		<div class="inlineblock">
@@ -123,7 +127,8 @@
 
 		<div class="inlineblock">
 			<h2>Weight (lbs)</h2>
-			<input type="number" name="weight" placeholder="120" min="10" max="150" step="1" class="floatInput" required>
+			<input type="number" name="weight" placeholder="120" min="10" max="150" step="1" class="floatInput"
+				required>
 		</div>
 
 		<h2 style="margin: 5vh 0 1vh 0;">Image Upload</h2>

@@ -3,6 +3,7 @@ from .pitScouting import pitScouting
 from .matchScouting import matchScouting
 from .teamPages import teamPages
 import random
+import time
 bp = Blueprint('scouting', __name__)
 
 def changeBackground():

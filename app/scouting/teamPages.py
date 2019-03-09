@@ -4,16 +4,20 @@ from random import randint
 
 
 def teamPages(number):
-    if(str(number) == "random"):
+
+    if(not str(number).isdigit()):
         try:
             return teamPages(str(randint(1, 3790)))
         except:
             return teamPages(str(randint(1, 3790)))
+
     else:
         database = current_app._get_current_object().database
         database.addBATeamData(number)
         generalData = database.getTeamData(number)
         robotData = database.getTeam(number)
+        if not robotData:
+            robotData = [['' for e in range(20)]]
         try:
             name = generalData['teamInfo']['nickname']
             website = generalData['teamInfo']['website']
