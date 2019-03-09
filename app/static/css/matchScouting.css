@@ -79,7 +79,7 @@ li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/images/color.gif");
+    background-image: url("/images/color1.gif");
     background-attachment: fixed;
     animation-name: backgroundScroll;
     animation-duration: 8s;

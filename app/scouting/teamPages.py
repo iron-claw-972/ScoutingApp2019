@@ -13,12 +13,13 @@ def teamPages(number):
 
     else:
         database = current_app._get_current_object().database
-        database.addBATeamData(number)
-        generalData = database.getTeamData(number)
-        robotData = database.getTeam(number)
-        if not robotData:
-            robotData = [['' for e in range(20)]]
         try:
+            database.addBATeamData(number)
+            generalData = database.getTeamData(number)
+            robotData = database.getTeam(number)
+            if not robotData:
+                robotData = [['' for e in range(20)]]
+
             name = generalData['teamInfo']['nickname']
             website = generalData['teamInfo']['website']
         except:
