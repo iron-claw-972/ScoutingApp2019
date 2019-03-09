@@ -14,34 +14,28 @@ def changeBackground():
         file.write(render_template('matchScouting.css', image="/images/"+random.choice(ilist)))
 @bp.route('/home', methods=['GET'])
 def home():
-    changeBackground()
     return render_template('scoutingHome.html')
 
 
 @bp.route('/inputPitData', methods=['GET', 'POST'])
 def pit():
-    changeBackground()
     return pitScouting(request)
 
 
 @bp.route('/inputMatchData', methods=['GET', 'POST'])
 def match():
-    changeBackground()
     return matchScouting(request)
 
 @bp.route('/pitData', methods=['GET'])
 def pitDataDisplay():
-    changeBackground()
     return render_template('pitData.html')
 
 @bp.route('/matchData', methods=['GET'])
 def matchDataDisplay():
-    changeBackground()
     return render_template('matchData.html')
 
 @bp.route('/teamPages')
 def teamPagesInput():
-    changeBackground()
     return render_template('teamPageInput.html')
 
 

@@ -8,10 +8,11 @@
     src: url(../fonts/monserrat/Montserrat-Bold.otf);
     font-weight: bold;
 }
-
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:700');
 * {
     text-align: center;
-    font-family: "Monserrat", "Helvetica Neue", sans-serif;
+    font-family: 'Monserrat', sans-serif;
 }
 
 *:focus {
@@ -78,7 +79,7 @@ li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/images/back.png");
+    background-image: url("/images/color.gif");
     background-attachment: fixed;
     animation-name: backgroundScroll;
     animation-duration: 8s;

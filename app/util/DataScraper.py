@@ -39,13 +39,20 @@ class DataScraper:
         return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'/event/'+event_key+'/matches'+'?X-TBA-Auth-Key='+self.apiKey).text)
 
     def getMatchTeams(self, matchNumber):
+        data=json.loads(requests.get(self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
+        print(data)
+        try:
+            red = [e[3:] for e in data['alliances']['red']['team_keys']]
+            blue = [e[3:] for e in data['alliances']['blue']['team_keys']]
+        except:
+            return None
         return {
-            "R1": "18",
-            "R2": "254",
-            "R3": "971",
-            "B1": "973",
-            "B2": "1776",
-            "B3": "1678"
+            "R1": red[0],
+            "R2": red[1],
+            "R3": red[2],
+            "B1": blue[0],
+            "B2": blue[1],
+            "B3": blue[2]
         }
 
 

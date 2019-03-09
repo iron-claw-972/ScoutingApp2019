@@ -1,5 +1,5 @@
 import flask
-from flask import current_app, session, render_template
+from flask import current_app, session, render_template, redirect
 import time
 
 
@@ -26,9 +26,11 @@ def matchScouting(request):
         if('matchNumber' in fields):
             if(not database.matchExists(data['matchNumber'])):
                 teams = database.createMatch(data['matchNumber'])
+                if teams == None:
+                    return redirect("/scouting/inputMatchData")
             else:
                 database.mycursor.execute(
-                    "select * from team_performance_%s_%s where `MatchID`=" % (database.year, database.compy) + data['matchNumber'] + "")
+                    "select * from team_performance_%s_%s where `MatchID`=" % (database.year, database.compy) + "'"+data['matchNumber'] + "'")
                 datateams = [e[1] for e in database.mycursor.fetchall()]
                 print(datateams)
                 teamlist = ['R1', 'R2', 'R3', 'B1', 'B2', 'B3']

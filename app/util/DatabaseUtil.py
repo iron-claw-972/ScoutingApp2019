@@ -117,7 +117,7 @@ class DatabaseUtil:
     @staticmethod
     def getHatchAvg(teamNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT AVG(topH + midH + lowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber) )
+            "SELECT AVG(topH + midH + lowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
 
     @staticmethod
     def matchExists(matchNumber):
@@ -135,11 +135,13 @@ class DatabaseUtil:
     @staticmethod
     def createMatch(matchNumber):  # returns dictionary of teams
         DatabaseUtil.mycursor.execute(
-            "INSERT INTO match_info (MatchID) VALUES ("+matchNumber+");")
+            "INSERT INTO match_info (MatchID) VALUES ('"+matchNumber+"');")
         teamDict = datascraper.getMatchTeams(matchNumber)
+        if teamDict == None:
+            return None
         for key, value in teamDict.items():
             DatabaseUtil.mycursor.execute(
-                "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = " + matchNumber + ";")
+                "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = '" + matchNumber + "';")
         DatabaseUtil.mydb.commit()
         return teamDict
 
