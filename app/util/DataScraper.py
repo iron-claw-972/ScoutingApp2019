@@ -1,5 +1,6 @@
 import requests
 import json
+import datetime
 #import tbapy
 
 
@@ -38,8 +39,17 @@ class DataScraper:
     def getTeamMatches(self, team, event_key):
         return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'/event/'+event_key+'/matches'+'?X-TBA-Auth-Key='+self.apiKey).text)
 
+    def getMatches(self, event_key, now):
+        mat = json.loads(requests.get(self.baseUrl + '/event/'+event_key +
+                                      '/matches/simple'+'?X-TBA-Auth-Key='+self.apiKey).text)
+        mat = [{'alliances': e['alliances'], 'key':e['key'], 'time':e['time'], 'ptime':e['predicted_time']}
+               for e in mat if 'frc972' in e['alliances']['red']['team_keys']+e['alliances']['blue']['team_keys'] and e['time'] > now]
+        newlist = sorted(mat, key=lambda k: k['time'])
+        return newlist
+
     def getMatchTeams(self, matchNumber):
-        data=json.loads(requests.get(self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
+        data = json.loads(requests.get(
+            self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
         print(data)
         try:
             red = [e[3:] for e in data['alliances']['red']['team_keys']]

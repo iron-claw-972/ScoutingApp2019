@@ -1,6 +1,7 @@
 from flask import render_template
-import datetime
+import time
 
 
-def matchSchedule(database, request):
-    currentTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+def matchSchedule(scraper):
+    currentTime = time.time()
+    results = scraper.getMatches(scraper.SFeventKey, currentTime)

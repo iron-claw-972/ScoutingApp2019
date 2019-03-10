@@ -20,14 +20,18 @@ UPLOAD_FOLDER = './static/images/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
 app.allowed_file = allowed_file
 
 
 #  config, evntually move to config
 app.database = database.DatabaseUtil
+app.scraper = scraper
 app.database.storeVariable('batteryStatus', ['good', 'good', 'good'])
 app.database.storeVariable('timeUntilGood', [0, 0, 0])
 app.database.storeVariable('batteryChargingTime', 5)
