@@ -28,7 +28,8 @@
                                 <td style="width:50px;">
                                     <p style="height:19px;">Alliance Partners: {{AP1}}</p>
                                     <p>Opposing Teams: {{OT1}}</p>
-                                    <p>Time Until Match Starts: {{T1}}</p>
+                                    <p>Time Until Match Starts: </p>
+                                    <p id="time">{{T1}}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -38,7 +39,8 @@
                                 <td style="width:50px;">
                                     <p style="height:19px;">Alliance Partners: {{AP2}}</p>
                                     <p>Opposing Teams: {{OT2}}</p>
-                                    <p>Time Until Match Starts: {{T2}}</p>
+                                    <p>Time Until Match Starts: </p>
+                                    <p id="time2">{{T2}}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -72,7 +74,34 @@
 
 
     <span id="copylAddress" style="display: inline-block; position: absolute; left: -9999em;"></span>
-</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span
-        class="gr__triangle"></span></span>
+    <script>function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            var fiveMinutes = Number("{{T1}}");
+            console.log('');
+
+            display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+            var fiveMinutes1 = Number("{{T2}}");
+
+            display = document.querySelector('#time2');
+            startTimer(fiveMinutes1, display);
+        };
+    </script>
+</body>
 
 </html>
