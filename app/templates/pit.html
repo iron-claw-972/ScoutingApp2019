@@ -8,15 +8,44 @@
     <title>ScoutingAppBootstrap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @media (min-width: 241px) and (max-width: 900px) {
+            .tablewidth {
+                width: 80vw;
+            }
+
+            .imgpos {
+                display: block;
+            }
+
+            .imgwid {
+                width: 80vw;
+            }
+
+        }
+
+        @media (min-width: 900px) {
+            .tablewidth {
+                width: 50vw;
+            }
+
+            .imgwid {
+                width: 45vw;
+            }
+
+            .imgpos {}
+
+        }
+    </style>
 </head>
 
 <body style="text-align: center;" data-gr-c-s-loaded="true">
     <h1 class="text-center" style="margin:14px;margin-bottom:45px;">Pit Dashboard</h1>
     <div class="table-responsive" style="text-align: center">
-        <table>
+        <table class="" style="display: inline-block;">
             <tr>
-                <td>
-                    <table class="table" style="width:50vw">
+                <td class="tablewidth imgpos">
+                    <table class="table">
                         <thead>
                             <tr></tr>
                         </thead>
@@ -60,9 +89,8 @@
                         </tbody>
                     </table>
                 </td>
-                <td style="padding-left:2vw"><iframe
-                        src="https://player.twitch.tv/?&lt;channel, video, or collection&gt;" height="450" width="550"
-                        scrolling="no" allowfullscreen="no">
+                <td style="padding-left:2vw" class="imgpos"><iframe class="imgwid" src="{{url}}" height="550"
+                        width="550" scrolling="no" allowfullscreen="no">
                     </iframe></td>
             </tr>
         </table>

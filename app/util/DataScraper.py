@@ -39,6 +39,9 @@ class DataScraper:
     def getTeamMatches(self, team, event_key):
         return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'/event/'+event_key+'/matches'+'?X-TBA-Auth-Key='+self.apiKey).text)
 
+    def getWebcastUrl(self, event_key):
+        return 'https://player.twitch.tv/?channel='+json.loads(requests.get(self.baseUrl + '/event/'+event_key+'?X-TBA-Auth-Key='+self.apiKey).text)['webcasts'][0]['channel']
+
     def getMatches(self, event_key, now):
         mat = json.loads(requests.get(self.baseUrl + '/event/'+event_key +
                                       '/matches/simple'+'?X-TBA-Auth-Key='+self.apiKey).text)
