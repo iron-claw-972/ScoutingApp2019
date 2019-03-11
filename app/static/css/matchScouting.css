@@ -125,7 +125,7 @@ input[type="radio"] + label, input[type="checkbox"] + label {
 }
 
 input[type="radio"] + label:hover, input[type="checkbox"] + label:hover {
-    background-color: #fff0d6;
+    background-color: rgba(255, 193, 7, 0.78);;
     transition: 0.25s;
 }
 
@@ -136,7 +136,7 @@ input[type="radio"] + label:active, input[type="checkbox"] + label:active {
 
 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
     border-color: orange;
-    background-color: #fff0d6;
+    background-color: rgba(255, 193, 7, 0.78);;
     transition: 0.25s;
 }
 
@@ -180,7 +180,7 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #fff0d6;
+    background-color: rgba(255, 193, 7, 0.78);;
     transition: 0.25s;
 }
 
