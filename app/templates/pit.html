@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+        p {
+            font-size: 30px;
+        }
+
         @media (min-width: 241px) and (max-width: 900px) {
             .tablewidth {
                 width: 80vw;
@@ -44,36 +48,38 @@
     <div class="table-responsive" style="text-align: center">
         <table class="" style="display: inline-block;">
             <tr>
-                <td class="tablewidth imgpos">
+                <td class="tablewidth imgpos" style="border-color: black; border-width: 2px">
                     <table class="table">
                         <thead>
                             <tr></tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr style="background-color: {{C1}}">
                                 <td style="width:199px;">
                                     <p style="height:19px;">Next Match</p>
                                 </td>
                                 <td style="width:50px;">
-                                    <p style="height:19px;">Alliance Partners: {{AP1}}</p>
-                                    <p>Opposing Teams: {{OT1}}</p>
-                                    <p>Time Until Match Starts: </p>
-                                    <p id="time">{{T1}}</p>
+                                    <p style="display:inline">RED: {{AP1}}</p>
+                                    <p style="display:inline">BLUE: {{OT1}}</p>
+                                    <p style="display:inline">Time Left: </p>
+                                    <p id="time" style="display:inline">{{T1}}</p>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: {{C2}}">
                                 <td style="width:199px;">
                                     <p style="height:19px;">Following Match</p>
                                 </td>
                                 <td style="width:50px;">
-                                    <p style="height:19px;">Alliance Partners: {{AP2}}</p>
-                                    <p>Opposing Teams: {{OT2}}</p>
-                                    <p>Time Until Match Starts: </p>
-                                    <p id="time2">{{T2}}</p>
+                                    <p style="height:19px;display:inline">RED: {{AP2}}</p>
+                                    <p style="display:inline">BLUE: {{OT2}}</p>
+                                    <p style="display:inline">Time Left: </p>
+                                    <p style="display:inline" id="time2">{{T2}}</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Battery Tracker</td>
+                                <td>
+                                    <p>Battery Tracker</p>
+                                </td>
                                 <td>
                                     <form action="/pit/home" method="POST">
                                         Enter the number of the battery you just used, and then start charging it
@@ -129,6 +135,7 @@
             display = document.querySelector('#time2');
             startTimer(fiveMinutes1, display);
         };
+        setTimeout(function () { window.location.reload(true); }, 100000);
     </script>
 </body>
 
