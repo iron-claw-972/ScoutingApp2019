@@ -4,6 +4,7 @@ from .matchSchedule import matchSchedule
 bp = Blueprint('pit', __name__)
 
 
+@bp.route('/')
 @bp.route('/home', methods=['GET', 'POST'])
 def home():
     scraper = current_app._get_current_object().scraper

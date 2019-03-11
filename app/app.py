@@ -6,7 +6,7 @@ import util.DatabaseUtil as database
 import util.DataScraper as scraper
 
 import os
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__, static_folder="static", static_url_path="")
@@ -40,6 +40,12 @@ app.register_blueprint(pitHandler.bp, url_prefix=PIT_PREFIX)
 app.register_blueprint(scoutingHandler.bp, url_prefix=SCOUTING_PREFIX)
 app.register_blueprint(publicityBoard.bp)
 app.register_blueprint(index.bp)
+
+@app.route('/')
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
 
 if __name__ == "__main__":
     app.run()
