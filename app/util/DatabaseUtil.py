@@ -120,6 +120,11 @@ class DatabaseUtil:
             "SELECT AVG(topH + midH + lowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
 
     @staticmethod
+    def getCargoAvg(teamNumber):
+        DatabaseUtil.mycursor.execute(
+            "SELECT AVG(topC + midC + lowC + carC) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
+
+    @staticmethod
     def matchExists(matchNumber):
         DatabaseUtil.mycursor.execute(
             'SELECT COUNT(1) FROM match_info WHERE `MatchID` = "' + matchNumber + '";')

@@ -52,16 +52,18 @@ header {
 }
 
 img#clawLogo {
-    height: 7vh;
+    height: 6vh;
     
 }
 
 h1 {
+    text-transform: uppercase;
     color: #FF6400;
     font-family: "Bebas";
     font-weight: bold;
     font-size: 8vw;
     margin-left: 2vw;
+    margin-top: 1vh;
     display: inline;
     word-spacing: 1vw;
     letter-spacing: 0.3vw;
@@ -85,6 +87,10 @@ iframe {
     border: none;
     margin: 2vh 0 2vh 0;
     flex: 1 1 auto;
+    margin-bottom: -90px;
+    position: relative;
+    bottom: 95px;
+    clip-path: inset(95px 0 0 0)
 }
 
 div#sponsors {
