@@ -10,7 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         p {
-            font-size: 30px;
+            font-size: 25px;
         }
 
         @media (min-width: 241px) and (max-width: 900px) {
@@ -54,8 +54,9 @@
                             <tr></tr>
                         </thead>
                         <tbody>
-                            <tr style="background-image: linear-gradient(to right, {{C1}} 0%, {{C1}} 20%, Transparent 100%); border:none;">
-                                <td style="width:199px;">
+                            <tr
+                                style="background-image: linear-gradient(to right, {{C1}} 0%, {{C1}} 20%, Transparent 100%); border:none;">
+                                <td style="width:19px;">
                                     <p style="height:19px;">Next Match</p>
                                 </td>
                                 <td style="width:50px;">
@@ -65,8 +66,9 @@
                                     <p id="time" style="display:inline">{{T1}}</p>
                                 </td>
                             </tr>
-                            <tr style="background-image: linear-gradient(to right, {{C2}} 0%, {{C2}} 20%, Transparent 100%);">
-                                <td style="width:199px;">
+                            <tr
+                                style="background-image: linear-gradient(to right, {{C2}} 0%, {{C2}} 20%, Transparent 100%);">
+                                <td style="width:19px;">
                                     <p style="height:19px;">Following Match</p>
                                 </td>
                                 <td style="width:50px;">
@@ -87,9 +89,27 @@
                                         <input type="text" name="state">
                                         <input type="submit" value="Submit">
                                     </form>
-                                    <p style="height:19px;">Battery 1: {{one}}</p>
-                                    <p style="height:19px;">Battery 2: {{two}}</p>
-                                    <p style="height:19px;">Battery 3: {{three}}</p>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h5 style="height:19px;">Battery 1: {{one}}</h5>
+                                                    <h5 style="height:19px;">Battery 2: {{two}}</h5>
+                                                    <h5 style="height:19px;">Battery 3: {{three}}</h5>
+                                                    <h5 style="height:19px;">Battery 4: {{four}}</h5>
+                                                    <h5 style="height:19px;">Battery 5: {{five}}</h5>
+                                                </td>
+                                                <td>
+                                                    <h5 style="height:19px;">Battery 6: {{six}}</h5>
+                                                    <h5 style="height:19px;">Battery 7: {{seven}}</h5>
+                                                    <h5 style="height:19px;">Battery 8: {{eight}}</h5>
+                                                    <h5 style="height:19px;">Battery 9: {{nine}}</h5>
+                                                    <h5 style="height:19px;">Battery 10: {{ten}}</h5>
+                                                    <h5 style="height:19px;">Battery 11: {{eleven}}</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </td>
                             </tr>
                         </tbody>

@@ -32,14 +32,17 @@ app.allowed_file = allowed_file
 #  config, evntually move to config
 app.database = database.DatabaseUtil
 app.scraper = scraper
-app.database.storeVariable('batteryStatus', ['good', 'good', 'good'])
-app.database.storeVariable('timeUntilGood', [0, 0, 0])
+app.database.storeVariable(
+    'batteryStatus', ['good', 'good', 'good', 'good', 'good', 'good', 'good', 'good', 'good', 'good', 'good'])
+app.database.storeVariable(
+    'timeUntilGood', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 app.database.storeVariable('batteryChargingTime', 5)
 
 app.register_blueprint(pitHandler.bp, url_prefix=PIT_PREFIX)
 app.register_blueprint(scoutingHandler.bp, url_prefix=SCOUTING_PREFIX)
 app.register_blueprint(publicityBoard.bp)
 app.register_blueprint(index.bp)
+
 
 @app.route('/')
 @app.route('/home')
