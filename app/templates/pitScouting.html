@@ -142,7 +142,8 @@
 		</div>
 
 		<h2 style="margin: 5vh 0 1vh 0;">Image Upload</h2>
-		<input type="file" name="robotPicUpload" class="vw30" accept="video/*, image/*" onchange="readURL(this);">
+		<label for="robotPicUpload">Choose A File...</label>
+		<input id="robotPicUpload" type="file" name="robotPicUpload" class="vw30" accept="image/*" onchange="readURL(this);">
 		<img id="robotPic" />
 
 		<textarea rows="5" form="inputForm" name="comments" maxlength="255"

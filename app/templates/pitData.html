@@ -55,6 +55,14 @@
         </tr>
         {% endfor %}
     </table>
+
+    <style>
+        table {border-collapse: collapse;}
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        thead {background-color: #cecece;}
+        thead, td {padding: 5px 0}
+    </style>
+
     <script>
         function sortTable(n, isNumber) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;

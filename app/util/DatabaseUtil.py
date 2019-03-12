@@ -117,12 +117,14 @@ class DatabaseUtil:
     @staticmethod
     def getHatchAvg(teamNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT AVG(topH + midH + lowH + carH) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
+            "SELECT ROUND(AVG(topH + midH + lowH + carH), 2) FROM team_performance_" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
+        return DatabaseUtil.mycursor.fetchall()[0][0]
 
     @staticmethod
     def getCargoAvg(teamNumber):
         DatabaseUtil.mycursor.execute(
-            "SELECT AVG(topC + midC + lowC + carC) FROM team_performance" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
+            "SELECT ROUND(AVG(topC + midC + lowC + carC), 2) FROM team_performance_" + DatabaseUtil.year + "_" + DatabaseUtil.compy + " WHERE teamNumber = " + str(teamNumber))
+        return DatabaseUtil.mycursor.fetchall()[0][0]
 
     @staticmethod
     def matchExists(matchNumber):
