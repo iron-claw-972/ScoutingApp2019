@@ -10,17 +10,21 @@ class DataScraper:
     #tba = tbapy.TBA(apiKey)
     SVReventKey = ""
     SFeventKey = ""
+    Year = ""
 
     def __init__(self):
         self.SVReventKey = '2018casj'
         self.SFeventKey = '2018casf'
+        self.Year = "2018"
 
     def getEvent(self, year, name):
+        year = self.Year
         events = json.loads(requests.get(self.baseUrl + "/events/" +
                                          year + '?X-TBA-Auth-Key='+self.apiKey).text)
         return next((e for e in events if e['name'] == name))
 
     def getTeamInfo(self, team, year):
+        year = self.Year
         return json.loads(requests.get(self.baseUrl + "/team/frc"+team+"/events/" +
                                        year+"/statuses" + '?X-TBA-Auth-Key='+self.apiKey).text)
 
@@ -28,6 +32,7 @@ class DataScraper:
         return json.loads(requests.get(self.baseUrl + '/team/frc'+team+'?X-TBA-Auth-Key='+self.apiKey).text)
 
     def getTeams(self, year, id):
+        year = self.Year
         return json.loads(requests.get(self.baseUrl + "/event/" + id + "/teams" + '?X-TBA-Auth-Key=' + self.apiKey).text)
 
     def getTeamEventStatus(self, team, event_key):
@@ -51,6 +56,7 @@ class DataScraper:
         return newlist
 
     def getMatchTeams(self, matchNumber):
+        matchNumber = self.Year+"casf_qm"+str(matchNumber)
         data = json.loads(requests.get(
             self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
         print(data)

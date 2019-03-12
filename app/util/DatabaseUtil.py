@@ -188,11 +188,11 @@ class DatabaseUtil:
     def addBATeamData(number):
         DatabaseUtil.teamData[number] = {}
         DatabaseUtil.teamData[number]['compResults'] = datascraper.getTeamInfo(
-            number, '2018')
+            number, DatabaseUtil.year)
         secretinfo = datascraper.getSecretTeamInfo(
             number)
         DatabaseUtil.teamData[number]['teamInfo'] = secretinfo
-        DatabaseUtil.mycursor.execute("insert into general_team_info(Team_Number, Name, Website, Location) values(%s,%s,%s,%s);", (str(
+        DatabaseUtil.mycursor.execute("insert ignore general_team_info(Team_Number, Name, Website, Location) values(%s,%s,%s,%s);", (str(
             number), secretinfo['nickname'], secretinfo['website'], secretinfo['city']+', '+secretinfo['state_prov']))
         DatabaseUtil.mydb.commit()
 
