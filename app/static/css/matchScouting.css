@@ -281,13 +281,31 @@ input[type="text"]:focus {
     
 }
 
-input[type="file"] {
-    margin-bottom: 3vh;
-    text-align: center;
-    padding: 1vh;
-    border-radius: 1vh;
+label[for="robotPicUpload"] {
+    display: inline-block;
     border: 2px solid black;
+    color: black;
+    margin-left: -6px;
+    transition: 0.25s;
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
     background-color: white;
+    font-size: 2vw;
+    border-radius: 1vw; 
+}
+
+label[for="robotPicUpload"]:hover {
+    background-color: rgba(255, 193, 7, 0.78);;
+    transition: 0.25s;
+}
+
+label[for="robotPicUpload"]:active {
+    background-color: orange;
+    transition: 0.25s;
+}
+
+input[type="file"] {
+    display: none; 
 }
 
 input[type='submit'] {
