@@ -31,8 +31,9 @@
                 <th onclick="sortTable(9, false)">Cargo LC</th>
                 <th onclick="sortTable(10, true)">Climb</th>
                 <th onclick="sortTable(12, true)">Climb Time</th>
-                <th onclick="sortTable(13, false)">Sandstorm</th>
-                <th onclick="sortTable(14, false)">Comments</th>
+                <th onclick="sortTable(13, false)">Buddy Climb</th>
+                <th onclick="sortTable(14, false)">Sandstorm</th>
+                <th onclick="sortTable(15, false)">Comments</th>
             </tr>
         </thead>
         {% for item in data %}
@@ -52,16 +53,29 @@
             <td>{{item[13]}}</td>
             <td>{{item[14]}}</td>
             <td>{{item[15]}}</td>
+            <td>{{item[16]}}</td>
 
         </tr>
         {% endfor %}
     </table>
 
     <style>
-        table {border-collapse: collapse;}
-        tr:nth-child(even) {background-color: #f2f2f2;}
-        thead {background-color: #cecece;}
-        thead, td {padding: 5px 0}
+        table {
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        thead {
+            background-color: #cecece;
+        }
+
+        thead,
+        td {
+            padding: 5px 0
+        }
     </style>
 
     <script>

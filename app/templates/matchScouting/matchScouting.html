@@ -74,9 +74,23 @@
                 <label class="counter" id="c3">0</label>
             </div>
         </div>
+        <div id="defenseInput">
+            <h3>Defense</h3>
+            <div class="defenseRating">
+                <input type="checkbox" name="defense" id="defense"><label class="firstInput lastInput" for="defense"
+                    style="margin-right: 1vw;">Did Defense?</label>
+                <span></span>
+                <input type="radio" name="defenseNum" value="1" id="d1" checked><label class="firstInput" for="d1"
+                    style="width: 17vw;">Effective</label>
+                <input type="radio" name="defenseNum" value="2" id="d2" checked><label class="" for="d2"
+                    style="width: 17vw;">Medium Effective</label>
+                <input type="radio" name="defenseNum" value="3" id="d3"><label class="lastInput" for="d3"
+                    style="width:17vw;">Not Effective</label>
 
+            </div>
+        </div>
         <div id="climbInput">
-            <h3>Climb <small><small><br /><small>without buddy climb</small></small></small></h3>
+            <h3>Climb</h3>
             <div class="outtakeLevels">
                 <input type="radio" name="climbLevel" value="No Climb" id="climb0" checked><label
                     class="vw15 firstInput" for="climb0">No Climb</label>
@@ -87,6 +101,13 @@
                 <input type="radio" name="climbLevel" value="Level 3" id="climb3"><label class="lastInput vw15"
                     for="climb3">Level 3</label>
             </div>
+            <input type="checkbox" name="buddyClimb" id="buddyClimb"><label class="firstInput lastInput"
+                for="buddyClimb" style="margin-right: 1vw;">Buddy Climb?</label>
+            <span></span>
+            <input type="radio" name="buddyClimbNum" value="buddyClimb1" id="buddyClimb1" checked><label
+                class="firstInput" for="buddyClimb1" style="width: 2vw;">1</label>
+            <input type="radio" name="buddyClimbNum" value="buddyClimb2" id="buddyClimb2"><label class="lastInput"
+                for="buddyClimb2" style="width:2vw;">2</label>
             <input type="number" name="climbTime" placeholder="Enter time (sec.)" style="width:20vw;" pattern="^[0-9]*$"
                 min="0" max="60">
         </div>

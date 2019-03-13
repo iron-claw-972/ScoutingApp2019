@@ -62,6 +62,12 @@ li a:hover {
 .vw20{
     width:21vw;
 }
+.vw12{
+    width:12vw;
+}
+.vw10{
+    width:10vw;
+}
 .vw15{
     width:15vw;
 }
@@ -363,5 +369,9 @@ img#robotPic {
 }
 
 input#buddyClimb:not(:checked) ~ input[name="buddyClimbNum"] + label {
+    display: none;
+}
+
+input#defense:not(:checked) ~ input[name="defenseNum"] + label {
     display: none;
 }
