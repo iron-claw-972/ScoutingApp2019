@@ -56,14 +56,15 @@ class DataScraper:
         return newlist
 
     def getMatchTeams(self, matchNumber):
-        matchNumber = self.SFReventKey+"_qm"+str(matchNumber)
+        matchNumber = self.SFeventKey+"_qm"+str(matchNumber)
         data = json.loads(requests.get(
             self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
         print(data)
         try:
             red = [e[3:] for e in data['alliances']['red']['team_keys']]
             blue = [e[3:] for e in data['alliances']['blue']['team_keys']]
-        except:
+        except Exception as e:
+            print(e)
             return None
         return {
             "R1": red[0],

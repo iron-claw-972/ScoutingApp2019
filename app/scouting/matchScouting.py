@@ -51,11 +51,11 @@ def matchScouting(request):
         # example data: {'climbTime': '10', 'cargo': '1,2,1,0,', 'matchNum': '12345', 'comments': 'Comments here', 'climbLevel': 'Level 1', 'teamNum': '12345', 'hatch': '1,1,1,2,', 'sandstorm': 'idk'}
         hatchData = [e for e in data['hatch'].split(',') if e]
         cargoData = [e for e in data['cargo'].split(',') if e]
-        newdata = {"MatchID": '', "TeamNumber": '', 'Climb': '', 'BuddyClimb': '', 'ClimbTime': '',
+        newdata = {"MatchID": '', 'Defense':'','Fouls':'', "TeamNumber": '', 'Climb': '', 'BuddyClimb': '', 'ClimbTime': '',
                    'TopH': '', 'MidH': '', 'LowH': '', 'CarH': '', 'CarC': '', 'LowC': '', 'MidC': '', 'TopC': '', 'Comments': '', 'Sandstorm': ''}
 
         try:
-            newdata.update({"MatchID": session['matchid'], "BuddyClimb": (data['buddyClimbNum'][-1] if 'buddyClimb' in data else '0'), "TeamNumber": session['teamnumber'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
+            newdata.update({"MatchID": session['matchid'], "BuddyClimb": (data['buddyClimbNum'][-1] if 'buddyClimb' in data else '0'), 'Fouls': (data['fouls'] if 'fouls' in data else '0'), 'Defense': (data['defenseNum'] if 'defense' in data else '0'), "TeamNumber": session['teamnumber'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
                             'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm']})
         except IndexError:
             return "Stop Hacking Us. "
