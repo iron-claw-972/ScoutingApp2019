@@ -13,8 +13,8 @@ class DataScraper:
     Year = ""
 
     def __init__(self):
-        self.SVReventKey = '2019cvr'
-        self.SFeventKey = '2019cvr'
+        self.SVReventKey = '2019cafr'
+        self.SFeventKey = '2019cafr'
         self.Year = "2019"
 
     def getEvent(self, year, name):
@@ -56,7 +56,7 @@ class DataScraper:
         return newlist
 
     def getMatchTeams(self, matchNumber):
-        matchNumber = self.Year+"casf_qm"+str(matchNumber)
+        matchNumber = self.SFReventKey+"_qm"+str(matchNumber)
         data = json.loads(requests.get(
             self.baseUrl + '/match/'+matchNumber+'?X-TBA-Auth-Key='+self.apiKey).text)
         print(data)
