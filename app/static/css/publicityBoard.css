@@ -89,7 +89,7 @@ iframe {
     flex: 1 1 auto;
     margin-bottom: -90px;
     position: relative;
-    bottom: 95px;
+    bottom: 100px;
     clip-path: inset(95px 0 0 0)
 }
 

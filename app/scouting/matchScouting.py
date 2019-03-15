@@ -52,11 +52,11 @@ def matchScouting(request):
         hatchData = [e for e in data['hatch'].split(',') if e]
         cargoData = [e for e in data['cargo'].split(',') if e]
         newdata = {"MatchID": '', 'Defense':'','Fouls':'', "TeamNumber": '', 'Climb': '', 'BuddyClimb': '', 'ClimbTime': '',
-                   'TopH': '', 'MidH': '', 'LowH': '', 'CarH': '', 'CarC': '', 'LowC': '', 'MidC': '', 'TopC': '', 'Comments': '', 'Sandstorm': ''}
+                   'TopH': '', 'MidH': '', 'LowH': '', 'CarH': '', 'CarC': '', 'LowC': '', 'MidC': '', 'TopC': '', 'Comments': '', 'Sandstorm': '', 'ScoutName': ''}
 
         try:
             newdata.update({"MatchID": session['matchid'], "BuddyClimb": (data['buddyClimbNum'][-1] if 'buddyClimb' in data else '0'), 'Fouls': (data['fouls'] if 'fouls' in data else '0'), 'Defense': (data['defenseNum'] if 'defense' in data else '0'), "TeamNumber": session['teamnumber'], 'Climb': data['climbLevel'], 'ClimbTime': data['climbTime'],
-                            'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm']})
+                            'TopH': hatchData[3], 'MidH': hatchData[2], 'LowH': hatchData[1], 'CarH': hatchData[0], 'CarC': cargoData[0], 'LowC': cargoData[1], 'MidC': cargoData[2], 'TopC': cargoData[3], 'Comments': data['comments'], 'Sandstorm': data['sandstorm'], 'ScoutName': data['scoutname']})
         except IndexError:
             return "Stop Hacking Us. "
         database.addMatchRecord(newdata)
