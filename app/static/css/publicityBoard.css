@@ -136,11 +136,13 @@ img.sponsorImage {
     filter: brightness(0);
 }
 
-table { border-collapse: collapse; }
-tr { border: none; }
-td {
-  border-right: solid 1px #f00; 
-  border-left: solid 1px #f00;
+
+
+
+li{
+    list-style: none
 }
 
-
+.robo{
+    font-size: 40px;width: 100vw; height:50vh; margin-left:auto;margin-right:auto;
+}
