@@ -5,7 +5,7 @@ from flask import Markup
 
 def matchSchedule(scraper):
     # currentTime = time.time()
-    currentTime = 1521331740
+    currentTime = time.time()
     scraper = scraper.DataScraper()
     url = scraper.getWebcastUrl(scraper.SFeventKey)
     print(url)

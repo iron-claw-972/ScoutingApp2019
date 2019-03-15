@@ -141,11 +141,11 @@ class DatabaseUtil:
 
     @staticmethod
     def createMatch(matchNumber):  # returns dictionary of teams
-        DatabaseUtil.mycursor.execute(
-            "INSERT INTO match_info (MatchID) VALUES ('"+matchNumber+"');")
         teamDict = datascraper.getMatchTeams(matchNumber)
         if teamDict == None:
             return None
+        DatabaseUtil.mycursor.execute(
+            "INSERT INTO match_info (MatchID) VALUES ('"+matchNumber+"');")
         for key, value in teamDict.items():
             DatabaseUtil.mycursor.execute(
                 "UPDATE match_info SET " + key + " = '" + str(value) + "' WHERE MatchID = '" + matchNumber + "';")
