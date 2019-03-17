@@ -35,44 +35,44 @@
 ## Scouting App Requirements
 
 ### Scouting App
-- [ ] Match Scouting
-- [ ] Match Data
+- [x] Match Scouting
+- [x] Match Data
 - [ ] Robot-Picking Data
-- [ ] Pit Scouting
-- [ ] Specific Bot Data
+- [x] Pit Scouting
+- [x] Specific Bot Data
 - [ ] ToN oF bIG dAtA?
 
 ### Hardware
-- [ ] 25" Touch Screen for publicity board
-- [ ] Pit Monitor for pit display
+- [x] 25" Touch Screen for publicity board
+- [x] Pit Monitor for pit display
 
 ### Publicity Board
-- [ ] Sponsors
+- [x] Sponsors
 - [ ] Tech Binder
 - [ ] Business Plan
-- [ ] interactive CAD
+- [x] interactive CAD
 
 ### Pit Display
-- [ ] Team Match Schedule
-- [ ] SA data for match prep
-- [ ] Livestream
+- [x] Team Match Schedule
+- [x] SA data for match prep
+- [x] Livestream
 - [ ] Battery Tracker
 
 ## TODO
 - [x] UI for match input
-- [ ] UI for pit input
+- [X] UI for pit input
 - [x] Database utility
-- [ ] Data output for matches
-- [ ] Data output for pits
-- [ ] Reformat database to match new design (Pranav)
-- [ ] Make pit scouting work (Alan)
-- [ ] Team page ui to encorporate more data (Holden)
-- [ ] Publicity board outline (more details) (Alexis and Dawson)
-- [ ] add more to todo (Holden)
-- [ ] get robot cad in step (Ethan)
-- [ ] fix travis building (Holden)
+- [x] Data output for matches
+- [x] Data output for pits
+- [x] Reformat database to match new design (Pranav)
+- [x] Make pit scouting work (Alan)
+- [x] Team page ui to encorporate more data (Holden)
+- [x] Publicity board outline (more details) (Alexis and Dawson)
+- [x] add more to todo (Holden)
+- [x] get robot cad in step (Ethan)
+- [x] fix travis building (Holden)
 
 ### Misc.
 - [ ] move configurations from app.py to config.py
 - [ ] configure production WSGI server
-- [ ] configure proper unit testing and travis integration
+- [x] configure proper unit testing and travis integration
