@@ -30,25 +30,25 @@ def matchScouting(request):
                 teams = database.createMatch(data['matchNumber'])
                 if teams == None:
                     return redirect("/scouting/inputMatchData")
-            else:
-                database.mycursor.execute(
-                    "select * from team_performance_%s_%s where `MatchID`=" % (database.year, database.compy) + "'"+data['matchNumber'] + "'")
-                datateams = [e[1] for e in database.mycursor.fetchall()]
-                print(datateams)
-                teamlist = ['R1', 'R2', 'R3', 'B1', 'B2', 'B3']
-                teams = [e for e in database.getMatches() if e[0] ==
-                         data["matchNumber"]][0][1:7]
-                teams = {teamlist[c]: team if not team in datateams else '' for c, team in enumerate(
-                    teams)}
-                print(teams)
-                session['matchid'] = data['matchNumber']
-                return flask.render_template('/matchScouting/inputTeamNumber.html', matchNumber=request.form['matchNumber'],
-                                             R1=teams['R1'],
-                                             R2=teams['R2'],
-                                             R3=teams['R3'],
-                                             B1=teams['B1'],
-                                             B2=teams['B2'],
-                                             B3=teams['B3'],)
+
+            database.mycursor.execute(
+                "select * from team_performance_%s_%s where `MatchID`=" % (database.year, database.compy) + "'"+data['matchNumber'] + "'")
+            datateams = [e[1] for e in database.mycursor.fetchall()]
+            print(datateams)
+            teamlist = ['R1', 'R2', 'R3', 'B1', 'B2', 'B3']
+            teams = [e for e in database.getMatches() if e[0] ==
+                     data["matchNumber"]][0][1:7]
+            teams = {teamlist[c]: team if not team in datateams else '' for c, team in enumerate(
+                teams)}
+            print(teams)
+            session['matchid'] = data['matchNumber']
+            return flask.render_template('/matchScouting/inputTeamNumber.html', matchNumber=request.form['matchNumber'],
+                                         R1=teams['R1'],
+                                         R2=teams['R2'],
+                                         R3=teams['R3'],
+                                         B1=teams['B1'],
+                                         B2=teams['B2'],
+                                         B3=teams['B3'],)
 
         # example data: {'climbTime': '10', 'cargo': '1,2,1,0,', 'matchNum': '12345', 'comments': 'Comments here', 'climbLevel': 'Level 1', 'teamNum': '12345', 'hatch': '1,1,1,2,', 'sandstorm': 'idk'}
         hatchData = [e for e in data['hatch'].split(',') if e]
