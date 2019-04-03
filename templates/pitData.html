@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pit Data</title>
+    <link rel="stylesheet" type="text/css" href="/css/matchScouting.css">
+    <script src="/js/jquery.js"></script>
+</head>
+
+<div id="background"></div>
+
+<body style="text-align: center; margin: 0 3vw">
+    <a href="/scouting/home">
+        <img src="/images/back.png" style="float:left;position:relative;
+        	   z-index:1000; width:80px"></a>
+    <img src="/images/back.png" style="opacity:0.0;float:right;position:relative;
+        	   z-index:1000; width:80px">
+    <h1>Pit Data</h1>
+
+    <form method="post">
+        <h2>Which columns should be displayed?</h2>
+        {% for item in allcolumns %}
+            <input id="{{item}}" type="checkbox" name="columnsSelected" value="{{item}}"><label for="{{item}}">{{item}}</label>
+        {% endfor %}
+
+        <h2>Sort by...</h2>
+        <select name="sortBy" style="margin-bottom: 1vh">
+        {% for item in allcolumns %}
+            <option value="{{item}}">{{item}}</option>
+        {% endfor %}
+        </select>
+        <input id="asc" type="radio" name="sortOrder" value="asc" checked><label for="asc">Ascending</label>
+        <input id="desc" type="radio" name="sortOrder" value="desc"><label for="desc">Descending</label>
+
+        <br /><input style="margin-bottom: 5vh" type="submit" value="Render Table!">
+    </form>
+
+    <table style="width:90vw;text-align: center; margin-left: auto;margin-right: auto; display: {{displayed}}" id="myTable2">
+        <thead>
+            <tr>
+                {% for columnName in columns %}
+                <th onclick="sortTable(0, true)">{{columnName}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        {% for row in data %}
+        <tr>
+            {% for item in row %}
+            <td>{{item}}</td>
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <style>
+        table {border-collapse: collapse;}
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        thead {background-color: #cecece;}
+        thead, td {padding: 5px 0}
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $("input[value=TeamNumber]").prop('checked', true);
+            $("option[value=TeamNumber]").prop('selected', true);
+
+            $("option[value={{sortBy}}]").prop('selected', true);
+            {% for item in columns %}
+            $("input[value={{item}}]").prop('checked', true);
+            {% endfor %}
+        });
+    </script>
+
+    <script>
+        function sortTable(n, isNumber) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable2");
+            switching = true;
+            // Set the sorting direction to ascending:
+            dir = "asc";
+            /* Make a loop that will continue until
+            no switching has been done: */
+            while (switching) {
+                // Start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /* Loop through all table rows (except the
+                first, which contains table headers): */
+                for (i = 1; i < (rows.length - 1); i++) {
+                    // Start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /* Get the two elements you want to compare,
+                    one from current row and one from the next: */
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /* Check if the two rows should switch place,
+                    based on the direction, asc or desc: */
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (!isNumber) {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                // If so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                        else {
+                            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                                shouldSwitch = true;
+                                console.log(Number(x.innerHTML));
+                                console.log(Number(y.innerHTML));
+                                break;
+                            }
+                        }
+
+                    }
+                }
+                if (shouldSwitch) {
+                    /* If a switch has been marked, make the switch
+                    and mark that a switch has been done: */
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    // Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    /* If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again. */
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
